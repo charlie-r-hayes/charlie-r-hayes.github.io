@@ -1,5 +1,5 @@
 /* =========================================================
-   ROOT COLORS
+   ROOT COLORS / DIMENSIONS
    ========================================================= */
 
 :root {
@@ -20,6 +20,12 @@
     --wood-light: #55351f;
 
     --display-blue: #7fa3a0;
+
+    /* smaller overall page margins */
+    --page-padding: clamp(20px, 2.5vw, 48px);
+
+    /* lets content use much more of a wide monitor */
+    --content-width: 1720px;
 }
 
 
@@ -109,14 +115,16 @@ body::before {
 
     padding:
         24px
-        clamp(25px, 5vw, 90px)
+        var(--page-padding)
         20px;
 }
 
 
 
 .header-main {
-    max-width: 1600px;
+    width: 100%;
+
+    max-width: var(--content-width);
 
     margin: 0 auto;
 }
@@ -128,13 +136,15 @@ body::before {
    ========================================================= */
 
 .header-top {
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
-        minmax(440px, 0.9fr)
-        minmax(500px, 1.1fr);
+        minmax(650px, 0.95fr)
+        minmax(600px, 1.05fr);
 
-    gap: 60px;
+    gap: 40px;
 
     align-items: center;
 }
@@ -145,14 +155,20 @@ body::before {
    NAME
    ========================================================= */
 
+.name-section {
+    min-width: 0;
+}
+
+
+
 .name-section h1 {
     color: var(--cream);
 
     font-size:
         clamp(
-            2.7rem,
-            4.5vw,
-            5rem
+            3rem,
+            4vw,
+            4.7rem
         );
 
     line-height: 0.9;
@@ -160,6 +176,9 @@ body::before {
     letter-spacing: 2px;
 
     font-weight: 800;
+
+    /* keeps Charlie Hayes on one line */
+    white-space: nowrap;
 }
 
 
@@ -172,6 +191,8 @@ body::before {
     font-size: 0.82rem;
 
     letter-spacing: 7px;
+
+    white-space: nowrap;
 }
 
 
@@ -335,7 +356,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(1) {
     height: 35px;
-
     animation-delay: 0s;
 }
 
@@ -343,7 +363,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(2) {
     height: 29px;
-
     animation-delay: 0.12s;
 }
 
@@ -351,7 +370,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(3) {
     height: 25px;
-
     animation-delay: 0.25s;
 }
 
@@ -359,7 +377,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(4) {
     height: 20px;
-
     animation-delay: 0.4s;
 }
 
@@ -367,7 +384,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(5) {
     height: 15px;
-
     animation-delay: 0.55s;
 }
 
@@ -375,7 +391,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(6) {
     height: 10px;
-
     animation-delay: 0.7s;
 }
 
@@ -383,7 +398,6 @@ nav a.active::after {
 
 .equalizer span:nth-child(7) {
     height: 5px;
-
     animation-delay: 0.85s;
 }
 
@@ -460,13 +474,15 @@ nav a.active::after {
 
 
 .shelf-heading {
-    max-width: 1300px;
+    width: 100%;
+
+    max-width: var(--content-width);
 
     margin: 0 auto;
 
     padding:
         0
-        30px
+        var(--page-padding)
         13px;
 
     display: flex;
@@ -517,7 +533,7 @@ nav a.active::after {
 
     padding:
         38px
-        35px
+        var(--page-padding)
         30px;
 
     display: flex;
@@ -979,7 +995,12 @@ nav a.active::after {
    ========================================================= */
 
 .project-preview {
-    max-width: 1400px;
+    width:
+        calc(
+            100% - (var(--page-padding) * 2)
+        );
+
+    max-width: var(--content-width);
 
     margin:
         35px
@@ -1567,7 +1588,12 @@ nav a.active::after {
    ========================================================= */
 
 .about-section {
-    max-width: 1200px;
+    width:
+        calc(
+            100% - (var(--page-padding) * 2)
+        );
+
+    max-width: var(--content-width);
 
     margin:
         100px
@@ -1575,7 +1601,7 @@ nav a.active::after {
 
     padding:
         0
-        45px;
+        20px;
 }
 
 
@@ -1620,7 +1646,7 @@ nav a.active::after {
 .site-footer {
     padding:
         45px
-        clamp(25px, 5vw, 90px);
+        var(--page-padding);
 
     display: flex;
 
@@ -1671,7 +1697,7 @@ nav a.active::after {
    HEADER RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1150px) {
+@media (max-width: 1300px) {
 
     .header-top {
         grid-template-columns: 1fr;
@@ -1695,11 +1721,6 @@ nav a.active::after {
 @media (max-width: 1000px) {
 
     .project-preview {
-        margin:
-            30px
-            25px
-            0;
-
         grid-template-columns: 1fr;
 
         gap: 40px;
@@ -1729,25 +1750,41 @@ nav a.active::after {
 
 @media (max-width: 700px) {
 
+    :root {
+        --page-padding: 20px;
+    }
+
+
     .site-header {
         padding:
             22px
-            22px
+            var(--page-padding)
             18px;
     }
 
 
     .name-section h1 {
-        font-size: 2.8rem;
+        font-size:
+            clamp(
+                2rem,
+                10vw,
+                2.8rem
+            );
+
+        letter-spacing: 1px;
+
+        white-space: nowrap;
     }
 
 
     .name-section p {
-        font-size: 0.64rem;
+        font-size: 0.59rem;
 
         line-height: 1.7;
 
-        letter-spacing: 4px;
+        letter-spacing: 3px;
+
+        white-space: normal;
     }
 
 
@@ -1789,9 +1826,9 @@ nav a.active::after {
 
 
     .shelf-heading {
-        padding-left: 22px;
+        padding-left: var(--page-padding);
 
-        padding-right: 22px;
+        padding-right: var(--page-padding);
     }
 
 
@@ -1830,9 +1867,14 @@ nav a.active::after {
 
 
     .project-preview {
+        width:
+            calc(
+                100% - 30px
+            );
+
         margin:
             25px
-            15px
+            auto
             0;
 
         padding:
@@ -1898,20 +1940,23 @@ nav a.active::after {
 
 
     .about-section {
+        width:
+            calc(
+                100% - 30px
+            );
+
         margin:
             70px
             auto;
 
-        padding:
-            0
-            25px;
+        padding: 0 10px;
     }
 
 
     .site-footer {
         padding:
             35px
-            25px;
+            var(--page-padding);
 
         flex-direction: column;
 
