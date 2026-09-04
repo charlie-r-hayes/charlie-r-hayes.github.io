@@ -3,52 +3,135 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Charlie Hayes - Electrical Engineering portfolio featuring controls, embedded systems, electronics, PCB design, robotics, and homelab projects."
+    >
 
     <link rel="stylesheet" href="style.css">
 
     <title>Charlie Hayes | Electrical Engineering</title>
 </head>
 
+
 <body>
+
+
+    <!-- ======================================================
+         HEADER
+         ====================================================== -->
 
     <header class="site-header">
 
-        <div class="name-section">
-            <h1>CHARLIE HAYES</h1>
-            <p>ELECTRICAL ENGINEERING STUDENT</p>
-        </div>
+        <div class="header-main">
 
-        <nav>
-            <a href="index.html" class="active">HOME</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#about">ABOUT</a>
-            <a href="#">RESUME</a>
-            <a href="#contact">CONTACT</a>
-        </nav>
+            <div class="name-section">
+
+                <h1>
+                    CHARLIE HAYES
+                </h1>
+
+                <p>
+                    ELECTRICAL ENGINEERING STUDENT
+                </p>
+
+            </div>
+
+
+            <nav>
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    HOME
+                </a>
+
+                <a href="#projects">
+                    PROJECTS
+                </a>
+
+                <a href="#about">
+                    ABOUT
+                </a>
+
+                <a href="#">
+                    RESUME
+                </a>
+
+                <a href="#contact">
+                    CONTACT
+                </a>
+
+            </nav>
+
+        </div>
 
     </header>
 
 
+
     <main>
 
-        <!-- RETRO DISPLAY -->
+
+        <!-- ==================================================
+             RETRO DISPLAY
+             ================================================== -->
 
         <section class="hero">
 
             <div class="display-panel">
 
-                <div class="equalizer">
+                <div class="equalizer" aria-hidden="true">
+
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
+                    <span></span>
+                    <span></span>
+
                 </div>
+
 
                 <div class="display-text">
-                    <p>EE PORTFOLIO</p>
-                    <p>SYSTEM ONLINE</p>
+
+                    <p>
+                        EE PORTFOLIO
+                    </p>
+
+                    <p>
+                        SYSTEM ONLINE
+                    </p>
+
+                </div>
+
+
+                <div class="display-right">
+
+                    <p>
+                        PLAY
+                    </p>
+
+                    <p>
+                        BUILD
+                    </p>
+
+                    <p>
+                        LEARN
+                    </p>
+
+                    <p>
+                        REPEAT
+                    </p>
+
                 </div>
 
             </div>
@@ -56,198 +139,611 @@
         </section>
 
 
-        <!-- PROJECT CASSETTE SHELF -->
 
-        <section class="project-shelf" id="projects">
+        <!-- ==================================================
+             PROJECT SHELF
+             ================================================== -->
+
+        <section
+            class="projects-section"
+            id="projects"
+        >
+
+            <div class="shelf-heading">
+
+                <p class="section-label">
+                    PROJECT ARCHIVE
+                </p>
+
+                <p class="shelf-instruction">
+                    HOVER OR SELECT A TAPE
+                </p>
+
+            </div>
 
 
-            <!-- HOMELAB -->
+            <div class="project-shelf">
 
-            <div class="cassette cassette-blue">
 
-                <div class="tape-top">
-                    <span>C-90</span>
-                    <span>A</span>
+                <!-- ==========================================
+                     HOMELAB
+                     ========================================== -->
+
+                <button
+                    class="cassette theme-blue active"
+                    type="button"
+                    data-project="homelab"
+                    aria-label="View Custom Homelab project preview"
+                >
+
+                    <span class="cassette-edge cassette-edge-left"></span>
+
+                    <span class="tape-top">
+
+                        <span>
+                            C-90
+                        </span>
+
+                        <span>
+                            A
+                        </span>
+
+                    </span>
+
+
+                    <span class="cassette-label">
+
+                        <span class="label-stripes"></span>
+
+                        <strong>
+                            HOMELAB
+                        </strong>
+
+                        <span class="label-rule"></span>
+
+                        <small>
+                            PROXMOX / LINUX
+                        </small>
+
+                        <small>
+                            NETWORKING
+                        </small>
+
+                        <span class="tape-number">
+                            01
+                        </span>
+
+                    </span>
+
+
+                    <span class="tape-bottom">
+
+                        CHARLIE HAYES
+
+                    </span>
+
+                    <span class="cassette-edge cassette-edge-right"></span>
+
+                </button>
+
+
+
+                <!-- ==========================================
+                     EMBEDDED
+                     ========================================== -->
+
+                <button
+                    class="cassette theme-red"
+                    type="button"
+                    data-project="embedded"
+                    aria-label="View Embedded Systems project preview"
+                >
+
+                    <span class="cassette-edge cassette-edge-left"></span>
+
+                    <span class="tape-top">
+
+                        <span>
+                            C-60
+                        </span>
+
+                        <span>
+                            A
+                        </span>
+
+                    </span>
+
+
+                    <span class="cassette-label">
+
+                        <span class="label-stripes"></span>
+
+                        <strong>
+                            EMBEDDED
+                        </strong>
+
+                        <span class="label-rule"></span>
+
+                        <small>
+                            ESP32 / FIRMWARE
+                        </small>
+
+                        <small>
+                            SENSORS
+                        </small>
+
+                        <span class="tape-number">
+                            02
+                        </span>
+
+                    </span>
+
+
+                    <span class="tape-bottom">
+
+                        CHARLIE HAYES
+
+                    </span>
+
+                    <span class="cassette-edge cassette-edge-right"></span>
+
+                </button>
+
+
+
+                <!-- ==========================================
+                     CONTROLS
+                     ========================================== -->
+
+                <button
+                    class="cassette theme-yellow"
+                    type="button"
+                    data-project="controls"
+                    aria-label="View Controls project preview"
+                >
+
+                    <span class="cassette-edge cassette-edge-left"></span>
+
+                    <span class="tape-top">
+
+                        <span>
+                            C-90
+                        </span>
+
+                        <span>
+                            B
+                        </span>
+
+                    </span>
+
+
+                    <span class="cassette-label">
+
+                        <span class="label-stripes"></span>
+
+                        <strong>
+                            CONTROLS
+                        </strong>
+
+                        <span class="label-rule"></span>
+
+                        <small>
+                            MODELING
+                        </small>
+
+                        <small>
+                            SIMULATION
+                        </small>
+
+                        <span class="tape-number">
+                            03
+                        </span>
+
+                    </span>
+
+
+                    <span class="tape-bottom">
+
+                        CHARLIE HAYES
+
+                    </span>
+
+                    <span class="cassette-edge cassette-edge-right"></span>
+
+                </button>
+
+
+
+                <!-- ==========================================
+                     PCB
+                     ========================================== -->
+
+                <button
+                    class="cassette theme-green"
+                    type="button"
+                    data-project="pcb"
+                    aria-label="View PCB Design project preview"
+                >
+
+                    <span class="cassette-edge cassette-edge-left"></span>
+
+                    <span class="tape-top">
+
+                        <span>
+                            C-60
+                        </span>
+
+                        <span>
+                            A
+                        </span>
+
+                    </span>
+
+
+                    <span class="cassette-label">
+
+                        <span class="label-stripes"></span>
+
+                        <strong>
+                            PCB DESIGN
+                        </strong>
+
+                        <span class="label-rule"></span>
+
+                        <small>
+                            HARDWARE
+                        </small>
+
+                        <small>
+                            ELECTRONICS
+                        </small>
+
+                        <span class="tape-number">
+                            04
+                        </span>
+
+                    </span>
+
+
+                    <span class="tape-bottom">
+
+                        CHARLIE HAYES
+
+                    </span>
+
+                    <span class="cassette-edge cassette-edge-right"></span>
+
+                </button>
+
+
+
+                <!-- ==========================================
+                     ROBOTICS
+                     ========================================== -->
+
+                <button
+                    class="cassette theme-orange"
+                    type="button"
+                    data-project="robotics"
+                    aria-label="View Robotics project preview"
+                >
+
+                    <span class="cassette-edge cassette-edge-left"></span>
+
+                    <span class="tape-top">
+
+                        <span>
+                            C-90
+                        </span>
+
+                        <span>
+                            B
+                        </span>
+
+                    </span>
+
+
+                    <span class="cassette-label">
+
+                        <span class="label-stripes"></span>
+
+                        <strong>
+                            ROBOTICS
+                        </strong>
+
+                        <span class="label-rule"></span>
+
+                        <small>
+                            MECHANICAL
+                        </small>
+
+                        <small>
+                            CONTROL
+                        </small>
+
+                        <span class="tape-number">
+                            05
+                        </span>
+
+                    </span>
+
+
+                    <span class="tape-bottom">
+
+                        CHARLIE HAYES
+
+                    </span>
+
+                    <span class="cassette-edge cassette-edge-right"></span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PROJECT MINI VIEWER
+             ================================================== -->
+
+        <section
+            class="project-preview"
+            id="project-preview"
+        >
+
+
+            <!-- ==============================================
+                 LARGE CASSETTE ART
+                 ============================================== -->
+
+            <div class="preview-art">
+
+                <div
+                    class="preview-cassette theme-blue"
+                    id="previewCassette"
+                >
+
+                    <div class="preview-label">
+
+                        <div class="preview-stripes"></div>
+
+
+                        <div class="preview-label-top">
+
+                            <span id="previewSide">
+                                SIDE A
+                            </span>
+
+                            <span id="previewTapeType">
+                                C-90
+                            </span>
+
+                        </div>
+
+
+                        <h2 id="previewTapeTitle">
+
+                            HOMELAB
+
+                        </h2>
+
+
+                        <p id="previewTapeSubtitle">
+
+                            PROXMOX / LINUX / NETWORKING
+
+                        </p>
+
+
+                        <div
+                            class="cassette-window"
+                            aria-hidden="true"
+                        >
+
+                            <div class="spool spool-left">
+
+                                <div class="spool-inner"></div>
+
+                            </div>
+
+
+                            <div class="tape-window-center">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <div class="spool spool-right">
+
+                                <div class="spool-inner"></div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="cassette-holes"
+                            aria-hidden="true"
+                        >
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="cassette-label">
+            </div>
 
-                    <div class="label-stripes"></div>
 
-                    <h2>HOMELAB</h2>
 
-                    <div class="label-line"></div>
+            <!-- ==============================================
+                 PROJECT INFORMATION
+                 ============================================== -->
 
-                    <p>
-                        PROXMOX / LINUX /
+            <div class="preview-info">
+
+                <p class="preview-eyebrow">
+
+                    FEATURED PROJECT
+
+                    <span id="previewNumber">
+                        01 / 05
+                    </span>
+
+                </p>
+
+
+                <h2 id="previewTitle">
+
+                    CUSTOM HOMELAB
+
+                </h2>
+
+
+                <p
+                    class="preview-category"
+                    id="previewCategory"
+                >
+
+                    PROXMOX • LINUX • NETWORKING
+
+                </p>
+
+
+                <p
+                    class="preview-description"
+                    id="previewDescription"
+                >
+
+                    A self-hosted homelab built for experimentation with
+                    virtualization, networking, Linux, game servers, and
+                    self-hosted services.
+
+                </p>
+
+
+                <div
+                    class="preview-tags"
+                    id="previewTags"
+                >
+
+                    <span>
+                        PROXMOX
+                    </span>
+
+                    <span>
+                        LINUX
+                    </span>
+
+                    <span>
                         NETWORKING
-                    </p>
+                    </span>
 
-                    <span class="tape-number">01</span>
-
-                </div>
-
-                <div class="tape-bottom">
-                    CHARLIE HAYES // ARCHIVE
-                </div>
-
-            </div>
-
-
-            <!-- EMBEDDED -->
-
-            <div class="cassette cassette-red">
-
-                <div class="tape-top">
-                    <span>C-60</span>
-                    <span>A</span>
-                </div>
-
-                <div class="cassette-label">
-
-                    <div class="label-stripes"></div>
-
-                    <h2>EMBEDDED</h2>
-
-                    <div class="label-line"></div>
-
-                    <p>
-                        ESP32 / FIRMWARE /
-                        SENSORS
-                    </p>
-
-                    <span class="tape-number">02</span>
+                    <span>
+                        OPNSENSE
+                    </span>
 
                 </div>
 
-                <div class="tape-bottom">
-                    CHARLIE HAYES // ARCHIVE
-                </div>
 
-            </div>
+                <a
+                    class="view-project-button"
+                    id="previewLink"
+                    href="projects/homelab.html"
+                >
 
+                    VIEW PROJECT
 
-            <!-- CONTROLS -->
+                    <span aria-hidden="true">
+                        →
+                    </span>
 
-            <div class="cassette cassette-yellow">
-
-                <div class="tape-top">
-                    <span>C-90</span>
-                    <span>B</span>
-                </div>
-
-                <div class="cassette-label">
-
-                    <div class="label-stripes"></div>
-
-                    <h2>CONTROLS</h2>
-
-                    <div class="label-line"></div>
-
-                    <p>
-                        MODELING /
-                        SIMULATION
-                    </p>
-
-                    <span class="tape-number">03</span>
-
-                </div>
-
-                <div class="tape-bottom">
-                    CHARLIE HAYES // ARCHIVE
-                </div>
-
-            </div>
-
-
-            <!-- PCB -->
-
-            <div class="cassette cassette-green">
-
-                <div class="tape-top">
-                    <span>C-60</span>
-                    <span>A</span>
-                </div>
-
-                <div class="cassette-label">
-
-                    <div class="label-stripes"></div>
-
-                    <h2>PCB DESIGN</h2>
-
-                    <div class="label-line"></div>
-
-                    <p>
-                        HARDWARE /
-                        ELECTRONICS
-                    </p>
-
-                    <span class="tape-number">04</span>
-
-                </div>
-
-                <div class="tape-bottom">
-                    CHARLIE HAYES // ARCHIVE
-                </div>
-
-            </div>
-
-
-            <!-- ROBOTICS -->
-
-            <div class="cassette cassette-orange">
-
-                <div class="tape-top">
-                    <span>C-90</span>
-                    <span>B</span>
-                </div>
-
-                <div class="cassette-label">
-
-                    <div class="label-stripes"></div>
-
-                    <h2>ROBOTICS</h2>
-
-                    <div class="label-line"></div>
-
-                    <p>
-                        MECHANICAL /
-                        CONTROL
-                    </p>
-
-                    <span class="tape-number">05</span>
-
-                </div>
-
-                <div class="tape-bottom">
-                    CHARLIE HAYES // ARCHIVE
-                </div>
+                </a>
 
             </div>
 
         </section>
 
 
-        <!-- PROJECT PREVIEW -->
 
-        <section class="project-preview">
+        <!-- ==================================================
+             ABOUT
+             ================================================== -->
 
-            <p class="small-heading">
-                SELECT A TAPE
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <p class="section-label">
+                ABOUT
             </p>
+
 
             <h2>
-                PROJECT ARCHIVE
+                ENGINEERING THROUGH BUILDING.
             </h2>
 
-            <p class="preview-description">
-                Explore projects involving controls, embedded systems,
-                electronics, networking, hardware design, and engineering.
+
+            <p>
+
+                I'm an electrical engineering student interested in
+                controls, embedded systems, electronics, hardware design,
+                and the process of turning ideas into working systems.
+
             </p>
 
         </section>
 
+
+
+        <!-- ==================================================
+             FOOTER / CONTACT
+             ================================================== -->
+
+        <footer
+            class="site-footer"
+            id="contact"
+        >
+
+            <div>
+
+                <p class="section-label">
+                    CONTACT
+                </p>
+
+                <h2>
+                    LET'S BUILD SOMETHING.
+                </h2>
+
+            </div>
+
+
+            <p class="footer-motto">
+
+                PLAY &gt; BUILD &gt; LEARN &gt; REPEAT
+
+            </p>
+
+        </footer>
+
+
     </main>
+
+
+
+    <script src="script.js"></script>
+
 
 </body>
 
