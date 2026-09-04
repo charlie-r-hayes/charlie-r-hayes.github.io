@@ -1,3 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #11110f;
+    color: #eee7d8;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+.site-header {
+    padding: 30px 5% 20px;
+
+    border-bottom: 1px solid #555;
+}
+
+.name-section h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+.name-section p {
+    letter-spacing: 7px;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+
+/* ---------------- NAVIGATION ---------------- */
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    color: #eee7d8;
+    text-decoration: none;
+
+    margin-right: 35px;
+
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e45135;
+}
+
+
+/* ---------------- DISPLAY ---------------- */
+
+.hero {
+    padding: 25px 5%;
+}
+
+.display-panel {
+    height: 90px;
+
+    border: 1px solid #555;
+    background: #090a09;
+
+    display: flex;
+    align-items: center;
+
+    padding: 20px 30px;
+}
+
+.display-text {
+    margin-left: 40px;
+
+    font-family: monospace;
+    letter-spacing: 3px;
+
+    color: #7fa3a0;
+}
+
+
+/* fake equalizer */
+
+.equalizer {
+    height: 40px;
+
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+}
+
+.equalizer span {
+    display: block;
+
+    width: 10px;
+
+    background: #e45135;
+}
+
+.equalizer span:nth-child(1) {
+    height: 35px;
+}
+
+.equalizer span:nth-child(2) {
+    height: 28px;
+}
+
+.equalizer span:nth-child(3) {
+    height: 22px;
+}
+
+.equalizer span:nth-child(4) {
+    height: 15px;
+}
+
+.equalizer span:nth-child(5) {
+    height: 8px;
+}
+
+
+/* ---------------- CASSETTE SHELF ---------------- */
+
+.project-shelf {
+    min-height: 420px;
+
+    padding: 40px 7%;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 25px;
+
+    background: #161511;
+
+    border-top: 12px solid #3c291c;
+    border-bottom: 12px solid #3c291c;
+}
+
+
 /* ---------------- CASSETTE ---------------- */
 
 .cassette {
@@ -189,4 +332,36 @@
     box-shadow:
         0 15px 25px rgba(0,0,0,0.8),
         0 0 15px rgba(228,81,53,0.25);
+}
+
+
+/* ---------------- PROJECT PREVIEW ---------------- */
+
+.project-preview {
+    padding: 50px 10% 80px;
+
+    max-width: 900px;
+}
+
+.small-heading {
+    color: #e45135;
+
+    font-family: monospace;
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.project-preview h2 {
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+}
+
+.project-preview > p:last-child {
+    color: #aaa;
+
+    line-height: 1.7;
+
+    max-width: 600px;
 }
