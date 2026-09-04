@@ -55,8 +55,6 @@
                 <div class="header-console">
 
 
-                    <!-- MAIN DISPLAY -->
-
                     <div class="console-display">
 
                         <div class="display-inner">
@@ -79,9 +77,7 @@
 
 
                             <div class="display-message">
-
                                 IDEAS IN PROGRESS
-
                             </div>
 
 
@@ -90,8 +86,6 @@
                     </div>
 
 
-
-                    <!-- SIDE DISPLAY -->
 
                     <div class="console-side">
 
@@ -141,7 +135,11 @@
                     PROJECTS
                 </a>
 
-                <a href="#">
+                <a
+                    href="assets/Charlie_Hayes_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     RESUME
                 </a>
 
@@ -150,6 +148,7 @@
                 </a>
 
             </nav>
+
 
         </div>
 
@@ -200,15 +199,41 @@
 
                         I like projects that force me to understand how
                         the entire system works — from circuits and firmware
-                        to networking, mechanics, and software.
+                        to networking, mechanics, and software. I learn best
+                        by designing something, building it, figuring out
+                        what went wrong, and improving it.
 
                     </p>
+
+
+                    <div class="about-actions">
+
+                        <a
+                            href="assets/Charlie_Hayes_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="equipment-button"
+                        >
+                            VIEW RESUME
+                            <span>↗</span>
+                        </a>
+
+
+                        <a
+                            href="#projects"
+                            class="equipment-button equipment-button-secondary"
+                        >
+                            PROJECT ARCHIVE
+                            <span>↓</span>
+                        </a>
+
+                    </div>
 
                 </div>
 
 
 
-                <!-- RIGHT ABOUT CARD -->
+                <!-- RIGHT -->
 
                 <div class="about-card">
 
@@ -246,7 +271,7 @@
                                     </strong>
 
                                     <p>
-                                        Modeling / feedback
+                                        Modeling / feedback / automation
                                     </p>
 
                                 </div>
@@ -268,7 +293,7 @@
                                     </strong>
 
                                     <p>
-                                        Firmware / sensors
+                                        Firmware / sensors / devices
                                     </p>
 
                                 </div>
@@ -290,7 +315,7 @@
                                     </strong>
 
                                     <p>
-                                        PCB / hardware
+                                        PCB design / hardware
                                     </p>
 
                                 </div>
@@ -331,6 +356,7 @@
 
                 </div>
 
+
             </div>
 
         </section>
@@ -339,7 +365,7 @@
 
 
         <!-- ==================================================
-             PROJECTS
+             PROJECT ARCHIVE
              ================================================== -->
 
         <section
@@ -362,451 +388,283 @@
 
 
 
-            <div class="project-shelf">
+            <div class="project-cabinet">
 
 
-                <!-- LEFT WOOD RAIL -->
+                <!-- TOP WOOD -->
 
-                <div
-                    class="shelf-rail shelf-rail-left"
-                    aria-hidden="true"
-                ></div>
+                <div class="cabinet-top"></div>
 
 
 
-                <!-- CASSETTE BANK -->
+                <!-- LEFT RAIL -->
 
-                <div class="cassette-bank">
+                <div class="cabinet-side cabinet-left"></div>
 
 
-                    <!-- HOMELAB -->
 
-                    <button
-                        class="cassette theme-blue active"
-                        type="button"
-                        data-project="homelab"
-                        aria-label="View Custom Homelab project preview"
+                <!-- CENTER SHELF -->
+
+                <div class="cabinet-interior">
+
+
+                    <!-- CASSETTES -->
+
+                    <div class="cassette-bank">
+
+
+                        <!-- HOMELAB -->
+
+                        <button
+                            class="cassette cassette-dark theme-blue active"
+                            type="button"
+                            data-project="homelab"
+                            aria-label="View Homelab project"
+                        >
+
+                            <span class="cassette-case">
+
+                                <span class="case-glass"></span>
+
+                                <span class="case-screw screw-one"></span>
+                                <span class="case-screw screw-two"></span>
+
+                                <span class="vertical-label">
+
+                                    <span class="vertical-color"></span>
+
+                                    <strong>
+                                        HOMELAB
+                                    </strong>
+
+                                    <small>
+                                        PROXMOX / LINUX / NETWORKING
+                                    </small>
+
+                                    <span class="vertical-icon">
+                                        ◎
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- EMBEDDED -->
+
+                        <button
+                            class="cassette cassette-light theme-red"
+                            type="button"
+                            data-project="embedded"
+                            aria-label="View Embedded Systems project"
+                        >
+
+                            <span class="cassette-case">
+
+                                <span class="case-glass"></span>
+
+                                <span class="case-screw screw-one"></span>
+                                <span class="case-screw screw-two"></span>
+
+                                <span class="vertical-label">
+
+                                    <span class="vertical-color"></span>
+
+                                    <strong>
+                                        EMBEDDED SYSTEMS
+                                    </strong>
+
+                                    <small>
+                                        MCU / SENSORS / FIRMWARE
+                                    </small>
+
+                                    <span class="vertical-icon">
+                                        ▣
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- CONTROLS -->
+
+                        <button
+                            class="cassette cassette-light theme-blue"
+                            type="button"
+                            data-project="controls"
+                            aria-label="View Controls project"
+                        >
+
+                            <span class="cassette-case">
+
+                                <span class="case-glass"></span>
+
+                                <span class="case-screw screw-one"></span>
+                                <span class="case-screw screw-two"></span>
+
+                                <span class="vertical-label">
+
+                                    <span class="vertical-color"></span>
+
+                                    <strong>
+                                        CONTROLS
+                                    </strong>
+
+                                    <small>
+                                        MODELING / SIMULATION
+                                    </small>
+
+                                    <span class="vertical-icon">
+                                        ∿
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- PCB -->
+
+                        <button
+                            class="cassette cassette-dark theme-yellow"
+                            type="button"
+                            data-project="pcb"
+                            aria-label="View PCB Design project"
+                        >
+
+                            <span class="cassette-case">
+
+                                <span class="case-glass"></span>
+
+                                <span class="case-screw screw-one"></span>
+                                <span class="case-screw screw-two"></span>
+
+                                <span class="vertical-label">
+
+                                    <span class="vertical-color"></span>
+
+                                    <strong>
+                                        PCB DESIGN
+                                    </strong>
+
+                                    <small>
+                                        HARDWARE / ELECTRONICS
+                                    </small>
+
+                                    <span class="vertical-icon">
+                                        ▦
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+
+                        <!-- ROBOTICS -->
+
+                        <button
+                            class="cassette cassette-light theme-red"
+                            type="button"
+                            data-project="robotics"
+                            aria-label="View Robotics project"
+                        >
+
+                            <span class="cassette-case">
+
+                                <span class="case-glass"></span>
+
+                                <span class="case-screw screw-one"></span>
+                                <span class="case-screw screw-two"></span>
+
+                                <span class="vertical-label">
+
+                                    <span class="vertical-color"></span>
+
+                                    <strong>
+                                        ROBOTICS
+                                    </strong>
+
+                                    <small>
+                                        MECHANICAL / CONTROL
+                                    </small>
+
+                                    <span class="vertical-icon">
+                                        ⚙
+                                    </span>
+
+                                </span>
+
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- HEADPHONES -->
+
+                    <div
+                        class="headphones"
+                        aria-hidden="true"
                     >
 
-                        <span class="case-shell">
+                        <div class="headphones-band"></div>
 
-                            <span class="case-ridge ridge-left"></span>
-                            <span class="case-ridge ridge-right"></span>
+                        <div class="headphones-band-inner"></div>
 
-                            <span class="case-screw screw-top-left"></span>
-                            <span class="case-screw screw-top-right"></span>
 
-                            <span class="case-top-markings">
+                        <div class="headphones-arm headphones-arm-left"></div>
 
-                                <span>
-                                    C-90
-                                </span>
+                        <div class="headphones-arm headphones-arm-right"></div>
 
-                                <span>
-                                    A
-                                </span>
 
-                            </span>
+                        <div class="headphone-cup headphone-cup-left">
 
+                            <div class="headphone-pad"></div>
 
-                            <span class="cassette-label">
+                        </div>
 
-                                <span class="label-stripes"></span>
 
-                                <strong>
-                                    HOMELAB
-                                </strong>
+                        <div class="headphone-cup headphone-cup-right">
 
-                                <span class="label-rule"></span>
+                            <div class="headphone-pad"></div>
 
-                                <small>
-                                    PROXMOX / LINUX
-                                </small>
+                        </div>
 
-                                <small>
-                                    NETWORKING
-                                </small>
 
-                                <span class="tape-number">
-                                    01
-                                </span>
+                        <div class="headphone-cable"></div>
 
-                            </span>
-
-
-                            <span class="case-lower-window">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </span>
-
-
-                            <span class="case-bottom-text">
-                                CHARLIE HAYES
-                            </span>
-
-                            <span class="case-screw screw-bottom-left"></span>
-                            <span class="case-screw screw-bottom-right"></span>
-
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- EMBEDDED -->
-
-                    <button
-                        class="cassette theme-red"
-                        type="button"
-                        data-project="embedded"
-                        aria-label="View Embedded Systems project preview"
-                    >
-
-                        <span class="case-shell">
-
-                            <span class="case-ridge ridge-left"></span>
-                            <span class="case-ridge ridge-right"></span>
-
-                            <span class="case-screw screw-top-left"></span>
-                            <span class="case-screw screw-top-right"></span>
-
-                            <span class="case-top-markings">
-
-                                <span>
-                                    C-60
-                                </span>
-
-                                <span>
-                                    A
-                                </span>
-
-                            </span>
-
-
-                            <span class="cassette-label">
-
-                                <span class="label-stripes"></span>
-
-                                <strong>
-                                    EMBEDDED
-                                </strong>
-
-                                <span class="label-rule"></span>
-
-                                <small>
-                                    ESP32 / FIRMWARE
-                                </small>
-
-                                <small>
-                                    SENSORS
-                                </small>
-
-                                <span class="tape-number">
-                                    02
-                                </span>
-
-                            </span>
-
-
-                            <span class="case-lower-window">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </span>
-
-
-                            <span class="case-bottom-text">
-                                CHARLIE HAYES
-                            </span>
-
-                            <span class="case-screw screw-bottom-left"></span>
-                            <span class="case-screw screw-bottom-right"></span>
-
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- CONTROLS -->
-
-                    <button
-                        class="cassette theme-yellow"
-                        type="button"
-                        data-project="controls"
-                        aria-label="View Controls project preview"
-                    >
-
-                        <span class="case-shell">
-
-                            <span class="case-ridge ridge-left"></span>
-                            <span class="case-ridge ridge-right"></span>
-
-                            <span class="case-screw screw-top-left"></span>
-                            <span class="case-screw screw-top-right"></span>
-
-                            <span class="case-top-markings">
-
-                                <span>
-                                    C-90
-                                </span>
-
-                                <span>
-                                    B
-                                </span>
-
-                            </span>
-
-
-                            <span class="cassette-label">
-
-                                <span class="label-stripes"></span>
-
-                                <strong>
-                                    CONTROLS
-                                </strong>
-
-                                <span class="label-rule"></span>
-
-                                <small>
-                                    MODELING
-                                </small>
-
-                                <small>
-                                    SIMULATION
-                                </small>
-
-                                <span class="tape-number">
-                                    03
-                                </span>
-
-                            </span>
-
-
-                            <span class="case-lower-window">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </span>
-
-
-                            <span class="case-bottom-text">
-                                CHARLIE HAYES
-                            </span>
-
-                            <span class="case-screw screw-bottom-left"></span>
-                            <span class="case-screw screw-bottom-right"></span>
-
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- PCB -->
-
-                    <button
-                        class="cassette theme-green"
-                        type="button"
-                        data-project="pcb"
-                        aria-label="View PCB Design project preview"
-                    >
-
-                        <span class="case-shell">
-
-                            <span class="case-ridge ridge-left"></span>
-                            <span class="case-ridge ridge-right"></span>
-
-                            <span class="case-screw screw-top-left"></span>
-                            <span class="case-screw screw-top-right"></span>
-
-                            <span class="case-top-markings">
-
-                                <span>
-                                    C-60
-                                </span>
-
-                                <span>
-                                    A
-                                </span>
-
-                            </span>
-
-
-                            <span class="cassette-label">
-
-                                <span class="label-stripes"></span>
-
-                                <strong>
-                                    PCB DESIGN
-                                </strong>
-
-                                <span class="label-rule"></span>
-
-                                <small>
-                                    HARDWARE
-                                </small>
-
-                                <small>
-                                    ELECTRONICS
-                                </small>
-
-                                <span class="tape-number">
-                                    04
-                                </span>
-
-                            </span>
-
-
-                            <span class="case-lower-window">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </span>
-
-
-                            <span class="case-bottom-text">
-                                CHARLIE HAYES
-                            </span>
-
-                            <span class="case-screw screw-bottom-left"></span>
-                            <span class="case-screw screw-bottom-right"></span>
-
-                        </span>
-
-                    </button>
-
-
-
-                    <!-- ROBOTICS -->
-
-                    <button
-                        class="cassette theme-orange"
-                        type="button"
-                        data-project="robotics"
-                        aria-label="View Robotics project preview"
-                    >
-
-                        <span class="case-shell">
-
-                            <span class="case-ridge ridge-left"></span>
-                            <span class="case-ridge ridge-right"></span>
-
-                            <span class="case-screw screw-top-left"></span>
-                            <span class="case-screw screw-top-right"></span>
-
-                            <span class="case-top-markings">
-
-                                <span>
-                                    C-90
-                                </span>
-
-                                <span>
-                                    B
-                                </span>
-
-                            </span>
-
-
-                            <span class="cassette-label">
-
-                                <span class="label-stripes"></span>
-
-                                <strong>
-                                    ROBOTICS
-                                </strong>
-
-                                <span class="label-rule"></span>
-
-                                <small>
-                                    MECHANICAL
-                                </small>
-
-                                <small>
-                                    CONTROL
-                                </small>
-
-                                <span class="tape-number">
-                                    05
-                                </span>
-
-                            </span>
-
-
-                            <span class="case-lower-window">
-
-                                <span></span>
-                                <span></span>
-                                <span></span>
-
-                            </span>
-
-
-                            <span class="case-bottom-text">
-                                CHARLIE HAYES
-                            </span>
-
-                            <span class="case-screw screw-bottom-left"></span>
-                            <span class="case-screw screw-bottom-right"></span>
-
-                        </span>
-
-                    </button>
+                    </div>
 
 
                 </div>
 
 
 
-                <!-- RETRO HEADPHONES -->
+                <!-- RIGHT RAIL -->
 
-                <div
-                    class="headphones"
-                    aria-hidden="true"
-                >
-
-                    <div class="headband"></div>
-
-                    <div class="headband-inner"></div>
-
-                    <div class="headphone-arm arm-left"></div>
-                    <div class="headphone-arm arm-right"></div>
-
-                    <div class="earcup earcup-left">
-
-                        <div class="earpad"></div>
-
-                    </div>
-
-
-                    <div class="earcup earcup-right">
-
-                        <div class="earpad"></div>
-
-                    </div>
-
-
-                    <div class="headphone-cable"></div>
-
-                </div>
+                <div class="cabinet-side cabinet-right"></div>
 
 
 
-                <!-- RIGHT WOOD RAIL -->
+                <!-- BOTTOM WOOD -->
 
-                <div
-                    class="shelf-rail shelf-rail-right"
-                    aria-hidden="true"
-                ></div>
+                <div class="cabinet-bottom"></div>
 
 
             </div>
@@ -817,7 +675,7 @@
 
 
         <!-- ==================================================
-             MINI PROJECT VIEWER
+             PROJECT MINI VIEWER
              ================================================== -->
 
         <section
@@ -826,7 +684,7 @@
         >
 
 
-            <!-- REALISTIC CASSETTE -->
+            <!-- REAL CASSETTE FACE -->
 
             <div class="preview-art">
 
@@ -841,18 +699,16 @@
 
                         <!-- SCREWS -->
 
-                        <span class="preview-screw preview-screw-1"></span>
-                        <span class="preview-screw preview-screw-2"></span>
-                        <span class="preview-screw preview-screw-3"></span>
-                        <span class="preview-screw preview-screw-4"></span>
+                        <span class="preview-screw screw-a"></span>
+                        <span class="preview-screw screw-b"></span>
+                        <span class="preview-screw screw-c"></span>
+                        <span class="preview-screw screw-d"></span>
+
 
 
                         <!-- PAPER LABEL -->
 
                         <div class="preview-label">
-
-                            <div class="preview-stripes"></div>
-
 
                             <div class="preview-label-top">
 
@@ -876,66 +732,74 @@
                                 PROXMOX / LINUX / NETWORKING
                             </p>
 
-                        </div>
 
-
-
-                        <!-- TAPE WINDOW -->
-
-                        <div class="cassette-window">
-
-
-                            <div class="spool">
-
-                                <div class="spool-teeth"></div>
-
-                                <div class="spool-inner"></div>
-
-                            </div>
-
-
-
-                            <div class="tape-window-center">
-
-                                <div class="tape-band"></div>
-
-                                <div class="tape-visible"></div>
-
-                            </div>
-
-
-
-                            <div class="spool">
-
-                                <div class="spool-teeth"></div>
-
-                                <div class="spool-inner"></div>
-
-                            </div>
-
+                            <div class="preview-stripes"></div>
 
                         </div>
 
 
 
-                        <!-- LOWER CASSETTE RECESS -->
+                        <!-- CLEAR REEL WINDOW -->
 
-                        <div class="cassette-lower-panel">
+                        <div class="reel-window">
 
-                            <span class="lower-hole"></span>
 
-                            <div class="pressure-pad">
+                            <div class="reel reel-left">
+
+                                <div class="reel-teeth"></div>
+
+                                <div class="reel-center"></div>
+
+                            </div>
+
+
+
+                            <div class="visible-tape">
+
+                                <div class="tape-roll"></div>
+
+                                <div class="tape-strip"></div>
+
+                            </div>
+
+
+
+                            <div class="reel reel-right">
+
+                                <div class="reel-teeth"></div>
+
+                                <div class="reel-center"></div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- LOWER TAPE BODY -->
+
+                        <div class="lower-tape-panel">
+
+
+                            <span class="lower-tape-hole"></span>
+
+
+                            <div class="pressure-window">
 
                                 <span></span>
 
                             </div>
 
-                            <span class="lower-hole"></span>
+
+                            <span class="lower-tape-hole"></span>
+
 
                         </div>
 
 
-                        <div class="cassette-bottom-slots">
+
+                        <div class="bottom-openings">
 
                             <span></span>
                             <span></span>
@@ -954,10 +818,9 @@
 
 
 
-            <!-- PROJECT INFO -->
+            <!-- INFORMATION -->
 
             <div class="preview-info">
-
 
                 <p class="preview-eyebrow">
 
@@ -1027,12 +890,11 @@
 
                     VIEW PROJECT
 
-                    <span aria-hidden="true">
+                    <span>
                         →
                     </span>
 
                 </a>
-
 
             </div>
 
@@ -1043,28 +905,199 @@
 
 
         <!-- ==================================================
-             FOOTER
+             CONTACT
              ================================================== -->
 
-        <footer
-            class="site-footer"
+        <section
+            class="contact-section"
             id="contact"
         >
 
-            <div>
+            <div class="contact-console">
 
-                <p class="section-label">
-                    CONTACT
-                </p>
 
-                <h2>
-                    LET'S BUILD SOMETHING.
-                </h2>
+                <!-- LEFT -->
+
+                <div class="contact-information">
+
+                    <p class="section-label">
+                        CONTACT // LINE OUT
+                    </p>
+
+
+                    <h2>
+                        LET'S BUILD SOMETHING.
+                    </h2>
+
+
+                    <p class="contact-intro">
+
+                        Have a project, opportunity, or just want to talk
+                        engineering? Reach out directly or leave a message.
+
+                    </p>
+
+
+
+                    <div class="contact-readout">
+
+
+                        <a href="mailto:charliehayes49@gmail.com">
+
+                            <span class="contact-type">
+                                EMAIL
+                            </span>
+
+                            <span class="contact-value">
+                                charliehayes49@gmail.com
+                            </span>
+
+                        </a>
+
+
+
+                        <a href="tel:+19522288813">
+
+                            <span class="contact-type">
+                                PHONE
+                            </span>
+
+                            <span class="contact-value">
+                                952-228-8813
+                            </span>
+
+                        </a>
+
+
+
+                        <a
+                            href="https://www.linkedin.com/in/charlie-hayes-baa16534b/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+
+                            <span class="contact-type">
+                                LINKEDIN
+                            </span>
+
+                            <span class="contact-value">
+                                CONNECT ↗
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE FORM -->
+
+                <div class="message-panel">
+
+                    <div class="message-display-header">
+
+                        <span>
+                            MESSAGE INPUT
+                        </span>
+
+                        <span class="status-light">
+                            READY
+                        </span>
+
+                    </div>
+
+
+                    <form
+                        class="contact-form"
+                        action="https://formspree.io/f/YOUR_FORM_ID"
+                        method="POST"
+                    >
+
+
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="New message from Charlie Hayes portfolio"
+                        >
+
+
+                        <label>
+
+                            NAME
+
+                            <input
+                                type="text"
+                                name="name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            EMAIL
+
+                            <input
+                                type="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            MESSAGE
+
+                            <textarea
+                                name="message"
+                                rows="5"
+                                required
+                            ></textarea>
+
+                        </label>
+
+
+                        <button type="submit">
+
+                            SEND MESSAGE
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
 
             </div>
 
+        </section>
 
-            <p class="footer-motto">
+
+
+        <!-- ==================================================
+             FOOTER
+             ================================================== -->
+
+        <footer class="site-footer">
+
+            <p>
+                CHARLIE HAYES // ELECTRICAL ENGINEERING
+            </p>
+
+            <p>
                 STAY CURIOUS.
             </p>
 
