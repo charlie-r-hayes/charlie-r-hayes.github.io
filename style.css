@@ -1,5 +1,31 @@
 /* =========================================================
-   GLOBAL
+   ROOT COLORS
+   ========================================================= */
+
+:root {
+    --background: #10110f;
+    --background-light: #161511;
+    --panel: #090a09;
+
+    --cream: #eee7d8;
+    --cream-dark: #d8d0bf;
+
+    --muted: #a49f95;
+
+    --line: #45443f;
+
+    --red: #ef553b;
+
+    --wood: #3b2618;
+    --wood-light: #55351f;
+
+    --display-blue: #7fa3a0;
+}
+
+
+
+/* =========================================================
+   RESET
    ========================================================= */
 
 * {
@@ -8,17 +34,66 @@
     padding: 0;
 }
 
+
+
 html {
     scroll-behavior: smooth;
 }
 
+
+
 body {
-    background-color: #10110f;
-    color: #eee7d8;
-
-    font-family: Arial, Helvetica, sans-serif;
-
     min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #171814 0%,
+            var(--background) 38%
+        );
+
+    color: var(--cream);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+button,
+a {
+    font: inherit;
+}
+
+
+
+/* subtle old-print texture */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.035;
+
+    z-index: 9999;
+
+    background-image:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.2) 0,
+            rgba(255, 255, 255, 0.2) 1px,
+            transparent 1px,
+            transparent 4px
+        );
 }
 
 
@@ -28,25 +103,51 @@ body {
    ========================================================= */
 
 .site-header {
-    padding: 22px 4% 20px;
+    background: rgba(16, 17, 15, 0.98);
 
-    background: #10110f;
+    border-bottom: 1px solid var(--line);
 
-    border-bottom: 1px solid #444;
+    padding:
+        24px
+        clamp(25px, 5vw, 90px)
+        22px;
 }
 
+
+
+.header-main {
+    max-width: 1600px;
+
+    margin: 0 auto;
+}
+
+
+
 .name-section h1 {
-    font-size: clamp(2.6rem, 4vw, 4.5rem);
+    color: var(--cream);
+
+    font-size:
+        clamp(
+            2.7rem,
+            4.5vw,
+            5rem
+        );
+
+    line-height: 0.9;
 
     letter-spacing: 2px;
 
-    line-height: 0.95;
+    font-weight: 800;
 }
 
-.name-section p {
-    margin-top: 14px;
 
-    font-size: 0.85rem;
+
+.name-section p {
+    margin-top: 15px;
+
+    color: var(--cream);
+
+    font-size: 0.82rem;
 
     letter-spacing: 7px;
 }
@@ -58,175 +159,435 @@ body {
    ========================================================= */
 
 nav {
-    margin-top: 25px;
+    margin-top: 26px;
 
     display: flex;
+
     flex-wrap: wrap;
 
-    gap: 35px;
+    gap:
+        18px
+        38px;
 }
 
+
+
 nav a {
-    color: #eee7d8;
+    position: relative;
+
+    color: var(--cream);
 
     text-decoration: none;
 
-    font-size: 0.78rem;
+    font-size: 0.74rem;
 
     font-weight: bold;
 
     letter-spacing: 3px;
 
-    transition: color 0.2s ease;
+    transition:
+        color 0.2s ease;
 }
+
+
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 100%;
+
+    bottom: -7px;
+
+    height: 1px;
+
+    background: var(--red);
+
+    transition:
+        right 0.2s ease;
+}
+
+
 
 nav a:hover,
 nav a.active {
-    color: #ef553b;
+    color: var(--red);
+}
+
+
+
+nav a:hover::after,
+nav a.active::after {
+    right: 0;
 }
 
 
 
 /* =========================================================
-   TOP RETRO DISPLAY
+   HERO DISPLAY
    ========================================================= */
 
 .hero {
-    padding: 24px 4%;
+    padding:
+        24px
+        clamp(25px, 5vw, 90px);
 
-    background: #10110f;
+    background: var(--background);
 }
 
-.display-panel {
-    min-height: 82px;
 
-    border: 1px solid #4d4d4d;
+
+.display-panel {
+    position: relative;
+
+    max-width: 1600px;
+
+    min-height: 90px;
+
+    margin: 0 auto;
+
+    padding:
+        18px
+        26px;
+
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #4a4b47;
 
     background:
         linear-gradient(
-            to bottom,
-            #080908,
-            #050605
+            180deg,
+            #080908 0%,
+            #030403 100%
         );
 
-    display: flex;
-    align-items: center;
-
-    padding: 20px 26px;
-
     box-shadow:
-        inset 0 0 18px rgba(0, 0, 0, 0.8);
+        inset 0 0 25px rgba(0, 0, 0, 0.9),
+        0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 
 
-/* fake equalizer */
+.display-panel::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border: 1px solid rgba(255, 255, 255, 0.035);
+
+    pointer-events: none;
+}
+
+
+
+/* =========================================================
+   EQUALIZER
+   ========================================================= */
 
 .equalizer {
+    height: 40px;
+
     display: flex;
 
     align-items: flex-end;
 
     gap: 4px;
-
-    height: 35px;
 }
+
+
 
 .equalizer span {
-    width: 9px;
-
     display: block;
 
-    background: #ef553b;
+    width: 9px;
+
+    background: var(--red);
 
     box-shadow:
-        0 0 5px rgba(239, 85, 59, 0.25);
+        0 0 6px rgba(239, 85, 59, 0.28);
+
+    animation:
+        equalizerMove
+        1.5s
+        ease-in-out
+        infinite
+        alternate;
 }
+
+
 
 .equalizer span:nth-child(1) {
-    height: 32px;
+    height: 35px;
+
+    animation-delay: 0s;
 }
+
+
 
 .equalizer span:nth-child(2) {
-    height: 25px;
+    height: 29px;
+
+    animation-delay: 0.12s;
 }
+
+
 
 .equalizer span:nth-child(3) {
-    height: 19px;
+    height: 25px;
+
+    animation-delay: 0.25s;
 }
+
+
 
 .equalizer span:nth-child(4) {
-    height: 13px;
+    height: 20px;
+
+    animation-delay: 0.4s;
 }
+
+
 
 .equalizer span:nth-child(5) {
-    height: 7px;
+    height: 15px;
+
+    animation-delay: 0.55s;
 }
 
 
 
+.equalizer span:nth-child(6) {
+    height: 10px;
+
+    animation-delay: 0.7s;
+}
+
+
+
+.equalizer span:nth-child(7) {
+    height: 5px;
+
+    animation-delay: 0.85s;
+}
+
+
+
+@keyframes equalizerMove {
+
+    from {
+        transform: scaleY(0.75);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+
+}
+
+
+
+/* =========================================================
+   DISPLAY TEXT
+   ========================================================= */
+
 .display-text {
-    margin-left: 38px;
+    margin-left: 42px;
 
-    color: #7fa3a0;
+    color: var(--display-blue);
 
-    font-family: "Courier New", monospace;
+    font-family:
+        "Courier New",
+        monospace;
 
     font-size: 0.72rem;
 
     letter-spacing: 3px;
+
+    line-height: 1.4;
+}
+
+
+
+.display-right {
+    margin-left: auto;
+
+    padding-left: 25px;
+
+    color: #999a93;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 2px;
+
+    line-height: 1.6;
+
+    text-align: right;
 }
 
 
 
 /* =========================================================
-   CASSETTE SHELF
+   PROJECT SECTION
    ========================================================= */
 
-.project-shelf {
-    min-height: 380px;
+.projects-section {
+    padding-top: 22px;
 
-    padding: 35px 5%;
+    background: var(--background-light);
+}
+
+
+
+.shelf-heading {
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding:
+        0
+        30px
+        13px;
 
     display: flex;
 
-    justify-content: center;
-
     align-items: center;
 
-    gap: 18px;
+    justify-content: space-between;
+}
 
-    flex-wrap: nowrap;
 
-    overflow-x: auto;
 
-    background: #161511;
+.section-label {
+    color: var(--red);
 
-    border-top: 11px solid #3c2719;
+    font-family:
+        "Courier New",
+        monospace;
 
-    border-bottom: 11px solid #3c2719;
+    font-size: 0.68rem;
 
-    box-shadow:
-        inset 0 20px 30px rgba(0, 0, 0, 0.25),
-        inset 0 -20px 30px rgba(0, 0, 0, 0.35);
+    letter-spacing: 4px;
+}
+
+
+
+.shelf-instruction {
+    color: #77776f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.6rem;
+
+    letter-spacing: 2px;
 }
 
 
 
 /* =========================================================
-   CASSETTE BODY
+   WOODEN SHELF
+   ========================================================= */
+
+.project-shelf {
+    position: relative;
+
+    min-height: 385px;
+
+    padding:
+        38px
+        35px
+        30px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            #14130f 0%,
+            #181611 50%,
+            #12120f 100%
+        );
+
+    border-top: 12px solid var(--wood);
+
+    border-bottom: 14px solid var(--wood-light);
+
+    box-shadow:
+        inset 0 22px 30px rgba(0, 0, 0, 0.45),
+        inset 0 -15px 25px rgba(0, 0, 0, 0.35),
+        0 8px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+
+.project-shelf::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    top: -8px;
+
+    height: 3px;
+
+    opacity: 0.4;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #6a462d 0,
+            #6a462d 80px,
+            #372216 110px,
+            #59371f 170px
+        );
+}
+
+
+
+/* =========================================================
+   CASSETTE SPINES
    ========================================================= */
 
 .cassette {
+    --accent: #315a78;
+
     position: relative;
 
-    flex: 0 0 auto;
+    flex:
+        0
+        0
+        145px;
 
-    width: 150px;
+    width: 145px;
 
-    height: 315px;
+    height: 310px;
 
-    padding: 12px 10px;
+    padding:
+        12px
+        10px;
 
     display: flex;
 
@@ -234,79 +595,141 @@ nav a.active {
 
     justify-content: center;
 
-    cursor: pointer;
+    appearance: none;
 
+    border:
+        2px
+        solid
+        #353535;
 
-    /* old plastic case appearance */
+    border-radius: 3px;
 
     background:
         linear-gradient(
             90deg,
-            #0c0c0c 0%,
-            #252525 7%,
-            #141414 13%,
+            #0b0b0b 0%,
+            #252525 6%,
+            #121212 13%,
             #191919 87%,
-            #292929 94%,
-            #0b0b0b 100%
+            #282828 94%,
+            #090909 100%
         );
 
-    border: 2px solid #353535;
+    color: #111;
 
-    border-radius: 3px;
-
+    cursor: pointer;
 
     box-shadow:
-        inset 4px 0 5px rgba(255, 255, 255, 0.035),
-        inset -4px 0 7px rgba(0, 0, 0, 0.8),
-        5px 6px 8px rgba(0, 0, 0, 0.65);
+        inset 5px 0 7px rgba(255, 255, 255, 0.035),
+        inset -5px 0 7px rgba(0, 0, 0, 0.85),
+        5px 6px 7px rgba(0, 0, 0, 0.55);
 
+    transform-origin: bottom center;
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
 }
 
 
 
-/* fake vertical plastic grooves */
+/* slightly different heights */
 
-.cassette::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    bottom: 0;
-
-    left: 7px;
-
-    width: 2px;
-
-    background: rgba(255, 255, 255, 0.035);
+.cassette:nth-child(2) {
+    height: 304px;
 }
 
-.cassette::after {
-    content: "";
 
-    position: absolute;
 
-    top: 0;
+.cassette:nth-child(3) {
+    height: 317px;
+}
 
-    bottom: 0;
 
-    right: 7px;
 
-    width: 2px;
+.cassette:nth-child(4) {
+    height: 307px;
+}
 
-    background: rgba(0, 0, 0, 0.7);
+
+
+.cassette:nth-child(5) {
+    height: 314px;
 }
 
 
 
 /* =========================================================
-   CASSETTE TOP MARKINGS
+   CASSETTE COLORS
+   ========================================================= */
+
+.theme-blue {
+    --accent: #315a78;
+}
+
+
+
+.theme-red {
+    --accent: #a94c3c;
+}
+
+
+
+.theme-yellow {
+    --accent: #ad8436;
+}
+
+
+
+.theme-green {
+    --accent: #567153;
+}
+
+
+
+.theme-orange {
+    --accent: #ae6638;
+}
+
+
+
+/* =========================================================
+   CASSETTE EDGES
+   ========================================================= */
+
+.cassette-edge {
+    position: absolute;
+
+    top: 5px;
+
+    bottom: 5px;
+
+    width: 2px;
+
+    opacity: 0.45;
+}
+
+
+
+.cassette-edge-left {
+    left: 6px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+
+.cassette-edge-right {
+    right: 6px;
+
+    background: rgba(0, 0, 0, 0.85);
+}
+
+
+
+/* =========================================================
+   CASSETTE TOP
    ========================================================= */
 
 .tape-top {
@@ -322,11 +745,13 @@ nav a.active {
 
     justify-content: space-between;
 
-    color: #707070;
+    color: #6f6f6a;
 
-    font-family: "Courier New", monospace;
+    font-family:
+        "Courier New",
+        monospace;
 
-    font-size: 0.55rem;
+    font-size: 0.52rem;
 
     letter-spacing: 1px;
 }
@@ -334,7 +759,7 @@ nav a.active {
 
 
 /* =========================================================
-   CASSETTE LABEL
+   CASSETTE PAPER LABEL
    ========================================================= */
 
 .cassette-label {
@@ -342,202 +767,132 @@ nav a.active {
 
     width: 100%;
 
-    min-height: 145px;
+    min-height: 148px;
 
     padding:
         18px
         10px
         12px;
 
-    background: #ded6c5;
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d4ccbb,
+            #e4dccb 45%,
+            #d7cfbd
+        );
 
     color: #151515;
 
     overflow: hidden;
 
+    text-align: left;
+
     box-shadow:
         0 1px 3px rgba(0, 0, 0, 0.8),
-        inset 0 0 10px rgba(75, 50, 20, 0.14);
+        inset 0 0 13px rgba(90, 65, 35, 0.16);
 }
 
 
 
-.cassette-label h2 {
+.label-stripes {
+    position: absolute;
+
+    top: 14px;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 23px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--accent) 0%,
+            var(--accent) 32%,
+            #d7cfbd 32%,
+            #d7cfbd 67%,
+            var(--accent) 67%,
+            var(--accent) 100%
+        );
+}
+
+
+
+.cassette-label strong {
     position: relative;
 
     z-index: 2;
 
     margin-top: 25px;
 
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 
-    font-size: 0.95rem;
+    font-size: 0.91rem;
 
-    line-height: 1;
-
-    letter-spacing: 0.7px;
+    letter-spacing: 0.5px;
 }
 
 
 
-.cassette-label p {
+.cassette-label small {
     position: relative;
 
     z-index: 2;
 
-    font-family: "Courier New", monospace;
+    display: block;
 
-    font-size: 0.52rem;
+    font-family:
+        "Courier New",
+        monospace;
 
-    line-height: 1.5;
+    font-size: 0.47rem;
 
     font-weight: bold;
+
+    line-height: 1.45;
 }
 
 
 
-/* =========================================================
-   LABEL STRIPES
-   ========================================================= */
+.label-rule {
+    position: relative;
 
-.label-stripes {
-    position: absolute;
+    z-index: 2;
 
-    top: 15px;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 22px;
-}
-
-
-
-/* BLUE */
-
-.cassette-blue .label-stripes {
-    background:
-        linear-gradient(
-            to bottom,
-            #315a78 0%,
-            #315a78 34%,
-            #d4cdbb 34%,
-            #d4cdbb 66%,
-            #315a78 66%,
-            #315a78 100%
-        );
-}
-
-
-
-/* RED */
-
-.cassette-red .label-stripes {
-    background:
-        linear-gradient(
-            to bottom,
-            #a74537 0%,
-            #a74537 34%,
-            #d4cdbb 34%,
-            #d4cdbb 66%,
-            #a74537 66%,
-            #a74537 100%
-        );
-}
-
-
-
-/* YELLOW */
-
-.cassette-yellow .label-stripes {
-    background:
-        linear-gradient(
-            to bottom,
-            #b58d37 0%,
-            #b58d37 34%,
-            #d4cdbb 34%,
-            #d4cdbb 66%,
-            #b58d37 66%,
-            #b58d37 100%
-        );
-}
-
-
-
-/* GREEN */
-
-.cassette-green .label-stripes {
-    background:
-        linear-gradient(
-            to bottom,
-            #557052 0%,
-            #557052 34%,
-            #d4cdbb 34%,
-            #d4cdbb 66%,
-            #557052 66%,
-            #557052 100%
-        );
-}
-
-
-
-/* ORANGE */
-
-.cassette-orange .label-stripes {
-    background:
-        linear-gradient(
-            to bottom,
-            #ab6338 0%,
-            #ab6338 34%,
-            #d4cdbb 34%,
-            #d4cdbb 66%,
-            #ab6338 66%,
-            #ab6338 100%
-        );
-}
-
-
-
-/* =========================================================
-   LABEL DETAIL LINE
-   ========================================================= */
-
-.label-line {
     width: 100%;
 
     height: 1px;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
-    background: #666;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 
-
-/* =========================================================
-   CASSETTE NUMBER
-   ========================================================= */
 
 .tape-number {
     position: absolute;
 
-    right: 7px;
+    right: 6px;
 
     bottom: 5px;
 
-    color: #555;
+    color: #4f4f49;
 
-    font-family: "Courier New", monospace;
+    font-family:
+        "Courier New",
+        monospace;
 
-    font-size: 0.5rem;
+    font-size: 0.47rem;
 }
 
 
-
-/* =========================================================
-   CASSETTE BOTTOM TEXT
-   ========================================================= */
 
 .tape-bottom {
     position: absolute;
@@ -548,89 +903,797 @@ nav a.active {
 
     width: 100%;
 
+    color: #676761;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.4rem;
+
+    letter-spacing: 1px;
+
     text-align: center;
-
-    color: #676767;
-
-    font-family: "Courier New", monospace;
-
-    font-size: 0.43rem;
-
-    letter-spacing: 0.8px;
 }
 
 
 
 /* =========================================================
-   CASSETTE HOVER
+   SELECTED CASSETTE
    ========================================================= */
 
-.cassette:hover {
+.cassette:hover,
+.cassette:focus-visible,
+.cassette.active {
     transform:
-        translateY(-24px)
-        rotate(-2deg)
-        scale(1.025);
+        translateY(-11px);
 
-    border-color: #555;
+    border-color: #666;
+
+    outline: none;
 
     z-index: 5;
 
     box-shadow:
-        0 16px 25px rgba(0, 0, 0, 0.8),
-        0 0 15px rgba(239, 85, 59, 0.22);
+        0 14px 23px rgba(0, 0, 0, 0.75),
+        0 0 14px color-mix(
+            in srgb,
+            var(--accent) 45%,
+            transparent
+        );
 }
 
 
 
-/* alternate rotation so they don't all move identically */
+.cassette.active::after {
+    content: "";
 
-.cassette:nth-child(even):hover {
-    transform:
-        translateY(-24px)
-        rotate(2deg)
-        scale(1.025);
+    position: absolute;
+
+    left: 12px;
+
+    right: 12px;
+
+    bottom: -18px;
+
+    height: 2px;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 7px var(--accent);
 }
 
 
 
 /* =========================================================
-   PROJECT ARCHIVE TEXT
+   PROJECT PREVIEW
    ========================================================= */
 
 .project-preview {
-    padding: 45px 10% 80px;
+    max-width: 1400px;
 
-    max-width: 950px;
+    margin:
+        35px
+        auto
+        0;
+
+    padding:
+        38px
+        45px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(350px, 0.9fr)
+        minmax(400px, 1.1fr);
+
+    gap: 55px;
+
+    align-items: center;
+
+    border:
+        1px
+        solid
+        #41413d;
+
+    background:
+        linear-gradient(
+            120deg,
+            #121310,
+            #0c0d0b
+        );
+
+    box-shadow:
+        inset 0 0 28px rgba(0, 0, 0, 0.45),
+        0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-.small-heading {
-    margin-bottom: 10px;
 
-    color: #ef553b;
 
-    font-family: "Courier New", monospace;
+/* =========================================================
+   LARGE CASSETTE
+   ========================================================= */
+
+.preview-art {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+
+.preview-cassette {
+    --accent: #315a78;
+
+    position: relative;
+
+    width:
+        min(
+            100%,
+            520px
+        );
+
+    aspect-ratio: 1.55 / 1;
+
+    padding: 20px;
+
+    border:
+        3px
+        solid
+        #343434;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            150deg,
+            #202020,
+            #080808
+        );
+
+    box-shadow:
+        inset 7px 7px 15px rgba(255, 255, 255, 0.025),
+        inset -10px -10px 18px rgba(0, 0, 0, 0.75),
+        10px 15px 20px rgba(0, 0, 0, 0.55);
+
+    transition:
+        opacity 0.16s ease,
+        transform 0.16s ease;
+}
+
+
+
+.preview-label {
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding:
+        28px
+        28px
+        20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d6cebd,
+            #eee4d1 50%,
+            #d6cebd
+        );
+
+    color: #161616;
+
+    box-shadow:
+        inset 0 0 18px rgba(80, 55, 25, 0.15);
+}
+
+
+
+.preview-stripes {
+    position: absolute;
+
+    top: 88px;
+
+    left: 0;
+
+    right: 0;
+
+    height: 46px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--accent) 0%,
+            var(--accent) 37%,
+            #ddd3bf 37%,
+            #ddd3bf 63%,
+            var(--accent) 63%,
+            var(--accent) 100%
+        );
+}
+
+
+
+.preview-label-top {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.63rem;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+
+.preview-label h2 {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 13px;
+
+    font-size:
+        clamp(
+            1.6rem,
+            3vw,
+            2.7rem
+        );
+
+    line-height: 1;
+
+    letter-spacing: 1px;
+}
+
+
+
+.preview-label > p {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 5px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   CASSETTE WINDOW
+   ========================================================= */
+
+.cassette-window {
+    position: absolute;
+
+    left: 15%;
+
+    right: 15%;
+
+    bottom: 59px;
+
+    height: 82px;
+
+    padding:
+        10px
+        16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border:
+        3px
+        solid
+        #1d1d1d;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(
+            #24211d,
+            #0e0e0d
+        );
+
+    box-shadow:
+        inset 0 0 9px #000;
+}
+
+
+
+/* =========================================================
+   SPOOLS
+   ========================================================= */
+
+.spool {
+    width: 58px;
+
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        6px
+        solid
+        #0c0c0c;
+
+    border-radius: 50%;
+
+    background:
+        repeating-conic-gradient(
+            #ded6c5 0deg 12deg,
+            #272727 12deg 24deg
+        );
+
+    box-shadow:
+        0 0 0 2px #777;
+}
+
+
+
+.spool-inner {
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: #141414;
+
+    border: 2px solid #807b71;
+}
+
+
+
+.tape-window-center {
+    flex: 1;
+
+    margin:
+        0
+        15px;
+
+    height: 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+
+.tape-window-center span {
+    display: block;
+
+    height: 3px;
+
+    background: #554c43;
+
+    box-shadow:
+        0 1px 1px #000;
+}
+
+
+
+.cassette-holes {
+    position: absolute;
+
+    left: 26%;
+
+    right: 26%;
+
+    bottom: 17px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+
+.cassette-holes span {
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    box-shadow:
+        inset 0 0 4px #000;
+}
+
+
+
+/* =========================================================
+   PREVIEW INFORMATION
+   ========================================================= */
+
+.preview-info {
+    min-width: 0;
+}
+
+
+
+.preview-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px
+        solid
+        #393a36;
+
+    color: #668dab;
+
+    font-family:
+        "Courier New",
+        monospace;
 
     font-size: 0.7rem;
 
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
-.project-preview h2 {
-    margin-bottom: 15px;
 
-    font-size: 2.2rem;
 
-    letter-spacing: -1px;
+.preview-eyebrow span {
+    color: #6d6c66;
+
+    letter-spacing: 1px;
 }
+
+
+
+.preview-info > h2 {
+    margin-top: 20px;
+
+    color: var(--cream);
+
+    font-size:
+        clamp(
+            2.4rem,
+            4vw,
+            4.5rem
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+}
+
+
+
+.preview-category {
+    margin-top: 13px;
+
+    color: var(--cream-dark);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 2px;
+}
+
+
 
 .preview-description {
-    max-width: 620px;
+    max-width: 690px;
 
-    color: #aaa;
+    margin-top: 24px;
 
-    font-size: 0.9rem;
+    color: #bbb6ab;
 
-    line-height: 1.7;
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.86rem;
+
+    line-height: 1.75;
+}
+
+
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.preview-tags {
+    margin-top: 25px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+
+.preview-tags span {
+    padding:
+        8px
+        13px;
+
+    border:
+        1px
+        solid
+        #5b5a53;
+
+    border-radius: 3px;
+
+    color: #c5c0b5;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* =========================================================
+   VIEW PROJECT BUTTON
+   ========================================================= */
+
+.view-project-button {
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding:
+        14px
+        20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    border:
+        1px
+        solid
+        var(--cream);
+
+    border-radius: 4px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.72rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+
+.view-project-button:hover {
+    background: var(--cream);
+
+    color: #111;
+
+    transform: translateX(3px);
+}
+
+
+
+/* =========================================================
+   PREVIEW CHANGE ANIMATION
+   ========================================================= */
+
+.preview-cassette.changing,
+.preview-info.changing {
+    opacity: 0;
+
+    transform: translateY(5px);
+}
+
+
+
+.preview-info {
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-section {
+    max-width: 1200px;
+
+    margin:
+        100px
+        auto;
+
+    padding:
+        0
+        45px;
+}
+
+
+
+.about-section h2 {
+    max-width: 750px;
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            4rem
+        );
+}
+
+
+
+.about-section > p:last-child {
+    max-width: 700px;
+
+    margin-top: 25px;
+
+    color: #aaa69d;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.86rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding:
+        45px
+        clamp(25px, 5vw, 90px);
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    border-top:
+        1px
+        solid
+        var(--line);
+
+    background: #090a09;
+}
+
+
+
+.site-footer h2 {
+    margin-top: 12px;
+
+    font-size:
+        clamp(
+            1.6rem,
+            3vw,
+            3rem
+        );
+}
+
+
+
+.footer-motto {
+    color: #75756f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .project-preview {
+        margin:
+            30px
+            25px
+            0;
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .preview-art {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .preview-info {
+        max-width: 700px;
+    }
+
 }
 
 
@@ -639,45 +1702,202 @@ nav a.active {
    MOBILE
    ========================================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 700px) {
+
+    .site-header {
+        padding:
+            22px
+            22px
+            18px;
+    }
+
+
+    .name-section h1 {
+        font-size: 2.8rem;
+    }
+
 
     .name-section p {
+        font-size: 0.64rem;
+
+        line-height: 1.7;
+
         letter-spacing: 4px;
     }
 
 
     nav {
-        gap: 18px;
+        gap:
+            15px
+            22px;
+    }
+
+
+    nav a {
+        font-size: 0.62rem;
+
+        letter-spacing: 2px;
     }
 
 
     .hero {
-        padding-left: 20px;
+        padding:
+            18px
+            20px;
+    }
 
-        padding-right: 20px;
+
+    .display-panel {
+        min-height: 80px;
+
+        padding:
+            15px
+            18px;
+    }
+
+
+    .display-text {
+        margin-left: 25px;
+
+        font-size: 0.6rem;
+
+        letter-spacing: 2px;
+    }
+
+
+    .display-right {
+        display: none;
+    }
+
+
+    .shelf-heading {
+        padding-left: 22px;
+
+        padding-right: 22px;
+    }
+
+
+    .shelf-instruction {
+        display: none;
     }
 
 
     .project-shelf {
+        min-height: 350px;
+
+        padding:
+            38px
+            25px
+            28px;
+
         justify-content: flex-start;
-
-        padding-left: 30px;
-
-        padding-right: 30px;
     }
 
 
     .cassette {
-        width: 135px;
+        flex-basis: 130px;
 
-        height: 295px;
+        width: 130px;
+
+        height: 285px;
+    }
+
+
+    .cassette:nth-child(2),
+    .cassette:nth-child(3),
+    .cassette:nth-child(4),
+    .cassette:nth-child(5) {
+        height: 285px;
     }
 
 
     .project-preview {
-        padding-left: 30px;
+        margin:
+            25px
+            15px
+            0;
 
-        padding-right: 30px;
+        padding:
+            25px
+            20px;
+
+        gap: 30px;
+    }
+
+
+    .preview-label {
+        padding:
+            20px
+            18px;
+    }
+
+
+    .preview-label h2 {
+        font-size: 1.5rem;
+    }
+
+
+    .preview-stripes {
+        top: 75px;
+
+        height: 35px;
+    }
+
+
+    .cassette-window {
+        left: 11%;
+
+        right: 11%;
+
+        bottom: 45px;
+
+        height: 64px;
+    }
+
+
+    .spool {
+        width: 43px;
+
+        height: 43px;
+    }
+
+
+    .spool-inner {
+        width: 15px;
+
+        height: 15px;
+    }
+
+
+    .cassette-holes {
+        bottom: 12px;
+    }
+
+
+    .preview-info > h2 {
+        font-size: 2.5rem;
+    }
+
+
+    .about-section {
+        margin:
+            70px
+            auto;
+
+        padding:
+            0
+            25px;
+    }
+
+
+    .site-footer {
+        padding:
+            35px
+            25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
 }
