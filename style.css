@@ -19,12 +19,10 @@
     --wood: #3b2618;
     --wood-light: #55351f;
 
-    --display-blue: #7fa3a0;
+    --display-blue: #78979a;
 
-    /* smaller overall page margins */
     --page-padding: clamp(20px, 2.5vw, 48px);
 
-    /* lets content use much more of a wide monitor */
     --content-width: 1720px;
 }
 
@@ -77,7 +75,9 @@ a {
 
 
 
-/* subtle scanline texture */
+/* =========================================================
+   GLOBAL SCANLINE TEXTURE
+   ========================================================= */
 
 body::before {
     content: "";
@@ -109,7 +109,12 @@ body::before {
    ========================================================= */
 
 .site-header {
-    background: rgba(16, 17, 15, 0.98);
+    background:
+        linear-gradient(
+            180deg,
+            #11120f,
+            #0d0e0c
+        );
 
     border-bottom: 1px solid var(--line);
 
@@ -117,6 +122,9 @@ body::before {
         24px
         var(--page-padding)
         20px;
+
+    box-shadow:
+        inset 0 -10px 25px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -141,8 +149,8 @@ body::before {
     display: grid;
 
     grid-template-columns:
-        minmax(650px, 0.95fr)
-        minmax(600px, 1.05fr);
+        minmax(620px, 0.9fr)
+        minmax(720px, 1.1fr);
 
     gap: 40px;
 
@@ -177,7 +185,6 @@ body::before {
 
     font-weight: 800;
 
-    /* keeps Charlie Hayes on one line */
     white-space: nowrap;
 }
 
@@ -270,50 +277,186 @@ nav a.active::after {
 
 
 /* =========================================================
-   HEADER RETRO DISPLAY
+   HEADER CONSOLE ASSEMBLY
    ========================================================= */
 
-.display-panel {
+.header-console {
     position: relative;
 
     width: 100%;
 
-    min-height: 105px;
+    min-height: 132px;
 
-    padding:
-        18px
-        24px;
+    padding: 10px;
 
-    display: flex;
+    display: grid;
 
-    align-items: center;
+    grid-template-columns:
+        minmax(0, 1fr)
+        180px;
 
-    border: 1px solid #4a4b47;
+    gap: 14px;
+
+    align-items: stretch;
+
+    border:
+        1px
+        solid
+        #3c3d38;
 
     background:
         linear-gradient(
             180deg,
-            #080908 0%,
-            #030403 100%
+            #10110f 0%,
+            #090a08 100%
         );
 
     box-shadow:
-        inset 0 0 25px rgba(0, 0, 0, 0.9),
-        0 2px 10px rgba(0, 0, 0, 0.4);
+        inset 0 0 25px rgba(0, 0, 0, 0.85),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03),
+        0 7px 14px rgba(0, 0, 0, 0.35);
 }
 
 
 
-.display-panel::before {
+/* fake equipment screws */
+
+.header-console::before,
+.header-console::after {
     content: "";
 
     position: absolute;
 
-    inset: 7px;
+    top: 7px;
 
-    border: 1px solid rgba(255, 255, 255, 0.035);
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #30312d;
+
+    box-shadow:
+        inset 0 0 2px #000,
+        0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+
+
+.header-console::before {
+    left: 7px;
+}
+
+
+
+.header-console::after {
+    right: 7px;
+}
+
+
+
+/* =========================================================
+   MAIN CONSOLE DISPLAY
+   ========================================================= */
+
+.console-display {
+    position: relative;
+
+    padding: 8px;
+
+    border:
+        1px
+        solid
+        #4b4c46;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0d0e0c,
+            #070806
+        );
+
+    box-shadow:
+        inset 0 0 14px #000,
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+
+.console-display::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    border:
+        1px
+        solid
+        #20211e;
 
     pointer-events: none;
+}
+
+
+
+.display-inner {
+    position: relative;
+
+    height: 100%;
+
+    min-height: 92px;
+
+    padding:
+        14px
+        22px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 45px;
+
+    overflow: hidden;
+
+    border:
+        1px
+        solid
+        rgba(255, 255, 255, 0.025);
+
+    background:
+        linear-gradient(
+            180deg,
+            #070806,
+            #030403
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.95);
+}
+
+
+
+/* faint glass reflection */
+
+.display-inner::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.025),
+            transparent 30%,
+            transparent 70%,
+            rgba(255, 255, 255, 0.015)
+        );
 }
 
 
@@ -323,7 +466,11 @@ nav a.active::after {
    ========================================================= */
 
 .equalizer {
-    height: 40px;
+    position: relative;
+
+    z-index: 2;
+
+    height: 48px;
 
     display: flex;
 
@@ -337,12 +484,12 @@ nav a.active::after {
 .equalizer span {
     display: block;
 
-    width: 9px;
+    width: 10px;
 
     background: var(--red);
 
     box-shadow:
-        0 0 6px rgba(239, 85, 59, 0.28);
+        0 0 7px rgba(239, 85, 59, 0.32);
 
     animation:
         equalizerMove
@@ -355,35 +502,40 @@ nav a.active::after {
 
 
 .equalizer span:nth-child(1) {
-    height: 35px;
+    height: 42px;
+
     animation-delay: 0s;
 }
 
 
 
 .equalizer span:nth-child(2) {
-    height: 29px;
+    height: 35px;
+
     animation-delay: 0.12s;
 }
 
 
 
 .equalizer span:nth-child(3) {
-    height: 25px;
+    height: 29px;
+
     animation-delay: 0.25s;
 }
 
 
 
 .equalizer span:nth-child(4) {
-    height: 20px;
+    height: 23px;
+
     animation-delay: 0.4s;
 }
 
 
 
 .equalizer span:nth-child(5) {
-    height: 15px;
+    height: 17px;
+
     animation-delay: 0.55s;
 }
 
@@ -391,6 +543,7 @@ nav a.active::after {
 
 .equalizer span:nth-child(6) {
     height: 10px;
+
     animation-delay: 0.7s;
 }
 
@@ -398,6 +551,7 @@ nav a.active::after {
 
 .equalizer span:nth-child(7) {
     height: 5px;
+
     animation-delay: 0.85s;
 }
 
@@ -406,7 +560,7 @@ nav a.active::after {
 @keyframes equalizerMove {
 
     from {
-        transform: scaleY(0.75);
+        transform: scaleY(0.72);
     }
 
     to {
@@ -418,11 +572,19 @@ nav a.active::after {
 
 
 /* =========================================================
-   DISPLAY TEXT
+   IDEAS IN PROGRESS DISPLAY
    ========================================================= */
 
-.display-text {
-    margin-left: 38px;
+.display-message {
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+    min-width: 0;
+
+    padding-bottom: 10px;
 
     color: var(--display-blue);
 
@@ -430,33 +592,183 @@ nav a.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.72rem;
+    font-size:
+        clamp(
+            0.68rem,
+            0.9vw,
+            0.95rem
+        );
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 
-    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 
 
-.display-right {
-    margin-left: auto;
+.display-message span {
+    opacity: 0.82;
 
-    padding-left: 25px;
+    text-shadow:
+        0 0 7px rgba(120, 151, 154, 0.25);
+}
 
-    color: #999a93;
+
+
+/* =========================================================
+   SIDE CONSOLE BOX
+   ========================================================= */
+
+.console-side {
+    position: relative;
+
+    padding: 7px;
+
+    border:
+        1px
+        solid
+        #454640;
+
+    background:
+        linear-gradient(
+            180deg,
+            #10110f,
+            #070806
+        );
+
+    box-shadow:
+        inset 0 0 12px rgba(0, 0, 0, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+
+
+.console-side::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 5px;
+
+    pointer-events: none;
+
+    border:
+        1px
+        solid
+        #22231f;
+}
+
+
+
+.side-message {
+    position: relative;
+
+    z-index: 2;
+
+    height: 100%;
+
+    min-height: 92px;
+
+    padding:
+        17px
+        14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    border:
+        1px
+        solid
+        rgba(255, 255, 255, 0.025);
+
+    background:
+        linear-gradient(
+            180deg,
+            #080907,
+            #040503
+        );
+}
+
+
+
+.stay-curious {
+    color: #aaa79d;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.6rem;
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+
+    letter-spacing: 2px;
+}
+
+
+
+.linkedin-link {
+    position: relative;
+
+    margin-top: 15px;
+
+    color: var(--red);
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.62rem;
+
+    font-weight: bold;
 
     letter-spacing: 2px;
 
-    line-height: 1.6;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
 
-    text-align: right;
+
+
+.linkedin-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    right: 100%;
+
+    bottom: -5px;
+
+    height: 1px;
+
+    background: var(--red);
+
+    transition:
+        right 0.2s ease;
+}
+
+
+
+.linkedin-link:hover {
+    color: var(--cream);
+
+    transform: translateX(2px);
+}
+
+
+
+.linkedin-link:hover::after {
+    right: 0;
 }
 
 
@@ -1694,10 +2006,10 @@ nav a.active::after {
 
 
 /* =========================================================
-   HEADER RESPONSIVE
+   RESPONSIVE HEADER
    ========================================================= */
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
 
     .header-top {
         grid-template-columns: 1fr;
@@ -1706,7 +2018,7 @@ nav a.active::after {
     }
 
 
-    .display-panel {
+    .header-console {
         max-width: none;
     }
 
@@ -1802,26 +2114,43 @@ nav a.active::after {
     }
 
 
-    .display-panel {
-        min-height: 80px;
+    .header-console {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    .console-side {
+        min-height: 85px;
+    }
+
+
+    .side-message {
+        min-height: 70px;
+    }
+
+
+    .display-inner {
+        min-height: 88px;
+
+        gap: 22px;
 
         padding:
-            15px
-            18px;
+            14px
+            15px;
     }
 
 
-    .display-text {
-        margin-left: 25px;
-
-        font-size: 0.6rem;
-
-        letter-spacing: 2px;
+    .equalizer span {
+        width: 7px;
     }
 
 
-    .display-right {
-        display: none;
+    .display-message {
+        font-size: 0.63rem;
+
+        letter-spacing: 1px;
     }
 
 
