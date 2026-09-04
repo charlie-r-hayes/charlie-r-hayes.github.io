@@ -3,23 +3,20 @@
    ========================================================= */
 
 :root {
-    --background: #0c0d0b;
-    --background-soft: #12130f;
+    --background: #0b0c09;
+    --background-soft: #11120e;
 
-    --cream: #eee5d4;
-    --cream-dark: #d4c9b5;
+    --cream: #eee4d2;
+    --cream-dark: #d0c6b3;
 
-    --paper: #ded3bd;
+    --red: #e5543b;
+    --display-blue: #759399;
 
-    --red: #e6533a;
+    --wood-dark: #24150c;
+    --wood-mid: #51301b;
+    --wood-light: #75492b;
 
-    --display-blue: #789699;
-
-    --wood-dark: #24140c;
-    --wood: #4b2c19;
-    --wood-light: #70472b;
-
-    --page-padding: clamp(18px, 2.5vw, 44px);
+    --page-padding: clamp(18px, 2.4vw, 44px);
 
     --content-width: 1720px;
 }
@@ -58,24 +55,26 @@ body {
 
     background:
         radial-gradient(
-            circle at 50% -15%,
-            #1d1d17,
-            #10110e 40%,
-            #080907 100%
+            circle at 50% -20%,
+            #202019,
+            #10110d 43%,
+            #070806 100%
         );
 }
 
 
 
+a,
 button,
-a {
+input,
+textarea {
     font: inherit;
 }
 
 
 
 /* =========================================================
-   GLOBAL OLD-SCREEN TEXTURE
+   TEXTURE
    ========================================================= */
 
 body::before {
@@ -85,17 +84,17 @@ body::before {
 
     inset: 0;
 
-    z-index: 9999;
-
     pointer-events: none;
+
+    z-index: 9999;
 
     opacity: 0.025;
 
     background:
         repeating-linear-gradient(
             0deg,
-            rgba(255,255,255,0.12) 0,
-            rgba(255,255,255,0.12) 1px,
+            rgba(255,255,255,0.13) 0,
+            rgba(255,255,255,0.13) 1px,
             transparent 1px,
             transparent 4px
         );
@@ -115,13 +114,13 @@ body::before {
 
     background:
         linear-gradient(
-            #141510,
-            #0b0c09
+            #151611,
+            #090a08
         );
 
     box-shadow:
-        inset 0 -10px 18px rgba(0,0,0,0.35),
-        0 6px 15px rgba(0,0,0,0.25);
+        inset 0 -9px 18px rgba(0,0,0,0.35),
+        0 6px 14px rgba(0,0,0,0.27);
 }
 
 
@@ -171,7 +170,7 @@ body::before {
     letter-spacing: 2px;
 
     text-shadow:
-        0 5px 12px rgba(0,0,0,0.4);
+        0 5px 13px rgba(0,0,0,0.42);
 }
 
 
@@ -181,9 +180,9 @@ body::before {
 
     white-space: nowrap;
 
-    color: #e5dcc9;
+    color: #e1d8c7;
 
-    font-size: 0.77rem;
+    font-size: 0.76rem;
 
     letter-spacing: 6px;
 }
@@ -213,11 +212,11 @@ nav a {
         0
         22px;
 
-    color: #d9d2c4;
+    color: #d8d1c3;
 
     text-decoration: none;
 
-    font-size: 0.69rem;
+    font-size: 0.68rem;
 
     font-weight: bold;
 
@@ -253,11 +252,9 @@ nav a + a::before {
     background:
         linear-gradient(
             transparent,
-            #6c6b63,
+            #6d6c63,
             transparent
         );
-
-    opacity: 0.8;
 }
 
 
@@ -282,12 +279,10 @@ nav a::after {
 
     height: 2px;
 
-    border-radius: 3px;
-
     background: var(--red);
 
     box-shadow:
-        0 0 6px rgba(230,83,58,0.4);
+        0 0 6px rgba(229,84,59,0.4);
 
     transition:
         right 0.2s ease;
@@ -308,19 +303,12 @@ nav a.active::after {
 
 
 
-nav a:first-child:hover::after,
-nav a:first-child.active::after {
-    right: 22px;
-}
-
-
-
 /* =========================================================
    HEADER RECEIVER
    ========================================================= */
 
 .header-console {
-    min-height: 120px;
+    min-height: 116px;
 
     padding: 9px;
 
@@ -337,9 +325,9 @@ nav a:first-child.active::after {
     background:
         linear-gradient(
             145deg,
-            #2b2c28,
-            #0b0c0a 19%,
-            #151612 78%,
+            #2d2e29,
+            #0c0d0a 18%,
+            #161713 78%,
             #050605
         );
 
@@ -360,8 +348,8 @@ nav a:first-child.active::after {
     background:
         linear-gradient(
             145deg,
-            #42423d,
-            #10110e 16%,
+            #41413c,
+            #0e0f0c 18%,
             #040504
         );
 
@@ -375,7 +363,7 @@ nav a:first-child.active::after {
 .side-message {
     height: 100%;
 
-    min-height: 88px;
+    min-height: 85px;
 
     border-radius: 3px;
 
@@ -411,30 +399,30 @@ nav a:first-child.active::after {
    ========================================================= */
 
 .equalizer {
-    height: 43px;
+    height: 42px;
 
     display: flex;
 
-    gap: 4px;
-
     align-items: flex-end;
+
+    gap: 4px;
 }
 
 
 
 .equalizer span {
-    width: 9px;
-
     display: block;
+
+    width: 9px;
 
     background:
         linear-gradient(
-            #ff6249,
-            #d83e2b
+            #ff6349,
+            #d73e2b
         );
 
     box-shadow:
-        0 0 7px rgba(230,83,58,0.34);
+        0 0 7px rgba(229,84,59,0.34);
 
     animation:
         equalizerMove
@@ -447,49 +435,43 @@ nav a:first-child.active::after {
 
 
 .equalizer span:nth-child(1) {
-    height: 40px;
+    height: 39px;
 }
 
 
 
 .equalizer span:nth-child(2) {
-    height: 34px;
-    animation-delay: 0.1s;
+    height: 33px;
 }
 
 
 
 .equalizer span:nth-child(3) {
-    height: 28px;
-    animation-delay: 0.2s;
+    height: 27px;
 }
 
 
 
 .equalizer span:nth-child(4) {
     height: 22px;
-    animation-delay: 0.3s;
 }
 
 
 
 .equalizer span:nth-child(5) {
     height: 16px;
-    animation-delay: 0.4s;
 }
 
 
 
 .equalizer span:nth-child(6) {
     height: 10px;
-    animation-delay: 0.5s;
 }
 
 
 
 .equalizer span:nth-child(7) {
     height: 5px;
-    animation-delay: 0.6s;
 }
 
 
@@ -517,24 +499,15 @@ nav a:first-child.active::after {
         "Courier New",
         monospace;
 
-    font-size:
-        clamp(
-            0.68rem,
-            0.85vw,
-            0.92rem
-        );
+    font-size: 0.85rem;
 
     letter-spacing: 2px;
 
     text-shadow:
-        0 0 7px rgba(120,150,153,0.28);
+        0 0 7px rgba(117,147,153,0.3);
 }
 
 
-
-/* =========================================================
-   SIDE CONSOLE
-   ========================================================= */
 
 .side-message {
     padding:
@@ -551,13 +524,13 @@ nav a:first-child.active::after {
 
 
 .stay-curious {
-    color: #bbb5a9;
+    color: #bbb5aa;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.69rem;
+    font-size: 0.68rem;
 
     letter-spacing: 2px;
 }
@@ -582,24 +555,12 @@ nav a:first-child.active::after {
     font-weight: bold;
 
     letter-spacing: 2px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-
-.linkedin-link:hover {
-    color: var(--cream);
-
-    transform: translateX(3px);
 }
 
 
 
 /* =========================================================
-   SHARED
+   GENERIC
    ========================================================= */
 
 .section-label {
@@ -609,7 +570,7 @@ nav a:first-child.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.65rem;
+    font-size: 0.64rem;
 
     font-weight: bold;
 
@@ -626,15 +587,15 @@ nav a:first-child.active::after {
     position: relative;
 
     padding:
-        50px
+        46px
         var(--page-padding)
-        54px;
+        48px;
 
     background:
         radial-gradient(
             circle at 20% 15%,
-            #1a1913,
-            #10110d 65%
+            #1b1a14,
+            #10110d 64%
         );
 }
 
@@ -655,8 +616,8 @@ nav a:first-child.active::after {
 
     background:
         linear-gradient(
-            #70492d,
-            #412615,
+            #74492c,
+            #402514,
             #20120b
         );
 
@@ -667,8 +628,6 @@ nav a:first-child.active::after {
 
 
 .about-inner {
-    width: 100%;
-
     max-width: 1500px;
 
     margin: 0 auto;
@@ -679,7 +638,7 @@ nav a:first-child.active::after {
         1.15fr
         0.85fr;
 
-    gap: 65px;
+    gap: 62px;
 
     align-items: center;
 }
@@ -706,9 +665,9 @@ nav a:first-child.active::after {
 
 
 .about-lead {
-    max-width: 720px;
+    max-width: 710px;
 
-    margin-top: 20px;
+    margin-top: 19px;
 
     color: #d3c9b7;
 
@@ -722,7 +681,7 @@ nav a:first-child.active::after {
 .about-body {
     max-width: 720px;
 
-    margin-top: 13px;
+    margin-top: 12px;
 
     color: #aaa497;
 
@@ -737,8 +696,67 @@ nav a:first-child.active::after {
 
 
 
+.about-actions {
+    margin-top: 19px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+
+
+.equipment-button {
+    padding:
+        10px
+        14px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    border-radius: 3px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.61rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            #282923,
+            #10110e
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.07),
+        inset 0 -2px 4px rgba(0,0,0,0.7),
+        0 4px 7px rgba(0,0,0,0.35);
+}
+
+
+
+.equipment-button-secondary {
+    color: #aaa498;
+}
+
+
+
 /* =========================================================
-   ABOUT CARD
+   ABOUT PAPER
    ========================================================= */
 
 .about-card {
@@ -746,14 +764,15 @@ nav a:first-child.active::after {
 
     border-radius: 8px;
 
-    transform: rotate(0.4deg);
+    transform:
+        rotate(0.35deg);
 
     background:
         linear-gradient(
             145deg,
-            #30302b,
+            #30312c,
             #0b0c09 25%,
-            #161713
+            #151612
         );
 
     box-shadow:
@@ -765,8 +784,8 @@ nav a:first-child.active::after {
 
 .about-paper {
     padding:
-        22px
-        25px
+        21px
+        24px
         18px;
 
     color: #181711;
@@ -775,8 +794,8 @@ nav a:first-child.active::after {
         linear-gradient(
             100deg,
             #c6baa2,
-            #e7dcc6 45%,
-            #cfc2a8
+            #e6dbc5 45%,
+            #cec1a8
         );
 
     box-shadow:
@@ -874,7 +893,7 @@ nav a:first-child.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.56rem;
+    font-size: 0.55rem;
 }
 
 
@@ -896,7 +915,7 @@ nav a:first-child.active::after {
 
 
 /* =========================================================
-   PROJECT AREA
+   PROJECTS
    ========================================================= */
 
 .projects-section {
@@ -905,7 +924,7 @@ nav a:first-child.active::after {
     background:
         linear-gradient(
             #15140f,
-            #10100d
+            #0d0e0b
         );
 }
 
@@ -945,102 +964,143 @@ nav a:first-child.active::after {
 
 
 /* =========================================================
-   SHELF
+   CASSETTE CABINET
    ========================================================= */
 
-.project-shelf {
+.project-cabinet {
     position: relative;
 
-    min-height: 355px;
-
-    padding:
-        28px
-        35px
-        24px;
+    min-height: 360px;
 
     display: grid;
 
     grid-template-columns:
-        28px
-        minmax(650px, 1fr)
-        200px
-        28px;
+        31px
+        1fr
+        31px;
 
-    gap: 18px;
+    grid-template-rows:
+        15px
+        1fr
+        17px;
+
+    background: #11110d;
+
+    box-shadow:
+        inset 0 22px 30px rgba(0,0,0,0.48),
+        inset 0 -18px 28px rgba(0,0,0,0.52);
+}
+
+
+
+.cabinet-top {
+    grid-column:
+        1
+        /
+        4;
+
+    grid-row: 1;
+
+    background:
+        linear-gradient(
+            #784c2d,
+            #492916,
+            #21120a
+        );
+
+    box-shadow:
+        0 5px 9px rgba(0,0,0,0.5);
+}
+
+
+
+.cabinet-bottom {
+    grid-column:
+        1
+        /
+        4;
+
+    grid-row: 3;
+
+    background:
+        linear-gradient(
+            #28150c,
+            #56301b,
+            #70452a
+        );
+
+    box-shadow:
+        0 -4px 8px rgba(0,0,0,0.55);
+}
+
+
+
+.cabinet-side {
+    grid-row: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            #25130b,
+            #75482b 40%,
+            #4c2917 70%,
+            #211109
+        );
+
+    box-shadow:
+        inset 2px 0 3px rgba(255,255,255,0.04),
+        inset -4px 0 5px rgba(0,0,0,0.5);
+}
+
+
+
+.cabinet-left {
+    grid-column: 1;
+}
+
+
+
+.cabinet-right {
+    grid-column: 3;
+}
+
+
+
+.cabinet-interior {
+    grid-column: 2;
+
+    grid-row: 2;
+
+    min-width: 0;
+
+    padding:
+        26px
+        40px
+        18px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(680px, 1fr)
+        215px;
+
+    gap: 25px;
 
     align-items: stretch;
 
     overflow: hidden;
 
-    border-top:
-        12px
-        solid
-        #472919;
-
-    border-bottom:
-        15px
-        solid
-        #4f2d19;
-
     background:
         radial-gradient(
-            ellipse at center top,
-            #252117,
-            #14130f 55%,
-            #0c0c0a
+            ellipse at 45% 0%,
+            #282319,
+            #15140f 48%,
+            #090a08 100%
         );
 
     box-shadow:
-        inset 0 22px 28px rgba(0,0,0,0.48),
-        inset 0 -17px 25px rgba(0,0,0,0.5),
-        0 10px 18px rgba(0,0,0,0.4);
-}
-
-
-
-/* =========================================================
-   VERTICAL WOOD SHELF RAILS
-   ========================================================= */
-
-.shelf-rail {
-    position: relative;
-
-    border-radius: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #2d180e,
-            #72462a 35%,
-            #4f2e1b 70%,
-            #25150c
-        );
-
-    box-shadow:
-        inset 3px 0 4px rgba(255,255,255,0.05),
-        inset -5px 0 6px rgba(0,0,0,0.55),
-        5px 4px 8px rgba(0,0,0,0.45);
-}
-
-
-
-.shelf-rail::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    opacity: 0.26;
-
-    background:
-        repeating-linear-gradient(
-            15deg,
-            transparent 0,
-            transparent 18px,
-            rgba(20,8,3,0.65) 20px,
-            transparent 23px
-        );
+        inset 0 24px 33px rgba(0,0,0,0.52),
+        inset 0 -14px 20px rgba(0,0,0,0.48);
 }
 
 
@@ -1052,19 +1112,20 @@ nav a:first-child.active::after {
 .cassette-bank {
     display: flex;
 
-    justify-content: center;
-
     align-items: flex-end;
 
-    gap: 5px;
+    justify-content: center;
 
-    transform: translateX(-25px);
+    gap: 7px;
+
+    transform:
+        translateX(-25px);
 }
 
 
 
 /* =========================================================
-   REALISTIC CASSETTE CASE SPINES
+   CASSETTE CASES
    ========================================================= */
 
 .cassette {
@@ -1075,13 +1136,11 @@ nav a:first-child.active::after {
     flex:
         0
         0
-        140px;
+        145px;
 
-    width: 140px;
+    width: 145px;
 
-    height: 288px;
-
-    padding: 0;
+    height: 295px;
 
     appearance: none;
 
@@ -1091,7 +1150,9 @@ nav a:first-child.active::after {
 
     cursor: pointer;
 
-    transform-origin: bottom center;
+    transform-origin:
+        bottom
+        center;
 
     transition:
         transform 0.2s ease,
@@ -1101,25 +1162,25 @@ nav a:first-child.active::after {
 
 
 .cassette:nth-child(2) {
-    height: 281px;
+    height: 286px;
 }
 
 
 
 .cassette:nth-child(3) {
-    height: 294px;
+    height: 307px;
 }
 
 
 
 .cassette:nth-child(4) {
-    height: 285px;
+    height: 291px;
 }
 
 
 
 .cassette:nth-child(5) {
-    height: 291px;
+    height: 300px;
 }
 
 
@@ -1131,19 +1192,19 @@ nav a:first-child.active::after {
 
 
 .theme-red {
-    --accent: #a94c3c;
+    --accent: #a94a3b;
 }
 
 
 
 .theme-yellow {
-    --accent: #ad8436;
+    --accent: #ad8335;
 }
 
 
 
 .theme-green {
-    --accent: #567153;
+    --accent: #557151;
 }
 
 
@@ -1154,14 +1215,14 @@ nav a:first-child.active::after {
 
 
 
-.case-shell {
+.cassette-case {
     position: absolute;
 
     inset: 0;
 
-    display: block;
-
     overflow: hidden;
+
+    display: block;
 
     border-radius:
         5px
@@ -1172,26 +1233,39 @@ nav a:first-child.active::after {
     background:
         linear-gradient(
             90deg,
-            #050505 0%,
-            #262626 7%,
-            #101010 14%,
+            #070707 0%,
+            #252525 6%,
+            #101010 13%,
             #191919 86%,
             #292929 94%,
             #050505 100%
         );
 
     box-shadow:
-        inset 3px 0 3px rgba(255,255,255,0.05),
-        inset -6px 0 7px rgba(0,0,0,0.8),
-        inset 0 2px 1px rgba(255,255,255,0.03),
+        inset 4px 0 5px rgba(255,255,255,0.045),
+        inset -6px 0 7px rgba(0,0,0,0.82),
+        inset 0 2px 1px rgba(255,255,255,0.04),
         5px 8px 10px rgba(0,0,0,0.7);
 }
 
 
 
-.case-shell::before {
-    content: "";
+.cassette-light .cassette-case {
+    background:
+        linear-gradient(
+            90deg,
+            #bcb5a8 0%,
+            #e1d8c8 8%,
+            #cac2b4 15%,
+            #ddd5c7 87%,
+            #b7afa1 95%,
+            #999284 100%
+        );
+}
 
+
+
+.case-glass {
     position: absolute;
 
     inset:
@@ -1203,60 +1277,18 @@ nav a:first-child.active::after {
     border:
         1px
         solid
-        rgba(255,255,255,0.04);
+        rgba(255,255,255,0.045);
 
     box-shadow:
-        inset 0 0 7px rgba(0,0,0,0.8);
+        inset 0 0 10px rgba(0,0,0,0.42);
 }
 
 
-
-.case-ridge {
-    position: absolute;
-
-    top: 10px;
-
-    bottom: 10px;
-
-    width: 3px;
-
-    opacity: 0.5;
-}
-
-
-
-.ridge-left {
-    left: 7px;
-
-    background:
-        linear-gradient(
-            #111,
-            #484848,
-            #111
-        );
-}
-
-
-
-.ridge-right {
-    right: 7px;
-
-    background:
-        linear-gradient(
-            #090909,
-            #272727,
-            #090909
-        );
-}
-
-
-
-/* =========================================================
-   CASE SCREWS
-   ========================================================= */
 
 .case-screw {
     position: absolute;
+
+    z-index: 5;
 
     width: 6px;
 
@@ -1267,326 +1299,192 @@ nav a:first-child.active::after {
     background:
         radial-gradient(
             circle,
-            #777 0%,
-            #323232 35%,
-            #050505 75%
+            #7b7b76,
+            #33332f 35%,
+            #070807 75%
         );
-
-    box-shadow:
-        inset 0 0 1px #000;
 }
 
 
 
-.screw-top-left {
-    top: 9px;
-    left: 12px;
-}
-
-
-
-.screw-top-right {
-    top: 9px;
-    right: 12px;
-}
-
-
-
-.screw-bottom-left {
-    bottom: 9px;
-    left: 12px;
-}
-
-
-
-.screw-bottom-right {
-    bottom: 9px;
-    right: 12px;
-}
-
-
-
-/* =========================================================
-   CASE LABEL
-   ========================================================= */
-
-.case-top-markings {
-    position: absolute;
-
-    top: 13px;
-
-    left: 22px;
-
-    right: 22px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #73736c;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.44rem;
-}
-
-
-
-.cassette-label {
-    position: absolute;
-
-    top: 66px;
-
+.screw-one {
     left: 10px;
+    top: 11px;
+}
 
+
+
+.screw-two {
     right: 10px;
-
-    min-height: 135px;
-
-    padding:
-        18px
-        9px
-        10px;
-
-    overflow: hidden;
-
-    text-align: left;
-
-    color: #16150f;
-
-    background:
-        linear-gradient(
-            96deg,
-            #c6baa4,
-            #e4dac5 45%,
-            #cec2aa
-        );
-
-    box-shadow:
-        0 2px 4px rgba(0,0,0,0.65),
-        inset 0 0 12px rgba(70,50,28,0.18);
-}
-
-
-
-.cassette-label::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: 0.1;
-
-    background:
-        repeating-linear-gradient(
-            -8deg,
-            transparent 0,
-            transparent 14px,
-            rgba(60,45,25,0.2) 15px
-        );
-}
-
-
-
-.label-stripes {
-    position: absolute;
-
-    top: 13px;
-
-    left: 0;
-
-    right: 0;
-
-    height: 21px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            var(--accent) 0%,
-            var(--accent) 31%,
-            #dbd0bd 31%,
-            #dbd0bd 68%,
-            var(--accent) 68%,
-            var(--accent) 100%
-        );
-}
-
-
-
-.cassette-label strong {
-    position: relative;
-
-    z-index: 2;
-
-    display: block;
-
-    margin-top: 22px;
-
-    margin-bottom: 7px;
-
-    font-size: 0.84rem;
-}
-
-
-
-.label-rule {
-    position: relative;
-
-    z-index: 2;
-
-    display: block;
-
-    height: 1px;
-
-    margin-bottom: 6px;
-
-    background: rgba(30,29,24,0.55);
-}
-
-
-
-.cassette-label small {
-    position: relative;
-
-    z-index: 2;
-
-    display: block;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.43rem;
-
-    font-weight: bold;
-
-    line-height: 1.4;
-}
-
-
-
-.tape-number {
-    position: absolute;
-
-    right: 5px;
-
-    bottom: 4px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.42rem;
-
-    color: #544d43;
+    bottom: 11px;
 }
 
 
 
 /* =========================================================
-   LOWER CASE WINDOW
+   VERTICAL SPINE LABEL
    ========================================================= */
 
-.case-lower-window {
+.vertical-label {
     position: absolute;
 
-    left: 30px;
+    top: 18px;
 
-    right: 30px;
+    bottom: 18px;
 
-    bottom: 45px;
+    left: 38px;
 
-    height: 20px;
+    right: 38px;
 
     padding:
-        4px
-        7px;
+        13px
+        8px;
 
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: column;
 
     align-items: center;
 
-    border-radius: 3px;
+    color: #181711;
+
+    overflow: hidden;
 
     background:
         linear-gradient(
-            #292723,
-            #080908
+            95deg,
+            #c8bba4,
+            #e7dcc6 46%,
+            #cdc0a7
         );
 
     box-shadow:
-        inset 0 0 6px #000;
+        0 2px 4px rgba(0,0,0,0.55),
+        inset 0 0 10px rgba(75,52,30,0.16);
 }
 
 
 
-.case-lower-window span {
-    width: 8px;
+.cassette-dark .vertical-label {
+    color: #ded7c8;
 
-    height: 8px;
-
-    border-radius: 50%;
-
-    border:
-        2px
-        solid
-        #706c61;
-
-    background: #111;
+    background:
+        linear-gradient(
+            95deg,
+            #242420,
+            #171815 45%,
+            #292925
+        );
 }
 
 
 
-.case-bottom-text {
+.vertical-color {
     position: absolute;
 
-    left: 0;
+    top: 13px;
 
-    right: 0;
+    bottom: 13px;
 
-    bottom: 21px;
+    left: 8px;
 
-    color: #6b6961;
+    width: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent) 0%,
+            var(--accent) 45%,
+            transparent 45%,
+            transparent 62%,
+            var(--accent) 62%
+        );
+}
+
+
+
+.vertical-label strong {
+    position: relative;
+
+    z-index: 2;
+
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
+
+    margin-top: 16px;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.5px;
+}
+
+
+
+.vertical-label small {
+    position: absolute;
+
+    right: 8px;
+
+    top: 16px;
+
+    bottom: 16px;
+
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.36rem;
+    font-size: 0.38rem;
 
-    letter-spacing: 1px;
+    font-weight: bold;
 
-    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+
+
+.vertical-icon {
+    position: absolute;
+
+    bottom: 13px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    font-size: 1rem;
 }
 
 
 
 /* =========================================================
-   CASSETTE SELECTED
+   ACTIVE CASE
    ========================================================= */
 
 .cassette:hover,
 .cassette:focus-visible,
 .cassette.active {
-    transform:
-        translateY(-9px)
-        scale(1.012);
-
     outline: none;
+
+    transform:
+        translateY(-10px)
+        scale(1.012);
 
     filter:
         drop-shadow(
-            0 0 7px
+            0 0 8px
             color-mix(
                 in srgb,
-                var(--accent) 35%,
+                var(--accent) 45%,
                 transparent
             )
         );
@@ -1603,7 +1501,7 @@ nav a:first-child.active::after {
 
     right: 17px;
 
-    bottom: -16px;
+    bottom: -15px;
 
     height: 3px;
 
@@ -1624,175 +1522,177 @@ nav a:first-child.active::after {
 .headphones {
     position: relative;
 
-    width: 190px;
+    min-height: 295px;
 
-    min-height: 290px;
-
-    align-self: center;
+    align-self: end;
 }
 
 
 
-.headband {
+.headphones-band {
     position: absolute;
 
     left: 24px;
 
-    top: 27px;
+    top: 15px;
 
-    width: 142px;
+    width: 150px;
 
-    height: 150px;
+    height: 157px;
 
     border:
-        17px
+        18px
         solid
         #171717;
 
     border-bottom: none;
 
     border-radius:
-        90px
-        90px
+        95px
+        95px
         0
         0;
 
     box-shadow:
         inset 4px 2px 4px rgba(255,255,255,0.05),
-        5px 4px 8px rgba(0,0,0,0.55);
+        5px 5px 9px rgba(0,0,0,0.55);
 }
 
 
 
-.headband-inner {
+.headphones-band-inner {
     position: absolute;
 
-    left: 38px;
+    left: 40px;
 
-    top: 40px;
+    top: 29px;
 
-    width: 114px;
+    width: 118px;
 
-    height: 123px;
+    height: 130px;
 
     border:
         4px
         solid
-        #5b4d3b;
+        #5b4b39;
 
     border-bottom: none;
 
     border-radius:
-        80px
-        80px
+        82px
+        82px
         0
         0;
 
-    opacity: 0.65;
+    opacity: 0.7;
 }
 
 
 
-.headphone-arm {
+.headphones-arm {
     position: absolute;
 
-    top: 140px;
+    top: 136px;
 
-    width: 13px;
+    width: 14px;
 
-    height: 64px;
+    height: 70px;
 
     border-radius: 4px;
 
     background:
         linear-gradient(
             90deg,
-            #303030,
+            #373737,
             #111
         );
 }
 
 
 
-.arm-left {
-    left: 31px;
+.headphones-arm-left {
+    left: 30px;
 
-    transform: rotate(-6deg);
+    transform:
+        rotate(-7deg);
 }
 
 
 
-.arm-right {
-    right: 31px;
+.headphones-arm-right {
+    right: 30px;
 
-    transform: rotate(6deg);
+    transform:
+        rotate(7deg);
 }
 
 
 
-.earcup {
+.headphone-cup {
     position: absolute;
 
-    top: 183px;
+    top: 184px;
 
-    width: 63px;
+    width: 67px;
 
-    height: 83px;
+    height: 88px;
 
     border-radius:
         30px
         30px
-        35px
-        35px;
+        37px
+        37px;
 
     background:
         linear-gradient(
             145deg,
-            #373737,
-            #0d0d0d 70%
+            #3b3b3b,
+            #0c0c0c 72%
         );
 
     box-shadow:
         inset 3px 2px 4px rgba(255,255,255,0.05),
-        inset -5px -5px 8px rgba(0,0,0,0.7),
-        5px 8px 11px rgba(0,0,0,0.5);
+        inset -5px -6px 9px rgba(0,0,0,0.75),
+        5px 8px 12px rgba(0,0,0,0.55);
 }
 
 
 
-.earcup-left {
-    left: 6px;
+.headphone-cup-left {
+    left: 3px;
 
-    transform: rotate(-8deg);
+    transform:
+        rotate(-8deg);
 }
 
 
 
-.earcup-right {
-    right: 6px;
+.headphone-cup-right {
+    right: 3px;
 
-    transform: rotate(8deg);
+    transform:
+        rotate(8deg);
 }
 
 
 
-.earpad {
+.headphone-pad {
     position: absolute;
 
     inset: 9px;
 
-    border-radius: 25px;
+    border-radius: 28px;
 
     background:
         radial-gradient(
             ellipse,
-            #0a0a0a,
-            #181818 48%,
-            #050505
+            #090909,
+            #181818 50%,
+            #040404
         );
 
     box-shadow:
-        inset 0 0 7px #000;
+        inset 0 0 8px #000;
 }
 
 
@@ -1800,13 +1700,13 @@ nav a:first-child.active::after {
 .headphone-cable {
     position: absolute;
 
-    right: 17px;
+    right: 15px;
 
-    top: 255px;
+    top: 257px;
 
-    width: 50px;
+    width: 45px;
 
-    height: 90px;
+    height: 85px;
 
     border-right:
         3px
@@ -1821,16 +1721,14 @@ nav a:first-child.active::after {
     border-radius:
         0
         0
-        35px
+        30px
         0;
-
-    transform: rotate(8deg);
 }
 
 
 
 /* =========================================================
-   PROJECT PREVIEW
+   MINI VIEWER
    ========================================================= */
 
 .project-preview {
@@ -1842,21 +1740,21 @@ nav a:first-child.active::after {
     max-width: 1500px;
 
     margin:
-        24px
+        25px
         auto
         0;
 
     padding:
-        30px
+        29px
         36px;
 
     display: grid;
 
     grid-template-columns:
-        minmax(380px, 0.9fr)
-        minmax(440px, 1.1fr);
+        minmax(390px, 0.92fr)
+        minmax(440px, 1.08fr);
 
-    gap: 48px;
+    gap: 50px;
 
     align-items: center;
 
@@ -1865,8 +1763,8 @@ nav a:first-child.active::after {
     background:
         linear-gradient(
             145deg,
-            #1c1d19,
-            #090a08 20%,
+            #1d1e1a,
+            #090a08 19%,
             #11120f
         );
 
@@ -1879,7 +1777,7 @@ nav a:first-child.active::after {
 
 
 /* =========================================================
-   REALISTIC PREVIEW CASSETTE
+   PREVIEW CASSETTE
    ========================================================= */
 
 .preview-art {
@@ -1896,7 +1794,7 @@ nav a:first-child.active::after {
     width:
         min(
             100%,
-            560px
+            570px
         );
 
     aspect-ratio:
@@ -1906,21 +1804,21 @@ nav a:first-child.active::after {
 
     padding: 13px;
 
-    border-radius: 13px;
+    border-radius: 14px;
 
     background:
         linear-gradient(
             145deg,
-            #333431,
+            #353632,
             #111210 18%,
-            #20211e 70%,
-            #070807
+            #22231f 70%,
+            #060706
         );
 
     box-shadow:
-        inset 3px 3px 3px rgba(255,255,255,0.045),
-        inset -9px -10px 14px rgba(0,0,0,0.7),
-        12px 15px 20px rgba(0,0,0,0.5);
+        inset 3px 3px 4px rgba(255,255,255,0.045),
+        inset -10px -11px 15px rgba(0,0,0,0.72),
+        12px 16px 21px rgba(0,0,0,0.52);
 
     transition:
         opacity 0.15s ease,
@@ -1938,38 +1836,36 @@ nav a:first-child.active::after {
 
     overflow: hidden;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background:
         linear-gradient(
             120deg,
             rgba(255,255,255,0.07),
-            rgba(30,30,27,0.97) 16%,
-            #141512 80%,
+            #1c1d1a 16%,
+            #121310 78%,
             #050605
         );
 
     box-shadow:
-        inset 0 0 14px rgba(0,0,0,0.8);
+        inset 0 0 15px rgba(0,0,0,0.82);
 }
 
 
 
-.preview-shell::after {
+.preview-shell::before {
     content: "";
 
     position: absolute;
 
-    inset: 5px;
-
-    pointer-events: none;
-
-    border-radius: 6px;
+    inset: 6px;
 
     border:
         1px
         solid
-        rgba(255,255,255,0.05);
+        rgba(255,255,255,0.055);
+
+    border-radius: 7px;
 }
 
 
@@ -1981,7 +1877,7 @@ nav a:first-child.active::after {
 .preview-screw {
     position: absolute;
 
-    z-index: 6;
+    z-index: 8;
 
     width: 9px;
 
@@ -1992,9 +1888,9 @@ nav a:first-child.active::after {
     background:
         radial-gradient(
             circle,
-            #9a9a93,
-            #393a37 35%,
-            #090a08 72%
+            #999990,
+            #393a36 37%,
+            #080908 74%
         );
 
     box-shadow:
@@ -2003,63 +1899,63 @@ nav a:first-child.active::after {
 
 
 
-.preview-screw-1 {
-    left: 16px;
+.screw-a {
     top: 14px;
-}
-
-
-
-.preview-screw-2 {
-    right: 16px;
-    top: 14px;
-}
-
-
-
-.preview-screw-3 {
     left: 16px;
-    bottom: 14px;
 }
 
 
 
-.preview-screw-4 {
+.screw-b {
+    top: 14px;
     right: 16px;
+}
+
+
+
+.screw-c {
     bottom: 14px;
+    left: 16px;
+}
+
+
+
+.screw-d {
+    bottom: 14px;
+    right: 16px;
 }
 
 
 
 /* =========================================================
-   PREVIEW PAPER LABEL
+   PREVIEW LABEL
    ========================================================= */
 
 .preview-label {
     position: absolute;
 
-    top: 21px;
+    top: 22px;
 
     left: 25px;
 
     right: 25px;
 
-    height: 145px;
+    height: 137px;
 
     padding:
-        18px
-        24px;
-
-    color: #171610;
+        17px
+        23px;
 
     overflow: hidden;
+
+    color: #171610;
 
     background:
         linear-gradient(
             97deg,
             #c8bba1,
-            #eee2ca 47%,
-            #cfc2a7
+            #eee2ca 48%,
+            #cfc1a6
         );
 
     box-shadow:
@@ -2069,35 +1965,10 @@ nav a:first-child.active::after {
 
 
 
-.preview-stripes {
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 22px;
-
-    height: 35px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            var(--accent) 0%,
-            var(--accent) 35%,
-            #ddd1bb 35%,
-            #ddd1bb 64%,
-            var(--accent) 64%,
-            var(--accent) 100%
-        );
-}
-
-
-
 .preview-label-top {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
     display: flex;
 
@@ -2107,7 +1978,7 @@ nav a:first-child.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.59rem;
+    font-size: 0.58rem;
 
     font-weight: bold;
 }
@@ -2117,9 +1988,9 @@ nav a:first-child.active::after {
 .preview-label h2 {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    margin-top: 9px;
+    margin-top: 8px;
 
     font-size:
         clamp(
@@ -2136,15 +2007,15 @@ nav a:first-child.active::after {
 .preview-label > p {
     position: relative;
 
-    z-index: 3;
+    z-index: 4;
 
-    margin-top: 5px;
+    margin-top: 4px;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.62rem;
+    font-size: 0.61rem;
 
     font-weight: bold;
 
@@ -2153,57 +2024,82 @@ nav a:first-child.active::after {
 
 
 
-/* =========================================================
-   CASSETTE REEL WINDOW
-   ========================================================= */
-
-.cassette-window {
+.preview-stripes {
     position: absolute;
 
-    left: 84px;
+    left: 0;
 
-    right: 84px;
+    right: 0;
 
-    top: 142px;
+    bottom: 17px;
 
-    height: 104px;
+    height: 31px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--accent) 0%,
+            var(--accent) 35%,
+            #ddd1bb 35%,
+            #ddd1bb 64%,
+            var(--accent) 64%,
+            var(--accent) 100%
+        );
+}
+
+
+
+/* =========================================================
+   REEL WINDOW
+   ========================================================= */
+
+.reel-window {
+    position: absolute;
+
+    left: 82px;
+
+    right: 82px;
+
+    top: 137px;
+
+    height: 106px;
 
     padding:
-        13px
-        17px;
+        14px
+        18px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 20px;
+    gap: 22px;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
     background:
         linear-gradient(
-            #26231e,
-            #090908
+            #292620,
+            #080908
         );
 
     box-shadow:
-        inset 0 0 15px #000,
+        inset 0 0 17px #000,
         0 2px 0 rgba(255,255,255,0.04);
 }
 
 
 
-.spool {
+.reel {
     position: relative;
 
-    width: 70px;
+    width: 72px;
 
-    height: 70px;
+    height: 72px;
 
     flex:
         0
         0
-        70px;
+        72px;
 
     display: grid;
 
@@ -2211,22 +2107,16 @@ nav a:first-child.active::after {
 
     border-radius: 50%;
 
-    background:
-        radial-gradient(
-            circle,
-            #151515 0%,
-            #101010 45%,
-            #070707 70%
-        );
+    background: #10110f;
 
     box-shadow:
-        0 0 0 5px #777267,
-        0 0 0 8px #0a0a09;
+        0 0 0 5px #777266,
+        0 0 0 8px #090a08;
 }
 
 
 
-.spool-teeth {
+.reel-teeth {
     position: absolute;
 
     inset: 7px;
@@ -2235,14 +2125,14 @@ nav a:first-child.active::after {
 
     background:
         repeating-conic-gradient(
-            #d9d0be 0deg 12deg,
-            #383836 12deg 24deg
+            #d8cfbd 0deg 12deg,
+            #383835 12deg 24deg
         );
 }
 
 
 
-.spool-inner {
+.reel-center {
     position: relative;
 
     z-index: 2;
@@ -2257,65 +2147,65 @@ nav a:first-child.active::after {
 
     box-shadow:
         inset 0 0 5px #000,
-        0 0 0 2px #706c62;
+        0 0 0 2px #716c62;
 }
 
 
 
-.tape-window-center {
+.visible-tape {
     position: relative;
 
     flex: 1;
 
-    height: 48px;
+    height: 52px;
 
     overflow: hidden;
 
     border-radius: 3px;
 
-    background: #12110f;
+    background: #11110f;
 
     box-shadow:
-        inset 0 0 7px #000;
+        inset 0 0 8px #000;
 }
 
 
 
-.tape-band {
+.tape-roll {
     position: absolute;
 
     left: 0;
 
     right: 0;
 
-    top: 14px;
+    top: 13px;
 
-    height: 18px;
+    height: 23px;
 
     background:
         linear-gradient(
-            #4d3b2b,
-            #2d2118
+            #493828,
+            #241a13
         );
 }
 
 
 
-.tape-visible {
+.tape-strip {
     position: absolute;
 
-    left: 12%;
+    left: 8%;
 
-    right: 12%;
+    right: 8%;
 
-    top: 19px;
+    top: 20px;
 
-    height: 7px;
+    height: 8px;
 
     background:
         linear-gradient(
-            #7b5a3b,
-            #3d2b1d
+            #806040,
+            #3a291c
         );
 
     box-shadow:
@@ -2325,19 +2215,19 @@ nav a:first-child.active::after {
 
 
 /* =========================================================
-   LOWER CASSETTE PANEL
+   LOWER CASSETTE
    ========================================================= */
 
-.cassette-lower-panel {
+.lower-tape-panel {
     position: absolute;
 
-    left: 130px;
+    left: 128px;
 
-    right: 130px;
+    right: 128px;
 
-    bottom: 39px;
+    bottom: 38px;
 
-    height: 48px;
+    height: 50px;
 
     display: flex;
 
@@ -2355,8 +2245,8 @@ nav a:first-child.active::after {
 
     background:
         linear-gradient(
-            #23231f,
-            #0b0c0a
+            #24241f,
+            #090a08
         );
 
     box-shadow:
@@ -2365,7 +2255,7 @@ nav a:first-child.active::after {
 
 
 
-.lower-hole {
+.lower-tape-hole {
     width: 14px;
 
     height: 14px;
@@ -2375,45 +2265,44 @@ nav a:first-child.active::after {
     background: #050605;
 
     box-shadow:
-        inset 0 0 3px #000,
-        0 0 0 2px #55534b;
+        0 0 0 2px #57554d;
 }
 
 
 
-.pressure-pad {
-    width: 55px;
+.pressure-window {
+    width: 58px;
 
-    height: 20px;
+    height: 21px;
 
     display: grid;
 
     place-items: center;
 
-    background: #171714;
+    background: #161713;
 
     box-shadow:
-        inset 0 0 4px #000;
+        inset 0 0 5px #000;
 }
 
 
 
-.pressure-pad span {
-    width: 35px;
+.pressure-window span {
+    width: 37px;
 
     height: 5px;
 
-    background: #827869;
+    background: #857969;
 }
 
 
 
-.cassette-bottom-slots {
+.bottom-openings {
     position: absolute;
 
-    left: 30%;
+    left: 31%;
 
-    right: 30%;
+    right: 31%;
 
     bottom: 15px;
 
@@ -2424,7 +2313,7 @@ nav a:first-child.active::after {
 
 
 
-.cassette-bottom-slots span {
+.bottom-openings span {
     width: 8px;
 
     height: 13px;
@@ -2584,7 +2473,7 @@ nav a:first-child.active::after {
 
 
 /* =========================================================
-   BUTTON
+   PROJECT BUTTON
    ========================================================= */
 
 .view-project-button {
@@ -2602,8 +2491,6 @@ nav a:first-child.active::after {
 
     gap: 20px;
 
-    border-radius: 4px;
-
     color: #e5ddcd;
 
     text-decoration: none;
@@ -2617,6 +2504,8 @@ nav a:first-child.active::after {
     font-weight: bold;
 
     letter-spacing: 2px;
+
+    border-radius: 4px;
 
     background:
         linear-gradient(
@@ -2643,15 +2532,367 @@ nav a:first-child.active::after {
 
 
 
-/* =========================================================
-   PREVIEW TRANSITION
-   ========================================================= */
-
 .preview-cassette.changing,
 .preview-info.changing {
     opacity: 0;
 
-    transform: translateY(5px);
+    transform:
+        translateY(5px);
+}
+
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-section {
+    margin-top: 48px;
+
+    padding:
+        15px
+        var(--page-padding)
+        30px;
+
+    background:
+        linear-gradient(
+            #11120e,
+            #080907
+        );
+}
+
+
+
+.contact-console {
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    padding: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    gap: 25px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #2b2c27,
+            #0c0d0a 18%,
+            #171814 77%,
+            #050605
+        );
+
+    box-shadow:
+        inset 1px 1px 1px rgba(255,255,255,0.06),
+        inset -4px -5px 11px rgba(0,0,0,0.72),
+        0 10px 18px rgba(0,0,0,0.5);
+}
+
+
+
+.contact-information {
+    padding:
+        24px
+        22px;
+}
+
+
+
+.contact-information h2 {
+    margin-top: 12px;
+
+    font-size:
+        clamp(
+            2.3rem,
+            4vw,
+            4.2rem
+        );
+
+    line-height: 0.94;
+}
+
+
+
+.contact-intro {
+    max-width: 600px;
+
+    margin-top: 16px;
+
+    color: #aaa497;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.75rem;
+
+    line-height: 1.65;
+}
+
+
+
+.contact-readout {
+    margin-top: 22px;
+
+    display: grid;
+
+    gap: 9px;
+}
+
+
+
+.contact-readout a {
+    padding:
+        11px
+        14px;
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1fr;
+
+    align-items: center;
+
+    color: #bdb7ab;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            #171814,
+            #0c0d0a
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.04),
+        inset 0 -2px 3px rgba(0,0,0,0.55);
+}
+
+
+
+.contact-readout a:hover {
+    color: var(--cream);
+}
+
+
+
+.contact-type {
+    color: var(--red);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.57rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+.contact-value {
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.7rem;
+}
+
+
+
+/* =========================================================
+   MESSAGE PANEL
+   ========================================================= */
+
+.message-panel {
+    padding: 10px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #41413c,
+            #10110e 15%,
+            #050605
+        );
+
+    box-shadow:
+        inset 0 0 5px #000;
+}
+
+
+
+.message-display-header {
+    padding:
+        11px
+        14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: var(--display-blue);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 2px;
+
+    background:
+        #050605;
+
+    box-shadow:
+        inset 0 0 14px #000;
+}
+
+
+
+.status-light {
+    color: #a9b880;
+}
+
+
+
+.contact-form {
+    padding:
+        15px
+        14px;
+
+    display: grid;
+
+    gap: 12px;
+
+    background:
+        #0b0c09;
+}
+
+
+
+.contact-form label {
+    display: grid;
+
+    gap: 6px;
+
+    color: #807c72;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding:
+        10px
+        11px;
+
+    border: none;
+
+    outline: none;
+
+    resize: vertical;
+
+    color: #ddd6c8;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.72rem;
+
+    background:
+        #070806;
+
+    box-shadow:
+        inset 0 0 8px #000,
+        0 1px 0 rgba(255,255,255,0.03);
+}
+
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow:
+        inset 0 0 8px #000,
+        0 0 0 1px #5d777a;
+}
+
+
+
+.contact-form button {
+    width: fit-content;
+
+    padding:
+        11px
+        16px;
+
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+
+    border: none;
+
+    border-radius: 3px;
+
+    color: #e8dfd0;
+
+    cursor: pointer;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.61rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            #292a25,
+            #11120f
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        inset 0 -2px 4px rgba(0,0,0,0.65),
+        0 4px 7px rgba(0,0,0,0.35);
+}
+
+
+
+.contact-form button:hover {
+    transform:
+        translateY(-1px);
 }
 
 
@@ -2661,55 +2902,28 @@ nav a:first-child.active::after {
    ========================================================= */
 
 .site-footer {
-    margin-top: 55px;
-
     padding:
-        32px
-        var(--page-padding);
+        19px
+        var(--page-padding)
+        22px;
 
     display: flex;
 
     justify-content: space-between;
 
-    align-items: flex-end;
+    gap: 25px;
 
-    gap: 30px;
-
-    background:
-        linear-gradient(
-            #10110e,
-            #060706
-        );
-
-    box-shadow:
-        inset 0 9px 20px rgba(0,0,0,0.4);
-}
-
-
-
-.site-footer h2 {
-    margin-top: 9px;
-
-    font-size:
-        clamp(
-            1.7rem,
-            3vw,
-            3rem
-        );
-}
-
-
-
-.footer-motto {
-    color: #77736a;
+    color: #706d64;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.58rem;
+    font-size: 0.53rem;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+
+    background: #060706;
 }
 
 
@@ -2735,7 +2949,7 @@ nav a:first-child.active::after {
     .about-inner {
         grid-template-columns: 1fr;
 
-        gap: 35px;
+        gap: 34px;
     }
 
 
@@ -2744,23 +2958,24 @@ nav a:first-child.active::after {
     }
 
 
-    .project-shelf {
-        grid-template-columns:
-            22px
-            minmax(620px, 1fr)
-            22px;
+    .cabinet-interior {
+        grid-template-columns: 1fr;
 
         overflow-x: auto;
     }
 
 
-    .headphones {
-        display: none;
+    .cassette-bank {
+        justify-content: flex-start;
+
+        transform: none;
+
+        min-width: 760px;
     }
 
 
-    .cassette-bank {
-        transform: none;
+    .headphones {
+        display: none;
     }
 
 
@@ -2772,11 +2987,16 @@ nav a:first-child.active::after {
 
 
     .preview-art {
-        max-width: 620px;
-
         width: 100%;
 
+        max-width: 620px;
+
         margin: 0 auto;
+    }
+
+
+    .contact-console {
+        grid-template-columns: 1fr;
     }
 
 }
@@ -2803,7 +3023,7 @@ nav a:first-child.active::after {
     .name-section p {
         white-space: normal;
 
-        font-size: 0.56rem;
+        font-size: 0.55rem;
 
         letter-spacing: 3px;
     }
@@ -2814,7 +3034,7 @@ nav a:first-child.active::after {
             0
             14px;
 
-        font-size: 0.58rem;
+        font-size: 0.57rem;
 
         letter-spacing: 2px;
     }
@@ -2836,14 +3056,14 @@ nav a:first-child.active::after {
 
 
     .about-section {
-        padding-top: 42px;
+        padding-top: 40px;
 
-        padding-bottom: 45px;
+        padding-bottom: 42px;
     }
 
 
     .about-copy h2 {
-        font-size: 2.5rem;
+        font-size: 2.45rem;
     }
 
 
@@ -2857,27 +3077,23 @@ nav a:first-child.active::after {
     }
 
 
-    .project-shelf {
-        min-height: 330px;
-
-        padding:
-            24px
-            18px
-            22px;
-
+    .project-cabinet {
         grid-template-columns:
             18px
-            max-content
+            1fr
             18px;
+    }
 
-        gap: 12px;
 
-        overflow-x: auto;
+    .cabinet-interior {
+        padding:
+            22px
+            18px;
     }
 
 
     .cassette-bank {
-        justify-content: flex-start;
+        min-width: 700px;
     }
 
 
@@ -2898,6 +3114,13 @@ nav a:first-child.active::after {
     }
 
 
+    .vertical-label {
+        left: 31px;
+
+        right: 31px;
+    }
+
+
     .project-preview {
         width:
             calc(
@@ -2905,7 +3128,7 @@ nav a:first-child.active::after {
             );
 
         padding:
-            22px
+            21px
             16px;
 
         gap: 28px;
@@ -2924,38 +3147,29 @@ nav a:first-child.active::after {
 
         right: 17px;
 
-        height: 120px;
-
-        padding:
-            15px
-            18px;
+        height: 116px;
     }
 
 
     .preview-label h2 {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
     }
 
 
-    .preview-stripes {
-        height: 28px;
+    .reel-window {
+        top: 112px;
 
-        bottom: 15px;
+        left: 51px;
+
+        right: 51px;
+
+        height: 79px;
+
+        gap: 13px;
     }
 
 
-    .cassette-window {
-        top: 117px;
-
-        left: 55px;
-
-        right: 55px;
-
-        height: 76px;
-    }
-
-
-    .spool {
+    .reel {
         width: 48px;
 
         height: 48px;
@@ -2964,26 +3178,38 @@ nav a:first-child.active::after {
     }
 
 
-    .cassette-lower-panel {
-        left: 90px;
+    .lower-tape-panel {
+        left: 88px;
 
-        right: 90px;
+        right: 88px;
 
         height: 37px;
 
-        bottom: 30px;
+        bottom: 29px;
     }
 
 
     .preview-info > h2 {
-        font-size: 2.5rem;
+        font-size: 2.45rem;
+    }
+
+
+    .contact-information {
+        padding:
+            18px
+            12px;
+    }
+
+
+    .contact-readout a {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
     }
 
 
     .site-footer {
         flex-direction: column;
-
-        align-items: flex-start;
     }
 
 }
