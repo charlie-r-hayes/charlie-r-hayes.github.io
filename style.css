@@ -71,7 +71,7 @@ a {
 
 
 
-/* subtle old-print texture */
+/* subtle scanline texture */
 
 body::before {
     content: "";
@@ -110,7 +110,7 @@ body::before {
     padding:
         24px
         clamp(25px, 5vw, 90px)
-        22px;
+        20px;
 }
 
 
@@ -122,6 +122,28 @@ body::before {
 }
 
 
+
+/* =========================================================
+   HEADER TOP
+   ========================================================= */
+
+.header-top {
+    display: grid;
+
+    grid-template-columns:
+        minmax(440px, 0.9fr)
+        minmax(500px, 1.1fr);
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+
+/* =========================================================
+   NAME
+   ========================================================= */
 
 .name-section h1 {
     color: var(--cream);
@@ -227,31 +249,19 @@ nav a.active::after {
 
 
 /* =========================================================
-   HERO DISPLAY
+   HEADER RETRO DISPLAY
    ========================================================= */
-
-.hero {
-    padding:
-        24px
-        clamp(25px, 5vw, 90px);
-
-    background: var(--background);
-}
-
-
 
 .display-panel {
     position: relative;
 
-    max-width: 1600px;
+    width: 100%;
 
-    min-height: 90px;
-
-    margin: 0 auto;
+    min-height: 105px;
 
     padding:
         18px
-        26px;
+        24px;
 
     display: flex;
 
@@ -398,7 +408,7 @@ nav a.active::after {
    ========================================================= */
 
 .display-text {
-    margin-left: 42px;
+    margin-left: 38px;
 
     color: var(--display-blue);
 
@@ -410,7 +420,7 @@ nav a.active::after {
 
     letter-spacing: 3px;
 
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 
@@ -633,8 +643,6 @@ nav a.active::after {
 }
 
 
-
-/* slightly different heights */
 
 .cassette:nth-child(2) {
     height: 304px;
@@ -1344,6 +1352,10 @@ nav a.active::after {
 
 .preview-info {
     min-width: 0;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
 }
 
 
@@ -1550,14 +1562,6 @@ nav a.active::after {
 
 
 
-.preview-info {
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease;
-}
-
-
-
 /* =========================================================
    ABOUT
    ========================================================= */
@@ -1664,6 +1668,27 @@ nav a.active::after {
 
 
 /* =========================================================
+   HEADER RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1150px) {
+
+    .header-top {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .display-panel {
+        max-width: none;
+    }
+
+}
+
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
@@ -1737,13 +1762,6 @@ nav a.active::after {
         font-size: 0.62rem;
 
         letter-spacing: 2px;
-    }
-
-
-    .hero {
-        padding:
-            18px
-            20px;
     }
 
 
