@@ -1,15 +1,13 @@
-/* =========================================================
-   PROJECT INFORMATION
-   ========================================================= */
-
 const projects = {
 
 
     homelab: {
 
-        number: "01 / 05",
+        number:
+            "01 / 05",
 
-        title: "CUSTOM HOMELAB",
+        title:
+            "CUSTOM HOMELAB",
 
         category:
             "PROXMOX • LINUX • NETWORKING",
@@ -29,7 +27,7 @@ const projects = {
             "projects/homelab.html",
 
         image:
-            "images/homelab-front.png",
+            "images/cassettes/homelab/homelab-front.png",
 
         hasImage:
             true,
@@ -48,7 +46,8 @@ const projects = {
 
     embedded: {
 
-        number: "02 / 05",
+        number:
+            "02 / 05",
 
         title:
             "EMBEDDED SYSTEMS",
@@ -90,7 +89,8 @@ const projects = {
 
     controls: {
 
-        number: "03 / 05",
+        number:
+            "03 / 05",
 
         title:
             "CONTROL SYSTEMS",
@@ -218,10 +218,6 @@ const projects = {
 
 
 
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
-
 const projectButtons =
     document.querySelectorAll(
         ".project-spine"
@@ -295,18 +291,10 @@ const projectLink =
 
 
 
-/* =========================================================
-   CURRENT PROJECT
-   ========================================================= */
-
 let currentProject =
     "homelab";
 
 
-
-/* =========================================================
-   CHANGE PROJECT
-   ========================================================= */
 
 function showProject(projectName) {
 
@@ -320,21 +308,6 @@ function showProject(projectName) {
     }
 
 
-
-    if (
-        projectName === currentProject
-    ) {
-        return;
-    }
-
-
-
-    currentProject =
-        projectName;
-
-
-
-    /* ACTIVE CASSETTE */
 
     projectButtons.forEach(
         button => {
@@ -363,7 +336,10 @@ function showProject(projectName) {
 
 
 
-    /* PROJECT TEXT */
+    currentProject =
+        projectName;
+
+
 
     projectNumber.textContent =
         project.number;
@@ -385,8 +361,6 @@ function showProject(projectName) {
         project.link;
 
 
-
-    /* TAGS */
 
     projectTags.innerHTML =
         "";
@@ -413,8 +387,6 @@ function showProject(projectName) {
     );
 
 
-
-    /* FRONT IMAGE */
 
     if (project.hasImage) {
 
@@ -466,10 +438,6 @@ function showProject(projectName) {
 
 
 
-/* =========================================================
-   CASSETTE INTERACTIONS
-   ========================================================= */
-
 projectButtons.forEach(
     button => {
 
@@ -478,8 +446,6 @@ projectButtons.forEach(
             button.dataset.project;
 
 
-
-        /* DESKTOP HOVER */
 
         button.addEventListener(
             "mouseenter",
@@ -494,8 +460,6 @@ projectButtons.forEach(
 
 
 
-        /* KEYBOARD */
-
         button.addEventListener(
             "focus",
             () => {
@@ -508,8 +472,6 @@ projectButtons.forEach(
         );
 
 
-
-        /* MOBILE / CLICK */
 
         button.addEventListener(
             "click",
@@ -525,3 +487,7 @@ projectButtons.forEach(
 
     }
 );
+
+
+
+showProject("homelab");
