@@ -712,16 +712,15 @@ body::before {
 
 
 /* =========================================================
-   REAL SHELF BACKGROUND
+   FULL WIDTH SHELF BACKGROUND
    ========================================================= */
 
 .shelf-stage {
     position: relative;
 
-    width: 95%;
+    width: 100%;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0;
 
     aspect-ratio: 1916 / 508;
 
@@ -825,14 +824,11 @@ body::before {
    ========================================================= */
 
 .image-spine {
-    flex-basis:
-        clamp(
-            90px,
-            5vw,
-            115px
-        );
+    flex-basis: 125px;
 
-    height: 110%;
+    height: 125%;
+
+    overflow: visible;
 }
 
 
@@ -849,6 +845,13 @@ body::before {
     object-position:
         center
         bottom;
+
+    transform:
+        scale(1.18);
+
+    transform-origin:
+        bottom
+        center;
 }
 
 
@@ -1683,9 +1686,7 @@ footer {
 
         max-width: none;
 
-        margin-left: 0;
-
-        margin-right: 0;
+        margin: 0;
     }
 
 
@@ -1708,9 +1709,19 @@ footer {
 
 
     .image-spine {
-        flex-basis: 105px;
+        flex-basis: 115px;
 
-        height: 110%;
+        height: 125%;
+    }
+
+
+    .image-spine img {
+        transform:
+            scale(1.18);
+
+        transform-origin:
+            bottom
+            center;
     }
 
 
