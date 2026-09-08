@@ -247,7 +247,8 @@ nav a + a::before {
 
     height: 17px;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     background:
         linear-gradient(
@@ -304,7 +305,7 @@ nav a.active::after {
 
 
 /* =========================================================
-   HEADER RECEIVER
+   HEADER CONSOLE
    ========================================================= */
 
 .header-console {
@@ -315,7 +316,7 @@ nav a.active::after {
     display: grid;
 
     grid-template-columns:
-        1fr
+        minmax(0, 1fr)
         180px;
 
     gap: 10px;
@@ -339,7 +340,66 @@ nav a.active::after {
 
 
 
-.console-display,
+/* =========================================================
+   GENERATED WORKBENCH IMAGE
+   ========================================================= */
+
+.console-display-image {
+    min-width: 0;
+
+    padding: 5px;
+
+    display: flex;
+
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #41413c,
+            #0e0f0c 18%,
+            #040504
+        );
+
+    box-shadow:
+        inset 0 0 5px #000;
+}
+
+
+
+.workbench-display-image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 85px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 3px;
+
+    filter:
+        brightness(0.95)
+        contrast(1.03);
+
+    box-shadow:
+        0 0 18px rgba(0,0,0,0.55);
+}
+
+
+
+/* =========================================================
+   STAY CURIOUS PANEL
+   ========================================================= */
+
 .console-side {
     padding: 6px;
 
@@ -359,11 +419,20 @@ nav a.active::after {
 
 
 
-.display-inner,
 .side-message {
     height: 100%;
 
     min-height: 85px;
+
+    padding:
+        15px
+        14px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 
     border-radius: 3px;
 
@@ -376,149 +445,6 @@ nav a.active::after {
 
     box-shadow:
         inset 0 0 25px #000;
-}
-
-
-
-.display-inner {
-    padding:
-        14px
-        20px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 38px;
-}
-
-
-
-/* =========================================================
-   EQUALIZER
-   ========================================================= */
-
-.equalizer {
-    height: 42px;
-
-    display: flex;
-
-    align-items: flex-end;
-
-    gap: 4px;
-}
-
-
-
-.equalizer span {
-    display: block;
-
-    width: 9px;
-
-    background:
-        linear-gradient(
-            #ff6349,
-            #d73e2b
-        );
-
-    box-shadow:
-        0 0 7px rgba(229,84,59,0.34);
-
-    animation:
-        equalizerMove
-        1.5s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-
-.equalizer span:nth-child(1) {
-    height: 39px;
-}
-
-
-
-.equalizer span:nth-child(2) {
-    height: 33px;
-}
-
-
-
-.equalizer span:nth-child(3) {
-    height: 27px;
-}
-
-
-
-.equalizer span:nth-child(4) {
-    height: 22px;
-}
-
-
-
-.equalizer span:nth-child(5) {
-    height: 16px;
-}
-
-
-
-.equalizer span:nth-child(6) {
-    height: 10px;
-}
-
-
-
-.equalizer span:nth-child(7) {
-    height: 5px;
-}
-
-
-
-@keyframes equalizerMove {
-
-    from {
-        transform: scaleY(0.75);
-    }
-
-    to {
-        transform: scaleY(1);
-    }
-
-}
-
-
-
-.display-message {
-    padding-bottom: 8px;
-
-    color: var(--display-blue);
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.85rem;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-        0 0 7px rgba(117,147,153,0.3);
-}
-
-
-
-.side-message {
-    padding:
-        15px
-        14px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
 }
 
 
@@ -555,6 +481,19 @@ nav a.active::after {
     font-weight: bold;
 
     letter-spacing: 2px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+
+.linkedin-link:hover {
+    color: var(--cream);
+
+    transform:
+        translateX(3px);
 }
 
 
@@ -1322,7 +1261,7 @@ nav a.active::after {
 
 
 /* =========================================================
-   VERTICAL SPINE LABEL
+   VERTICAL LABEL
    ========================================================= */
 
 .vertical-label {
@@ -1403,8 +1342,6 @@ nav a.active::after {
 
 
 
-/* FLIPPED FROM THE PREVIOUS VERSION */
-
 .vertical-label strong {
     position: relative;
 
@@ -1413,8 +1350,7 @@ nav a.active::after {
     writing-mode:
         vertical-rl;
 
-    transform:
-        none;
+    transform: none;
 
     margin-top: 16px;
 
@@ -1437,8 +1373,7 @@ nav a.active::after {
     writing-mode:
         vertical-rl;
 
-    transform:
-        none;
+    transform: none;
 
     font-family:
         "Courier New",
@@ -3054,6 +2989,11 @@ nav a.active::after {
 
     .header-console {
         grid-template-columns: 1fr;
+    }
+
+
+    .workbench-display-image {
+        min-height: 80px;
     }
 
 
