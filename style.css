@@ -1403,6 +1403,8 @@ nav a.active::after {
 
 
 
+/* FLIPPED FROM THE PREVIOUS VERSION */
+
 .vertical-label strong {
     position: relative;
 
@@ -1412,7 +1414,7 @@ nav a.active::after {
         vertical-rl;
 
     transform:
-        rotate(180deg);
+        none;
 
     margin-top: 16px;
 
@@ -1436,7 +1438,7 @@ nav a.active::after {
         vertical-rl;
 
     transform:
-        rotate(180deg);
+        none;
 
     font-family:
         "Courier New",
