@@ -712,7 +712,8 @@ body::before {
 
 
 /* =========================================================
-   FULL WIDTH SHELF BACKGROUND
+   FULL WIDTH SHELF
+   SLIGHTLY SHORTER THAN BEFORE
    ========================================================= */
 
 .shelf-stage {
@@ -720,26 +721,37 @@ body::before {
 
     width: 100%;
 
-    margin: 0;
+    /*
+       The original image is 1916 x 508.
 
-    aspect-ratio: 1916 / 508;
+       This container is intentionally a little shorter.
+       The image itself is NOT stretched.
+    */
+
+    aspect-ratio: 1916 / 465;
 
     overflow: hidden;
 
     background-image:
         url("images/shelf/project-shelf-background.png");
 
-    background-size: 100% 100%;
+    background-size:
+        100%
+        auto;
 
-    background-position: center;
+    background-position:
+        center
+        center;
 
-    background-repeat: no-repeat;
+    background-repeat:
+        no-repeat;
 }
 
 
 
 /* =========================================================
    CASSETTE ROW
+   MOVED LOWER
    ========================================================= */
 
 .cassette-row {
@@ -749,9 +761,13 @@ body::before {
 
     right: 16%;
 
-    bottom: 23%;
+    /*
+       Lower number = farther down toward shelf.
+    */
 
-    height: 47%;
+    bottom: 15%;
+
+    height: 50%;
 
     display: flex;
 
@@ -1003,8 +1019,13 @@ body::before {
 
     max-width: 1500px;
 
+    /*
+       Slightly closer to the shelf so more of it
+       appears on screen at once.
+    */
+
     margin:
-        28px
+        20px
         auto
         0;
 
@@ -1687,6 +1708,11 @@ footer {
         max-width: none;
 
         margin: 0;
+
+        aspect-ratio:
+            1916
+            /
+            465;
     }
 
 
@@ -1697,7 +1723,7 @@ footer {
 
         width: 700px;
 
-        bottom: 23%;
+        bottom: 15%;
 
         gap: 8px;
     }
