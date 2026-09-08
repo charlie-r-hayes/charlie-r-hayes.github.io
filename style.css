@@ -17,6 +17,10 @@
 
 
 
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -133,6 +137,10 @@ body::before {
 
 
 
+/* =========================================================
+   NAME
+   ========================================================= */
+
 .name-area h1 {
     white-space: nowrap;
 
@@ -161,6 +169,10 @@ body::before {
 }
 
 
+
+/* =========================================================
+   HEADER DISPLAY
+   ========================================================= */
 
 .header-console {
     display: grid;
@@ -230,7 +242,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.72rem;
+    font-size: 0.75rem;
 
     letter-spacing: 2px;
 }
@@ -250,7 +262,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.72rem;
 
     font-weight: bold;
 
@@ -260,7 +272,7 @@ body::before {
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
    ========================================================= */
 
 .main-nav {
@@ -286,7 +298,7 @@ body::before {
 
     text-decoration: none;
 
-    font-size: 0.72rem;
+    font-size: 0.74rem;
 
     font-weight: bold;
 
@@ -335,7 +347,7 @@ body::before {
 
 
 /* =========================================================
-   GENERIC
+   GENERIC LABEL
    ========================================================= */
 
 .section-label {
@@ -345,7 +357,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.72rem;
 
     font-weight: bold;
 
@@ -441,7 +453,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.85rem;
+    font-size: 0.88rem;
 
     line-height: 1.7;
 }
@@ -473,7 +485,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.73rem;
 
     font-weight: bold;
 
@@ -545,7 +557,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.72rem;
 
     font-weight: bold;
 
@@ -613,13 +625,13 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.68rem;
+    font-size: 0.7rem;
 }
 
 
 
 .interests strong {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
 }
 
 
@@ -633,7 +645,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.66rem;
+    font-size: 0.69rem;
 }
 
 
@@ -647,7 +659,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.64rem;
+    font-size: 0.68rem;
 
     letter-spacing: 2px;
 }
@@ -692,7 +704,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.67rem;
+    font-size: 0.7rem;
 
     letter-spacing: 2px;
 }
@@ -700,13 +712,16 @@ body::before {
 
 
 /* =========================================================
-   REAL SHELF
+   REAL SHELF BACKGROUND
    ========================================================= */
 
 .shelf-stage {
     position: relative;
 
-    width: 100%;
+    width: 95%;
+
+    margin-left: auto;
+    margin-right: auto;
 
     aspect-ratio: 1916 / 508;
 
@@ -723,8 +738,9 @@ body::before {
 }
 
 
+
 /* =========================================================
-   CASSETTES ON SHELF
+   CASSETTE ROW
    ========================================================= */
 
 .cassette-row {
@@ -734,7 +750,7 @@ body::before {
 
     right: 16%;
 
-    bottom: 25.2%;
+    bottom: 23%;
 
     height: 47%;
 
@@ -751,6 +767,10 @@ body::before {
 }
 
 
+
+/* =========================================================
+   CASSETTES
+   ========================================================= */
 
 .project-spine {
     height: 100%;
@@ -801,8 +821,21 @@ body::before {
 
 
 /* =========================================================
-   HOMELAB IMAGE
+   REAL HOMELAB SPINE
    ========================================================= */
+
+.image-spine {
+    flex-basis:
+        clamp(
+            90px,
+            5vw,
+            115px
+        );
+
+    height: 110%;
+}
+
+
 
 .image-spine img {
     display: block;
@@ -821,7 +854,7 @@ body::before {
 
 
 /* =========================================================
-   PLACEHOLDERS
+   PLACEHOLDER SPINES
    ========================================================= */
 
 .placeholder-spine {
@@ -888,9 +921,9 @@ body::before {
 
     font-size:
         clamp(
-            0.8rem,
+            0.85rem,
             1vw,
-            1rem
+            1.05rem
         );
 }
 
@@ -912,9 +945,9 @@ body::before {
 
     font-size:
         clamp(
-            0.48rem,
-            0.55vw,
-            0.62rem
+            0.52rem,
+            0.58vw,
+            0.66rem
         );
 
     font-weight: bold;
@@ -955,7 +988,7 @@ body::before {
 
 
 /* =========================================================
-   PREVIEW
+   PROJECT PREVIEW
    ========================================================= */
 
 .project-preview {
@@ -1003,6 +1036,10 @@ body::before {
 
 
 
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
 .preview-image-area {
     position: relative;
 
@@ -1036,6 +1073,10 @@ body::before {
 }
 
 
+
+/* =========================================================
+   PREVIEW PLACEHOLDER
+   ========================================================= */
 
 .preview-placeholder {
     display: none;
@@ -1075,7 +1116,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.78rem;
+    font-size: 0.82rem;
 
     letter-spacing: 2px;
 }
@@ -1090,6 +1131,10 @@ body::before {
 
 
 
+/* =========================================================
+   PROJECT INFO
+   ========================================================= */
+
 .preview-topline {
     display: flex;
 
@@ -1101,7 +1146,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.73rem;
 
     letter-spacing: 3px;
 }
@@ -1138,7 +1183,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.78rem;
+    font-size: 0.82rem;
 
     letter-spacing: 2px;
 }
@@ -1156,7 +1201,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.86rem;
+    font-size: 0.88rem;
 
     line-height: 1.7;
 }
@@ -1188,7 +1233,9 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.68rem;
+    font-size: 0.72rem;
+
+    letter-spacing: 1px;
 
     background:
         linear-gradient(
@@ -1218,7 +1265,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.72rem;
+    font-size: 0.75rem;
 
     font-weight: bold;
 
@@ -1229,6 +1276,12 @@ body::before {
             #292a25,
             #10110e
         );
+
+    border-radius: 3px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 5px 8px rgba(0,0,0,0.4);
 }
 
 
@@ -1276,6 +1329,9 @@ body::before {
             #0b0c09 20%,
             #151612
         );
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.45);
 }
 
 
@@ -1312,7 +1368,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.84rem;
+    font-size: 0.87rem;
 
     line-height: 1.65;
 }
@@ -1345,6 +1401,9 @@ body::before {
     text-decoration: none;
 
     background: #0c0d0a;
+
+    box-shadow:
+        inset 0 0 8px #000;
 }
 
 
@@ -1356,7 +1415,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.68rem;
+    font-size: 0.72rem;
 
     letter-spacing: 2px;
 }
@@ -1368,17 +1427,24 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.76rem;
+    font-size: 0.8rem;
 
     font-weight: normal;
 }
 
 
 
+/* =========================================================
+   FORM
+   ========================================================= */
+
 .message-panel {
     padding: 10px;
 
     background: #080906;
+
+    box-shadow:
+        inset 0 0 10px #000;
 }
 
 
@@ -1398,7 +1464,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.73rem;
 
     letter-spacing: 2px;
 }
@@ -1432,7 +1498,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.68rem;
+    font-size: 0.72rem;
 
     letter-spacing: 2px;
 }
@@ -1452,6 +1518,9 @@ body::before {
     color: #ddd5c8;
 
     background: #060705;
+
+    box-shadow:
+        inset 0 0 7px #000;
 }
 
 
@@ -1473,7 +1542,7 @@ body::before {
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.73rem;
 
     font-weight: bold;
 
@@ -1507,7 +1576,7 @@ footer {
         "Courier New",
         monospace;
 
-    font-size: 0.65rem;
+    font-size: 0.7rem;
 
     letter-spacing: 2px;
 
@@ -1524,16 +1593,27 @@ footer {
 
     .header-top {
         grid-template-columns: 1fr;
+
+        gap: 25px;
     }
 
 
     .about-inner {
         grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .interest-card {
+        max-width: 650px;
     }
 
 
     .project-preview {
         grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
 
@@ -1552,8 +1632,39 @@ footer {
     }
 
 
+    .name-area h1 {
+        font-size:
+            clamp(
+                2.2rem,
+                10vw,
+                3rem
+            );
+    }
+
+
+    .name-area p {
+        white-space: normal;
+
+        letter-spacing: 4px;
+    }
+
+
     .header-console {
         grid-template-columns: 1fr;
+    }
+
+
+    .main-nav a {
+        padding:
+            0
+            13px;
+
+        font-size: 0.68rem;
+    }
+
+
+    .main-nav a:first-child {
+        padding-left: 0;
     }
 
 
@@ -1562,13 +1673,19 @@ footer {
     }
 
 
-    .shelf-stage {
-        width: 1050px;
+    .projects-section {
+        overflow-x: auto;
     }
 
 
-    .projects-section {
-        overflow-x: auto;
+    .shelf-stage {
+        width: 1050px;
+
+        max-width: none;
+
+        margin-left: 0;
+
+        margin-right: 0;
     }
 
 
@@ -1578,6 +1695,22 @@ footer {
         right: auto;
 
         width: 700px;
+
+        bottom: 23%;
+
+        gap: 8px;
+    }
+
+
+    .project-spine {
+        flex-basis: 95px;
+    }
+
+
+    .image-spine {
+        flex-basis: 105px;
+
+        height: 110%;
     }
 
 
@@ -1593,8 +1726,20 @@ footer {
     }
 
 
+    .preview-image-area {
+        min-height: 270px;
+    }
+
+
+    .preview-info h2 {
+        font-size: 2.6rem;
+    }
+
+
     footer {
         flex-direction: column;
+
+        gap: 8px;
     }
 
 }
