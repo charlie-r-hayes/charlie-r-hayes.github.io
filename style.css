@@ -708,23 +708,19 @@ body::before {
 
     width: 100%;
 
-    aspect-ratio:
-        1866
-        /
-        800;
+    aspect-ratio: 1916 / 508;
 
     overflow: hidden;
 
     background-image:
         url("images/shelf/project-shelf-background.png");
 
-    background-size: cover;
+    background-size: 100% 100%;
 
     background-position: center;
 
     background-repeat: no-repeat;
 }
-
 
 
 /* =========================================================
