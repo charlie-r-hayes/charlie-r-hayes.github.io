@@ -1,27 +1,18 @@
-
 /* =========================================================
-   PROJECT DATA
+   PROJECT INFORMATION
    ========================================================= */
 
 const projects = {
+
 
     homelab: {
 
         number: "01 / 05",
 
-        theme: "theme-blue",
-
-        tapeTitle: "HOMELAB",
-
-        tapeSubtitle: "PROXMOX / LINUX / NETWORKING",
-
-        side: "SIDE A",
-
-        tapeType: "C-90",
-
         title: "CUSTOM HOMELAB",
 
-        category: "PROXMOX • LINUX • NETWORKING",
+        category:
+            "PROXMOX • LINUX • NETWORKING",
 
         description:
             "A self-hosted homelab built for experimentation with virtualization, networking, Linux, game servers, and self-hosted services. The system gives me a practical environment for learning infrastructure, troubleshooting hardware, and deploying real services.",
@@ -34,63 +25,81 @@ const projects = {
             "PI-HOLE"
         ],
 
-        link: "projects/homelab.html"
+        link:
+            "projects/homelab.html",
+
+        image:
+            "images/homelab-front.png",
+
+        hasImage:
+            true,
+
+        placeholderTitle:
+            "HOMELAB",
+
+        placeholderSubtitle:
+            "PROXMOX / LINUX / NETWORKING",
+
+        side:
+            "SIDE A"
     },
+
 
 
     embedded: {
 
         number: "02 / 05",
 
-        theme: "theme-red",
+        title:
+            "EMBEDDED SYSTEMS",
 
-        tapeTitle: "EMBEDDED",
-
-        tapeSubtitle: "ESP32 / FIRMWARE / SENSORS",
-
-        side: "SIDE A",
-
-        tapeType: "C-60",
-
-        title: "EMBEDDED SYSTEMS",
-
-        category: "ESP32 • FIRMWARE • SENSORS",
+        category:
+            "FIRMWARE • SENSORS • MICROCONTROLLERS",
 
         description:
-            "Embedded projects focused on connecting hardware and software through microcontrollers, sensors, displays, communication interfaces, and custom firmware. These projects explore practical low-level electronics and real-world device behavior.",
+            "Embedded projects combining microcontrollers, firmware, sensors, communication interfaces, and electronics to create devices that interact with the physical world.",
 
         tags: [
             "ESP32",
             "C / C++",
-            "SENSORS",
             "FIRMWARE",
+            "SENSORS",
             "I2C / SPI"
         ],
 
-        link: "projects/embedded.html"
+        link:
+            "projects/embedded.html",
+
+        image:
+            "",
+
+        hasImage:
+            false,
+
+        placeholderTitle:
+            "EMBEDDED",
+
+        placeholderSubtitle:
+            "FRONT IMAGE COMING SOON",
+
+        side:
+            "SIDE A"
     },
+
 
 
     controls: {
 
         number: "03 / 05",
 
-        theme: "theme-yellow",
+        title:
+            "CONTROL SYSTEMS",
 
-        tapeTitle: "CONTROLS",
-
-        tapeSubtitle: "MODELING / SIMULATION",
-
-        side: "SIDE B",
-
-        tapeType: "C-90",
-
-        title: "CONTROL SYSTEMS",
-
-        category: "MODELING • SIMULATION • FEEDBACK",
+        category:
+            "MODELING • SIMULATION • FEEDBACK",
 
         description:
-            "Projects involving system modeling, simulation, feedback, and controller design. This section focuses on understanding system behavior and applying control theory to practical engineering problems.",
+            "Projects involving system modeling, simulation, feedback, and controller design with an emphasis on understanding real system behavior.",
 
         tags: [
             "MATLAB",
@@ -100,30 +109,40 @@ const projects = {
             "MODELING"
         ],
 
-        link: "projects/controls.html"
+        link:
+            "projects/controls.html",
+
+        image:
+            "",
+
+        hasImage:
+            false,
+
+        placeholderTitle:
+            "CONTROLS",
+
+        placeholderSubtitle:
+            "FRONT IMAGE COMING SOON",
+
+        side:
+            "SIDE B"
     },
+
 
 
     pcb: {
 
-        number: "04 / 05",
+        number:
+            "04 / 05",
 
-        theme: "theme-green",
+        title:
+            "PCB DESIGN",
 
-        tapeTitle: "PCB DESIGN",
-
-        tapeSubtitle: "HARDWARE / ELECTRONICS",
-
-        side: "SIDE A",
-
-        tapeType: "C-60",
-
-        title: "PCB DESIGN",
-
-        category: "HARDWARE • ELECTRONICS • PCB",
+        category:
+            "HARDWARE • ELECTRONICS • PCB",
 
         description:
-            "Custom electronics projects centered around schematic capture, component selection, PCB layout, prototyping, and testing. The goal is to move projects away from breadboards and toward complete purpose-built hardware.",
+            "Electronics projects involving schematic design, component selection, PCB layout, fabrication, assembly, and hardware testing.",
 
         tags: [
             "KICAD",
@@ -133,30 +152,40 @@ const projects = {
             "HARDWARE"
         ],
 
-        link: "projects/pcb.html"
+        link:
+            "projects/pcb.html",
+
+        image:
+            "",
+
+        hasImage:
+            false,
+
+        placeholderTitle:
+            "PCB DESIGN",
+
+        placeholderSubtitle:
+            "FRONT IMAGE COMING SOON",
+
+        side:
+            "SIDE A"
     },
+
 
 
     robotics: {
 
-        number: "05 / 05",
+        number:
+            "05 / 05",
 
-        theme: "theme-orange",
+        title:
+            "ROBOTICS",
 
-        tapeTitle: "ROBOTICS",
-
-        tapeSubtitle: "MECHANICAL / CONTROL",
-
-        side: "SIDE B",
-
-        tapeType: "C-90",
-
-        title: "ROBOTICS",
-
-        category: "MOTION • SENSORS • CONTROL",
+        category:
+            "MOTION • SENSORS • CONTROL",
 
         description:
-            "Robotics and mechatronics projects combining mechanical systems, electronics, sensing, motors, and control. These builds focus on creating physical systems that can interact with and respond to the real world.",
+            "Robotics and mechatronics projects combining mechanical systems, electronics, sensing, motors, embedded hardware, and control.",
 
         tags: [
             "MOTORS",
@@ -166,7 +195,23 @@ const projects = {
             "EMBEDDED"
         ],
 
-        link: "projects/robotics.html"
+        link:
+            "projects/robotics.html",
+
+        image:
+            "",
+
+        hasImage:
+            false,
+
+        placeholderTitle:
+            "ROBOTICS",
+
+        placeholderSubtitle:
+            "FRONT IMAGE COMING SOON",
+
+        side:
+            "SIDE B"
     }
 
 };
@@ -174,59 +219,79 @@ const projects = {
 
 
 /* =========================================================
-   PAGE ELEMENTS
+   ELEMENTS
    ========================================================= */
 
-const cassetteButtons =
-    document.querySelectorAll(".cassette");
+const projectButtons =
+    document.querySelectorAll(
+        ".project-spine"
+    );
 
 
-const previewCassette =
-    document.getElementById("previewCassette");
+const projectImage =
+    document.getElementById(
+        "projectImage"
+    );
 
 
-const previewInfo =
-    document.querySelector(".preview-info");
+const previewPlaceholder =
+    document.getElementById(
+        "previewPlaceholder"
+    );
 
 
-const previewTapeTitle =
-    document.getElementById("previewTapeTitle");
+const placeholderSide =
+    document.getElementById(
+        "placeholderSide"
+    );
 
 
-const previewTapeSubtitle =
-    document.getElementById("previewTapeSubtitle");
+const placeholderTitle =
+    document.getElementById(
+        "placeholderTitle"
+    );
 
 
-const previewSide =
-    document.getElementById("previewSide");
+const placeholderSubtitle =
+    document.getElementById(
+        "placeholderSubtitle"
+    );
 
 
-const previewTapeType =
-    document.getElementById("previewTapeType");
+const projectNumber =
+    document.getElementById(
+        "projectNumber"
+    );
 
 
-const previewNumber =
-    document.getElementById("previewNumber");
+const projectTitle =
+    document.getElementById(
+        "projectTitle"
+    );
 
 
-const previewTitle =
-    document.getElementById("previewTitle");
+const projectCategory =
+    document.getElementById(
+        "projectCategory"
+    );
 
 
-const previewCategory =
-    document.getElementById("previewCategory");
+const projectDescription =
+    document.getElementById(
+        "projectDescription"
+    );
 
 
-const previewDescription =
-    document.getElementById("previewDescription");
+const projectTags =
+    document.getElementById(
+        "projectTags"
+    );
 
 
-const previewTags =
-    document.getElementById("previewTags");
-
-
-const previewLink =
-    document.getElementById("previewLink");
+const projectLink =
+    document.getElementById(
+        "projectLink"
+    );
 
 
 
@@ -234,28 +299,34 @@ const previewLink =
    CURRENT PROJECT
    ========================================================= */
 
-let currentProject = "homelab";
+let currentProject =
+    "homelab";
 
 
 
 /* =========================================================
-   CHANGE PROJECT PREVIEW
+   CHANGE PROJECT
    ========================================================= */
 
 function showProject(projectName) {
 
-    if (!projects[projectName]) {
-        return;
-    }
-
-
-    if (projectName === currentProject) {
-        return;
-    }
-
 
     const project =
         projects[projectName];
+
+
+    if (!project) {
+        return;
+    }
+
+
+
+    if (
+        projectName === currentProject
+    ) {
+        return;
+    }
+
 
 
     currentProject =
@@ -263,133 +334,133 @@ function showProject(projectName) {
 
 
 
-    /* -----------------------------------------
-       ACTIVE CASSETTE
-       ----------------------------------------- */
+    /* ACTIVE CASSETTE */
 
-    cassetteButtons.forEach((cassette) => {
+    projectButtons.forEach(
+        button => {
 
-        cassette.classList.remove("active");
+            button.classList.remove(
+                "active"
+            );
 
-    });
+        }
+    );
 
 
-    const selectedCassette =
+    const selectedButton =
         document.querySelector(
             `[data-project="${projectName}"]`
         );
 
 
-    if (selectedCassette) {
+    if (selectedButton) {
 
-        selectedCassette.classList.add("active");
+        selectedButton.classList.add(
+            "active"
+        );
 
     }
 
 
 
-    /* -----------------------------------------
-       FADE OUT
-       ----------------------------------------- */
+    /* PROJECT TEXT */
 
-    previewCassette.classList.add("changing");
-
-    previewInfo.classList.add("changing");
+    projectNumber.textContent =
+        project.number;
 
 
-
-    /* -----------------------------------------
-       CHANGE CONTENT
-       ----------------------------------------- */
-
-    setTimeout(() => {
+    projectTitle.textContent =
+        project.title;
 
 
-        previewCassette.className =
-            `preview-cassette ${project.theme} changing`;
+    projectCategory.textContent =
+        project.category;
 
 
-        previewTapeTitle.textContent =
-            project.tapeTitle;
+    projectDescription.textContent =
+        project.description;
 
 
-        previewTapeSubtitle.textContent =
-            project.tapeSubtitle;
-
-
-        previewSide.textContent =
-            project.side;
-
-
-        previewTapeType.textContent =
-            project.tapeType;
-
-
-        previewNumber.textContent =
-            project.number;
-
-
-        previewTitle.textContent =
-            project.title;
-
-
-        previewCategory.textContent =
-            project.category;
-
-
-        previewDescription.textContent =
-            project.description;
-
-
-        previewLink.href =
-            project.link;
+    projectLink.href =
+        project.link;
 
 
 
-        /* -------------------------------------
-           TAGS
-           ------------------------------------- */
+    /* TAGS */
 
-        previewTags.innerHTML = "";
-
-
-        project.tags.forEach((tag) => {
-
-            const tagElement =
-                document.createElement("span");
+    projectTags.innerHTML =
+        "";
 
 
-            tagElement.textContent =
+    project.tags.forEach(
+        tag => {
+
+            const element =
+                document.createElement(
+                    "span"
+                );
+
+
+            element.textContent =
                 tag;
 
 
-            previewTags.appendChild(
-                tagElement
+            projectTags.appendChild(
+                element
             );
 
-        });
+        }
+    );
 
 
 
-        /* -------------------------------------
-           FADE BACK IN
-           ------------------------------------- */
+    /* FRONT IMAGE */
 
-        requestAnimationFrame(() => {
-
-            previewCassette.classList.remove(
-                "changing"
-            );
+    if (project.hasImage) {
 
 
-            previewInfo.classList.remove(
-                "changing"
-            );
-
-        });
+        projectImage.src =
+            project.image;
 
 
-    }, 130);
+        projectImage.alt =
+            `${project.title} cassette`;
+
+
+        projectImage.style.display =
+            "block";
+
+
+        previewPlaceholder.style.display =
+            "none";
+
+
+    }
+
+    else {
+
+
+        projectImage.style.display =
+            "none";
+
+
+        previewPlaceholder.style.display =
+            "block";
+
+
+        placeholderSide.textContent =
+            project.side;
+
+
+        placeholderTitle.textContent =
+            project.placeholderTitle;
+
+
+        placeholderSubtitle.textContent =
+            project.placeholderSubtitle;
+
+
+    }
 
 }
 
@@ -399,49 +470,58 @@ function showProject(projectName) {
    CASSETTE INTERACTIONS
    ========================================================= */
 
-cassetteButtons.forEach((cassette) => {
+projectButtons.forEach(
+    button => {
 
 
-    const projectName =
-        cassette.dataset.project;
-
-
-
-    /* desktop hover */
-
-    cassette.addEventListener(
-        "mouseenter",
-        () => {
-
-            showProject(projectName);
-
-        }
-    );
+        const projectName =
+            button.dataset.project;
 
 
 
-    /* keyboard navigation */
+        /* DESKTOP HOVER */
 
-    cassette.addEventListener(
-        "focus",
-        () => {
+        button.addEventListener(
+            "mouseenter",
+            () => {
 
-            showProject(projectName);
+                showProject(
+                    projectName
+                );
 
-        }
-    );
+            }
+        );
 
 
 
-    /* mobile / click */
+        /* KEYBOARD */
 
-    cassette.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+            "focus",
+            () => {
 
-            showProject(projectName);
+                showProject(
+                    projectName
+                );
 
-        }
-    );
+            }
+        );
 
-});
+
+
+        /* MOBILE / CLICK */
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                showProject(
+                    projectName
+                );
+
+            }
+        );
+
+
+    }
+);
