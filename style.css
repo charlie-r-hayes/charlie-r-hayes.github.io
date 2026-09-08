@@ -1,24 +1,27 @@
 /* =========================================================
-   ROOT
+   VARIABLES
    ========================================================= */
 
 :root {
+
     --background: #0b0c09;
-    --background-soft: #11120e;
 
     --cream: #eee4d2;
-    --cream-dark: #d0c6b3;
 
-    --red: #e5543b;
-    --display-blue: #759399;
+    --muted: #aba497;
 
-    --wood-dark: #24150c;
-    --wood-mid: #51301b;
-    --wood-light: #75492b;
+    --red: #e4553e;
 
-    --page-padding: clamp(18px, 2.4vw, 44px);
+    --blue: #66859a;
 
-    --content-width: 1720px;
+    --page-padding:
+        clamp(
+            20px,
+            4vw,
+            78px
+        );
+
+    --max-width: 1740px;
 }
 
 
@@ -29,7 +32,9 @@
 
 * {
     box-sizing: border-box;
+
     margin: 0;
+
     padding: 0;
 }
 
@@ -42,6 +47,7 @@ html {
 
 
 body {
+
     min-height: 100vh;
 
     overflow-x: hidden;
@@ -54,17 +60,11 @@ body {
         sans-serif;
 
     background:
-        radial-gradient(
-            circle at 50% -20%,
-            #202019,
-            #10110d 43%,
-            #070806 100%
-        );
+        #0b0c09;
 }
 
 
 
-a,
 button,
 input,
 textarea {
@@ -73,28 +73,35 @@ textarea {
 
 
 
+button {
+    color: inherit;
+}
+
+
+
 /* =========================================================
-   TEXTURE
+   PAGE TEXTURE
    ========================================================= */
 
 body::before {
+
     content: "";
 
     position: fixed;
 
     inset: 0;
 
+    z-index: 999;
+
     pointer-events: none;
 
-    z-index: 9999;
-
-    opacity: 0.025;
+    opacity: 0.022;
 
     background:
         repeating-linear-gradient(
             0deg,
-            rgba(255,255,255,0.13) 0,
-            rgba(255,255,255,0.13) 1px,
+            rgba(255,255,255,0.12) 0,
+            rgba(255,255,255,0.12) 1px,
             transparent 1px,
             transparent 4px
         );
@@ -107,42 +114,44 @@ body::before {
    ========================================================= */
 
 .site-header {
+
     padding:
         18px
         var(--page-padding)
-        14px;
+        13px;
 
     background:
         linear-gradient(
-            #151611,
-            #090a08
+            #13140f,
+            #070806
         );
 
     box-shadow:
-        inset 0 -9px 18px rgba(0,0,0,0.35),
-        0 6px 14px rgba(0,0,0,0.27);
+        inset 0 -10px 18px rgba(0,0,0,0.4);
 }
 
 
 
-.header-main {
+.header-inner {
+
     width: 100%;
 
-    max-width: var(--content-width);
+    max-width: var(--max-width);
 
-    margin: 0 auto;
+    margin: auto;
 }
 
 
 
 .header-top {
+
     display: grid;
 
     grid-template-columns:
-        minmax(600px, 0.9fr)
-        minmax(700px, 1.1fr);
+        minmax(520px, 0.9fr)
+        minmax(650px, 1.1fr);
 
-    gap: 34px;
+    gap: 50px;
 
     align-items: center;
 }
@@ -153,88 +162,192 @@ body::before {
    NAME
    ========================================================= */
 
-.name-section h1 {
-    white-space: nowrap;
+.name-area h1 {
 
-    color: var(--cream);
+    white-space: nowrap;
 
     font-size:
         clamp(
-            3rem,
-            3.8vw,
-            4.6rem
+            3.2rem,
+            4.2vw,
+            5rem
         );
 
-    line-height: 0.88;
+    line-height: 0.9;
 
     letter-spacing: 2px;
-
-    text-shadow:
-        0 5px 13px rgba(0,0,0,0.42);
 }
 
 
 
-.name-section p {
-    margin-top: 12px;
+.name-area p {
 
-    white-space: nowrap;
+    margin-top: 13px;
 
-    color: #e1d8c7;
+    font-size: 0.78rem;
 
-    font-size: 0.76rem;
+    font-weight: bold;
 
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 }
 
 
 
 /* =========================================================
-   NAVIGATION
+   HEADER DISPLAY
    ========================================================= */
 
-nav {
-    margin-top: 18px;
+.header-console {
 
-    display: flex;
+    display: grid;
 
-    align-items: center;
+    grid-template-columns:
+        minmax(0, 1fr)
+        180px;
 
-    flex-wrap: wrap;
+    gap: 8px;
+
+    align-items: stretch;
 }
 
 
 
-nav a {
+.display-image-wrapper {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+
+.display-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+.header-side-box {
+
+    min-height: 100%;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #090b08,
+            #010201 78%
+        );
+
+    box-shadow:
+        inset 0 0 22px #000,
+        0 5px 12px rgba(0,0,0,0.45);
+}
+
+
+
+.header-side-box p {
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+.header-side-box a {
+
+    width: fit-content;
+
+    margin-top: 15px;
+
+    color: var(--red);
+
+    text-decoration: none;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   NAV
+   ========================================================= */
+
+.main-nav {
+
+    margin-top: 17px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+
+
+.main-nav a {
+
     position: relative;
 
     padding:
         0
         22px;
 
-    color: #d8d1c3;
+    color: #ded6c7;
 
     text-decoration: none;
 
-    font-size: 0.68rem;
+    font-size: 0.72rem;
 
     font-weight: bold;
 
     letter-spacing: 3px;
-
-    transition:
-        color 0.2s ease;
 }
 
 
 
-nav a:first-child {
+.main-nav a:first-child {
     padding-left: 0;
 }
 
 
 
-nav a + a::before {
+.main-nav a + a::before {
+
     content: "";
 
     position: absolute;
@@ -253,263 +366,34 @@ nav a + a::before {
     background:
         linear-gradient(
             transparent,
-            #6d6c63,
+            #777268,
             transparent
         );
 }
 
 
 
-nav a:hover,
-nav a.active {
+.main-nav a:hover,
+.main-nav a.active {
+
     color: var(--red);
 }
 
 
 
-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 22px;
-
-    right: 100%;
-
-    bottom: -7px;
-
-    height: 2px;
-
-    background: var(--red);
-
-    box-shadow:
-        0 0 6px rgba(229,84,59,0.4);
-
-    transition:
-        right 0.2s ease;
-}
-
-
-
-nav a:first-child::after {
-    left: 0;
-}
-
-
-
-nav a:hover::after,
-nav a.active::after {
-    right: 22px;
-}
-
-
-
 /* =========================================================
-   HEADER CONSOLE
-   ========================================================= */
-
-.header-console {
-    min-height: 116px;
-
-    padding: 9px;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        180px;
-
-    gap: 10px;
-
-    border-radius: 8px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #2d2e29,
-            #0c0d0a 18%,
-            #161713 78%,
-            #050605
-        );
-
-    box-shadow:
-        inset 1px 1px 1px rgba(255,255,255,0.07),
-        inset -4px -5px 10px rgba(0,0,0,0.8),
-        0 7px 13px rgba(0,0,0,0.55);
-}
-
-
-
-/* =========================================================
-   GENERATED WORKBENCH IMAGE
-   ========================================================= */
-
-.console-display-image {
-    min-width: 0;
-
-    padding: 5px;
-
-    display: flex;
-
-    align-items: stretch;
-
-    overflow: hidden;
-
-    border-radius: 5px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #41413c,
-            #0e0f0c 18%,
-            #040504
-        );
-
-    box-shadow:
-        inset 0 0 5px #000;
-}
-
-
-
-.workbench-display-image {
-    display: block;
-
-    width: 100%;
-
-    height: 100%;
-
-    min-height: 85px;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    border-radius: 3px;
-
-    filter:
-        brightness(0.95)
-        contrast(1.03);
-
-    box-shadow:
-        0 0 18px rgba(0,0,0,0.55);
-}
-
-
-
-/* =========================================================
-   STAY CURIOUS PANEL
-   ========================================================= */
-
-.console-side {
-    padding: 6px;
-
-    border-radius: 5px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #41413c,
-            #0e0f0c 18%,
-            #040504
-        );
-
-    box-shadow:
-        inset 0 0 5px #000;
-}
-
-
-
-.side-message {
-    height: 100%;
-
-    min-height: 85px;
-
-    padding:
-        15px
-        14px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    border-radius: 3px;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            #0c100e,
-            #020302 75%
-        );
-
-    box-shadow:
-        inset 0 0 25px #000;
-}
-
-
-
-.stay-curious {
-    color: #bbb5aa;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.68rem;
-
-    letter-spacing: 2px;
-}
-
-
-
-.linkedin-link {
-    width: fit-content;
-
-    margin-top: 13px;
-
-    color: var(--red);
-
-    text-decoration: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.58rem;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-
-.linkedin-link:hover {
-    color: var(--cream);
-
-    transform:
-        translateX(3px);
-}
-
-
-
-/* =========================================================
-   GENERIC
+   SECTION LABEL
    ========================================================= */
 
 .section-label {
+
     color: var(--red);
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.64rem;
+    font-size: 0.7rem;
 
     font-weight: bold;
 
@@ -523,53 +407,34 @@ nav a.active::after {
    ========================================================= */
 
 .about-section {
-    position: relative;
 
     padding:
-        46px
+        47px
         var(--page-padding)
-        48px;
+        50px;
 
     background:
         radial-gradient(
-            circle at 20% 15%,
-            #1b1a14,
-            #10110d 64%
-        );
-}
-
-
-
-.about-section::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    right: 0;
-
-    height: 10px;
-
-    background:
-        linear-gradient(
-            #74492c,
-            #402514,
-            #20120b
+            circle at 20% 0%,
+            #1a1914,
+            #0e0f0c 63%
         );
 
-    box-shadow:
-        0 4px 7px rgba(0,0,0,0.45);
+    border-top:
+        8px
+        solid
+        #4f2f1b;
 }
 
 
 
 .about-inner {
+
+    width: 100%;
+
     max-width: 1500px;
 
-    margin: 0 auto;
+    margin: auto;
 
     display: grid;
 
@@ -577,7 +442,7 @@ nav a.active::after {
         1.15fr
         0.85fr;
 
-    gap: 62px;
+    gap: 70px;
 
     align-items: center;
 }
@@ -585,32 +450,32 @@ nav a.active::after {
 
 
 .about-copy h2 {
+
     max-width: 800px;
 
-    margin-top: 12px;
+    margin-top: 14px;
 
     font-size:
         clamp(
-            2.5rem,
+            2.6rem,
             4vw,
             4.7rem
         );
 
     line-height: 0.94;
-
-    letter-spacing: -2px;
 }
 
 
 
 .about-lead {
-    max-width: 710px;
 
-    margin-top: 19px;
+    max-width: 720px;
 
-    color: #d3c9b7;
+    margin-top: 20px;
 
-    font-size: 1rem;
+    color: #d6cebf;
+
+    font-size: 1.03rem;
 
     line-height: 1.55;
 }
@@ -618,49 +483,44 @@ nav a.active::after {
 
 
 .about-body {
-    max-width: 720px;
 
-    margin-top: 12px;
+    max-width: 730px;
 
-    color: #aaa497;
+    margin-top: 15px;
+
+    color: var(--muted);
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.78rem;
+    font-size: 0.85rem;
 
     line-height: 1.7;
 }
 
 
 
-.about-actions {
-    margin-top: 19px;
+.about-buttons {
+
+    margin-top: 22px;
 
     display: flex;
 
-    flex-wrap: wrap;
+    gap: 10px;
 
-    gap: 9px;
+    flex-wrap: wrap;
 }
 
 
 
-.equipment-button {
+.retro-button {
+
     padding:
-        10px
-        14px;
+        11px
+        15px;
 
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 17px;
-
-    border-radius: 3px;
-
-    color: var(--cream);
+    color: #ddd5c7;
 
     text-decoration: none;
 
@@ -668,11 +528,13 @@ nav a.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.61rem;
+    font-size: 0.7rem;
 
     font-weight: bold;
 
     letter-spacing: 2px;
+
+    border-radius: 3px;
 
     background:
         linear-gradient(
@@ -682,68 +544,57 @@ nav a.active::after {
 
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.07),
-        inset 0 -2px 4px rgba(0,0,0,0.7),
-        0 4px 7px rgba(0,0,0,0.35);
-}
-
-
-
-.equipment-button-secondary {
-    color: #aaa498;
+        0 4px 8px rgba(0,0,0,0.4);
 }
 
 
 
 /* =========================================================
-   ABOUT PAPER
+   INTEREST CARD
    ========================================================= */
 
-.about-card {
+.interest-card {
+
     padding: 13px;
 
-    border-radius: 8px;
-
     transform:
-        rotate(0.35deg);
+        rotate(0.3deg);
+
+    border-radius: 7px;
 
     background:
         linear-gradient(
-            145deg,
-            #30312c,
-            #0b0c09 25%,
-            #151612
+            #282923,
+            #0d0e0b
         );
 
     box-shadow:
-        10px 13px 20px rgba(0,0,0,0.42),
-        inset 1px 1px 1px rgba(255,255,255,0.05);
+        10px 14px 22px rgba(0,0,0,0.4);
 }
 
 
 
-.about-paper {
-    padding:
-        21px
-        24px
-        18px;
+.interest-paper {
 
-    color: #181711;
+    padding:
+        23px
+        26px;
+
+    color: #191710;
 
     background:
         linear-gradient(
             100deg,
-            #c6baa2,
-            #e6dbc5 45%,
-            #cec1a8
+            #c6b99f,
+            #e9dec8 45%,
+            #cbbda2
         );
-
-    box-shadow:
-        inset 0 0 17px rgba(80,55,30,0.15);
 }
 
 
 
-.paper-heading {
+.interest-heading {
+
     display: flex;
 
     justify-content: space-between;
@@ -752,7 +603,7 @@ nav a.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.62rem;
+    font-size: 0.7rem;
 
     font-weight: bold;
 
@@ -761,20 +612,21 @@ nav a.active::after {
 
 
 
-.paper-rule {
+.interest-rule {
+
     height: 2px;
 
     margin:
-        11px
-        0
-        12px;
+        12px
+        0;
 
-    background: #24231d;
+    background: #222019;
 }
 
 
 
-.interest-grid {
+.interests {
+
     display: grid;
 
     grid-template-columns:
@@ -782,71 +634,85 @@ nav a.active::after {
         1fr;
 
     gap:
-        4px
+        5px
         25px;
 }
 
 
 
-.interest-row {
+.interests > div {
+
     padding:
-        9px
+        10px
         0;
 
-    display: flex;
+    display: grid;
 
-    gap: 11px;
+    grid-template-columns:
+        30px
+        1fr;
+
+    column-gap: 6px;
 
     border-bottom:
         1px
         dashed
-        rgba(40,38,30,0.27);
+        rgba(20,20,15,0.25);
 }
 
 
 
-.interest-number {
-    color: #806a4e;
+.interests span {
+
+    grid-row:
+        1
+        /
+        3;
+
+    color: #776851;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.56rem;
+    font-size: 0.68rem;
 }
 
 
 
-.interest-row strong {
-    font-size: 0.77rem;
+.interests strong {
+
+    font-size: 0.82rem;
 }
 
 
 
-.interest-row p {
-    margin-top: 3px;
+.interests p {
 
-    color: #61594d;
+    margin-top: 4px;
+
+    color: #62594d;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.55rem;
+    font-size: 0.66rem;
 }
 
 
 
-.paper-footer {
-    margin-top: 13px;
+.interest-footer {
 
-    color: #675c4c;
+    margin-top: 14px;
+
+    color: #685d4d;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.5rem;
+    font-size: 0.64rem;
 
     letter-spacing: 2px;
 }
@@ -854,32 +720,31 @@ nav a.active::after {
 
 
 /* =========================================================
-   PROJECTS
+   PROJECT SECTION
    ========================================================= */
 
 .projects-section {
-    padding-top: 16px;
+
+    padding-top: 20px;
 
     background:
-        linear-gradient(
-            #15140f,
-            #0d0e0b
-        );
+        #0b0c09;
 }
 
 
 
-.shelf-heading {
+.projects-heading {
+
     width: 100%;
 
     max-width: 1500px;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding:
         0
         var(--page-padding)
-        10px;
+        11px;
 
     display: flex;
 
@@ -888,14 +753,15 @@ nav a.active::after {
 
 
 
-.shelf-instruction {
-    color: #77736a;
+.project-instruction {
+
+    color: #8d877d;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.55rem;
+    font-size: 0.67rem;
 
     letter-spacing: 2px;
 }
@@ -903,187 +769,82 @@ nav a.active::after {
 
 
 /* =========================================================
-   CASSETTE CABINET
+   REAL SHELF BACKGROUND
    ========================================================= */
 
-.project-cabinet {
+.shelf-stage {
+
     position: relative;
 
-    min-height: 360px;
+    width: 100%;
 
-    display: grid;
-
-    grid-template-columns:
-        31px
-        1fr
-        31px;
-
-    grid-template-rows:
-        15px
-        1fr
-        17px;
-
-    background: #11110d;
-
-    box-shadow:
-        inset 0 22px 30px rgba(0,0,0,0.48),
-        inset 0 -18px 28px rgba(0,0,0,0.52);
-}
-
-
-
-.cabinet-top {
-    grid-column:
-        1
+    aspect-ratio:
+        1866
         /
-        4;
-
-    grid-row: 1;
-
-    background:
-        linear-gradient(
-            #784c2d,
-            #492916,
-            #21120a
-        );
-
-    box-shadow:
-        0 5px 9px rgba(0,0,0,0.5);
-}
-
-
-
-.cabinet-bottom {
-    grid-column:
-        1
-        /
-        4;
-
-    grid-row: 3;
-
-    background:
-        linear-gradient(
-            #28150c,
-            #56301b,
-            #70452a
-        );
-
-    box-shadow:
-        0 -4px 8px rgba(0,0,0,0.55);
-}
-
-
-
-.cabinet-side {
-    grid-row: 2;
-
-    background:
-        linear-gradient(
-            90deg,
-            #25130b,
-            #75482b 40%,
-            #4c2917 70%,
-            #211109
-        );
-
-    box-shadow:
-        inset 2px 0 3px rgba(255,255,255,0.04),
-        inset -4px 0 5px rgba(0,0,0,0.5);
-}
-
-
-
-.cabinet-left {
-    grid-column: 1;
-}
-
-
-
-.cabinet-right {
-    grid-column: 3;
-}
-
-
-
-.cabinet-interior {
-    grid-column: 2;
-
-    grid-row: 2;
-
-    min-width: 0;
-
-    padding:
-        26px
-        40px
-        18px;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(680px, 1fr)
-        215px;
-
-    gap: 25px;
-
-    align-items: stretch;
+        800;
 
     overflow: hidden;
 
-    background:
-        radial-gradient(
-            ellipse at 45% 0%,
-            #282319,
-            #15140f 48%,
-            #090a08 100%
-        );
+    background-image:
+        url("images/project-shelf-background.png");
 
-    box-shadow:
-        inset 0 24px 33px rgba(0,0,0,0.52),
-        inset 0 -14px 20px rgba(0,0,0,0.48);
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
 }
 
 
 
 /* =========================================================
-   CASSETTE BANK
+   CASSETTES ON SHELF
    ========================================================= */
 
-.cassette-bank {
+.cassette-row {
+
+    position: absolute;
+
+    left: 9.5%;
+
+    right: 16%;
+
+    bottom: 25.2%;
+
+    height: 47%;
+
     display: flex;
 
     align-items: flex-end;
 
-    justify-content: center;
-
-    gap: 7px;
-
-    transform:
-        translateX(-25px);
+    gap:
+        clamp(
+            6px,
+            0.65vw,
+            13px
+        );
 }
 
 
 
-/* =========================================================
-   CASSETTE CASES
-   ========================================================= */
+.project-spine {
 
-.cassette {
-    --accent: #315a78;
-
-    position: relative;
+    height: 100%;
 
     flex:
         0
         0
-        145px;
+        clamp(
+            76px,
+            7vw,
+            125px
+        );
 
-    width: 145px;
-
-    height: 295px;
-
-    appearance: none;
+    padding: 0;
 
     border: none;
+
+    outline: none;
 
     background: transparent;
 
@@ -1100,1160 +861,59 @@ nav a.active::after {
 
 
 
-.cassette:nth-child(2) {
-    height: 286px;
-}
-
-
-
-.cassette:nth-child(3) {
-    height: 307px;
-}
-
-
-
-.cassette:nth-child(4) {
-    height: 291px;
-}
-
-
-
-.cassette:nth-child(5) {
-    height: 300px;
-}
-
-
-
-.theme-blue {
-    --accent: #315a78;
-}
-
-
-
-.theme-red {
-    --accent: #a94a3b;
-}
-
-
-
-.theme-yellow {
-    --accent: #ad8335;
-}
-
-
-
-.theme-green {
-    --accent: #557151;
-}
-
-
-
-.theme-orange {
-    --accent: #ae6638;
-}
-
-
-
-.cassette-case {
-    position: absolute;
-
-    inset: 0;
-
-    overflow: hidden;
-
-    display: block;
-
-    border-radius:
-        5px
-        5px
-        3px
-        3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #070707 0%,
-            #252525 6%,
-            #101010 13%,
-            #191919 86%,
-            #292929 94%,
-            #050505 100%
-        );
-
-    box-shadow:
-        inset 4px 0 5px rgba(255,255,255,0.045),
-        inset -6px 0 7px rgba(0,0,0,0.82),
-        inset 0 2px 1px rgba(255,255,255,0.04),
-        5px 8px 10px rgba(0,0,0,0.7);
-}
-
-
-
-.cassette-light .cassette-case {
-    background:
-        linear-gradient(
-            90deg,
-            #bcb5a8 0%,
-            #e1d8c8 8%,
-            #cac2b4 15%,
-            #ddd5c7 87%,
-            #b7afa1 95%,
-            #999284 100%
-        );
-}
-
-
-
-.case-glass {
-    position: absolute;
-
-    inset:
-        6px
-        5px;
-
-    border-radius: 3px;
-
-    border:
-        1px
-        solid
-        rgba(255,255,255,0.045);
-
-    box-shadow:
-        inset 0 0 10px rgba(0,0,0,0.42);
-}
-
-
-
-.case-screw {
-    position: absolute;
-
-    z-index: 5;
-
-    width: 6px;
-
-    height: 6px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #7b7b76,
-            #33332f 35%,
-            #070807 75%
-        );
-}
-
-
-
-.screw-one {
-    left: 10px;
-    top: 11px;
-}
-
-
-
-.screw-two {
-    right: 10px;
-    bottom: 11px;
-}
-
-
-
-/* =========================================================
-   VERTICAL LABEL
-   ========================================================= */
-
-.vertical-label {
-    position: absolute;
-
-    top: 18px;
-
-    bottom: 18px;
-
-    left: 38px;
-
-    right: 38px;
-
-    padding:
-        13px
-        8px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    color: #181711;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            95deg,
-            #c8bba4,
-            #e7dcc6 46%,
-            #cdc0a7
-        );
-
-    box-shadow:
-        0 2px 4px rgba(0,0,0,0.55),
-        inset 0 0 10px rgba(75,52,30,0.16);
-}
-
-
-
-.cassette-dark .vertical-label {
-    color: #ded7c8;
-
-    background:
-        linear-gradient(
-            95deg,
-            #242420,
-            #171815 45%,
-            #292925
-        );
-}
-
-
-
-.vertical-color {
-    position: absolute;
-
-    top: 13px;
-
-    bottom: 13px;
-
-    left: 8px;
-
-    width: 10px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--accent) 0%,
-            var(--accent) 45%,
-            transparent 45%,
-            transparent 62%,
-            var(--accent) 62%
-        );
-}
-
-
-
-.vertical-label strong {
-    position: relative;
-
-    z-index: 2;
-
-    writing-mode:
-        vertical-rl;
-
-    transform: none;
-
-    margin-top: 16px;
-
-    font-size: 1rem;
-
-    letter-spacing: 0.5px;
-}
-
-
-
-.vertical-label small {
-    position: absolute;
-
-    right: 8px;
-
-    top: 16px;
-
-    bottom: 16px;
-
-    writing-mode:
-        vertical-rl;
-
-    transform: none;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.38rem;
-
-    font-weight: bold;
-
-    letter-spacing: 0.3px;
-}
-
-
-
-.vertical-icon {
-    position: absolute;
-
-    bottom: 13px;
-
-    left: 50%;
+.project-spine:hover,
+.project-spine:focus-visible,
+.project-spine.active {
 
     transform:
-        translateX(-50%);
-
-    font-size: 1rem;
-}
-
-
-
-/* =========================================================
-   ACTIVE CASE
-   ========================================================= */
-
-.cassette:hover,
-.cassette:focus-visible,
-.cassette.active {
-    outline: none;
-
-    transform:
-        translateY(-10px)
-        scale(1.012);
+        translateY(-10px);
 
     filter:
         drop-shadow(
-            0 0 8px
-            color-mix(
-                in srgb,
-                var(--accent) 45%,
-                transparent
-            )
+            0 8px 10px
+            rgba(0,0,0,0.55)
         );
-}
-
-
-
-.cassette.active::after {
-    content: "";
-
-    position: absolute;
-
-    left: 17px;
-
-    right: 17px;
-
-    bottom: -15px;
-
-    height: 3px;
-
-    border-radius: 4px;
-
-    background: var(--accent);
-
-    box-shadow:
-        0 0 8px var(--accent);
 }
 
 
 
 /* =========================================================
-   HEADPHONES
+   REAL CASSETTE SPINE IMAGE
    ========================================================= */
 
-.headphones {
-    position: relative;
+.image-spine img {
 
-    min-height: 295px;
-
-    align-self: end;
-}
-
-
-
-.headphones-band {
-    position: absolute;
-
-    left: 24px;
-
-    top: 15px;
-
-    width: 150px;
-
-    height: 157px;
-
-    border:
-        18px
-        solid
-        #171717;
-
-    border-bottom: none;
-
-    border-radius:
-        95px
-        95px
-        0
-        0;
-
-    box-shadow:
-        inset 4px 2px 4px rgba(255,255,255,0.05),
-        5px 5px 9px rgba(0,0,0,0.55);
-}
-
-
-
-.headphones-band-inner {
-    position: absolute;
-
-    left: 40px;
-
-    top: 29px;
-
-    width: 118px;
-
-    height: 130px;
-
-    border:
-        4px
-        solid
-        #5b4b39;
-
-    border-bottom: none;
-
-    border-radius:
-        82px
-        82px
-        0
-        0;
-
-    opacity: 0.7;
-}
-
-
-
-.headphones-arm {
-    position: absolute;
-
-    top: 136px;
-
-    width: 14px;
-
-    height: 70px;
-
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #373737,
-            #111
-        );
-}
-
-
-
-.headphones-arm-left {
-    left: 30px;
-
-    transform:
-        rotate(-7deg);
-}
-
-
-
-.headphones-arm-right {
-    right: 30px;
-
-    transform:
-        rotate(7deg);
-}
-
-
-
-.headphone-cup {
-    position: absolute;
-
-    top: 184px;
-
-    width: 67px;
-
-    height: 88px;
-
-    border-radius:
-        30px
-        30px
-        37px
-        37px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #3b3b3b,
-            #0c0c0c 72%
-        );
-
-    box-shadow:
-        inset 3px 2px 4px rgba(255,255,255,0.05),
-        inset -5px -6px 9px rgba(0,0,0,0.75),
-        5px 8px 12px rgba(0,0,0,0.55);
-}
-
-
-
-.headphone-cup-left {
-    left: 3px;
-
-    transform:
-        rotate(-8deg);
-}
-
-
-
-.headphone-cup-right {
-    right: 3px;
-
-    transform:
-        rotate(8deg);
-}
-
-
-
-.headphone-pad {
-    position: absolute;
-
-    inset: 9px;
-
-    border-radius: 28px;
-
-    background:
-        radial-gradient(
-            ellipse,
-            #090909,
-            #181818 50%,
-            #040404
-        );
-
-    box-shadow:
-        inset 0 0 8px #000;
-}
-
-
-
-.headphone-cable {
-    position: absolute;
-
-    right: 15px;
-
-    top: 257px;
-
-    width: 45px;
-
-    height: 85px;
-
-    border-right:
-        3px
-        solid
-        #111;
-
-    border-bottom:
-        3px
-        solid
-        #111;
-
-    border-radius:
-        0
-        0
-        30px
-        0;
-}
-
-
-
-/* =========================================================
-   MINI VIEWER
-   ========================================================= */
-
-.project-preview {
-    width:
-        calc(
-            100% - (var(--page-padding) * 2)
-        );
-
-    max-width: 1500px;
-
-    margin:
-        25px
-        auto
-        0;
-
-    padding:
-        29px
-        36px;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(390px, 0.92fr)
-        minmax(440px, 1.08fr);
-
-    gap: 50px;
-
-    align-items: center;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #1d1e1a,
-            #090a08 19%,
-            #11120f
-        );
-
-    box-shadow:
-        inset 1px 1px 1px rgba(255,255,255,0.05),
-        inset -4px -5px 12px rgba(0,0,0,0.65),
-        0 13px 24px rgba(0,0,0,0.4);
-}
-
-
-
-/* =========================================================
-   PREVIEW CASSETTE
-   ========================================================= */
-
-.preview-art {
-    display: flex;
-
-    justify-content: center;
-}
-
-
-
-.preview-cassette {
-    --accent: #315a78;
-
-    width:
-        min(
-            100%,
-            570px
-        );
-
-    aspect-ratio:
-        1.58
-        /
-        1;
-
-    padding: 13px;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #353632,
-            #111210 18%,
-            #22231f 70%,
-            #060706
-        );
-
-    box-shadow:
-        inset 3px 3px 4px rgba(255,255,255,0.045),
-        inset -10px -11px 15px rgba(0,0,0,0.72),
-        12px 16px 21px rgba(0,0,0,0.52);
-
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease;
-}
-
-
-
-.preview-shell {
-    position: relative;
+    display: block;
 
     width: 100%;
 
     height: 100%;
 
-    overflow: hidden;
+    object-fit: contain;
 
-    border-radius: 9px;
+    object-position:
+        center
+        bottom;
 
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,0.07),
-            #1c1d1a 16%,
-            #121310 78%,
-            #050605
-        );
+    /*
+       Useful if the cropped spine image still contains
+       tiny white areas around it.
+    */
 
-    box-shadow:
-        inset 0 0 15px rgba(0,0,0,0.82);
-}
-
-
-
-.preview-shell::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 6px;
-
-    border:
-        1px
-        solid
-        rgba(255,255,255,0.055);
-
-    border-radius: 7px;
+    mix-blend-mode: multiply;
 }
 
 
 
 /* =========================================================
-   PREVIEW SCREWS
+   TEMPORARY CSS SPINES
    ========================================================= */
 
-.preview-screw {
-    position: absolute;
+.placeholder-spine {
 
-    z-index: 8;
-
-    width: 9px;
-
-    height: 9px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #999990,
-            #393a36 37%,
-            #080908 74%
-        );
-
-    box-shadow:
-        inset 0 0 2px #000;
-}
-
-
-
-.screw-a {
-    top: 14px;
-    left: 16px;
-}
-
-
-
-.screw-b {
-    top: 14px;
-    right: 16px;
-}
-
-
-
-.screw-c {
-    bottom: 14px;
-    left: 16px;
-}
-
-
-
-.screw-d {
-    bottom: 14px;
-    right: 16px;
-}
-
-
-
-/* =========================================================
-   PREVIEW LABEL
-   ========================================================= */
-
-.preview-label {
-    position: absolute;
-
-    top: 22px;
-
-    left: 25px;
-
-    right: 25px;
-
-    height: 137px;
-
-    padding:
-        17px
-        23px;
+    position: relative;
 
     overflow: hidden;
-
-    color: #171610;
-
-    background:
-        linear-gradient(
-            97deg,
-            #c8bba1,
-            #eee2ca 48%,
-            #cfc1a6
-        );
-
-    box-shadow:
-        inset 0 0 14px rgba(75,52,30,0.17),
-        0 2px 5px rgba(0,0,0,0.55);
-}
-
-
-
-.preview-label-top {
-    position: relative;
-
-    z-index: 4;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.58rem;
-
-    font-weight: bold;
-}
-
-
-
-.preview-label h2 {
-    position: relative;
-
-    z-index: 4;
-
-    margin-top: 8px;
-
-    font-size:
-        clamp(
-            1.9rem,
-            3vw,
-            2.8rem
-        );
-
-    line-height: 1;
-}
-
-
-
-.preview-label > p {
-    position: relative;
-
-    z-index: 4;
-
-    margin-top: 4px;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.61rem;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-}
-
-
-
-.preview-stripes {
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 17px;
-
-    height: 31px;
-
-    background:
-        linear-gradient(
-            to bottom,
-            var(--accent) 0%,
-            var(--accent) 35%,
-            #ddd1bb 35%,
-            #ddd1bb 64%,
-            var(--accent) 64%,
-            var(--accent) 100%
-        );
-}
-
-
-
-/* =========================================================
-   REEL WINDOW
-   ========================================================= */
-
-.reel-window {
-    position: absolute;
-
-    left: 82px;
-
-    right: 82px;
-
-    top: 137px;
-
-    height: 106px;
-
-    padding:
-        14px
-        18px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 22px;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            #292620,
-            #080908
-        );
-
-    box-shadow:
-        inset 0 0 17px #000,
-        0 2px 0 rgba(255,255,255,0.04);
-}
-
-
-
-.reel {
-    position: relative;
-
-    width: 72px;
-
-    height: 72px;
-
-    flex:
-        0
-        0
-        72px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: #10110f;
-
-    box-shadow:
-        0 0 0 5px #777266,
-        0 0 0 8px #090a08;
-}
-
-
-
-.reel-teeth {
-    position: absolute;
-
-    inset: 7px;
-
-    border-radius: 50%;
-
-    background:
-        repeating-conic-gradient(
-            #d8cfbd 0deg 12deg,
-            #383835 12deg 24deg
-        );
-}
-
-
-
-.reel-center {
-    position: relative;
-
-    z-index: 2;
-
-    width: 23px;
-
-    height: 23px;
-
-    border-radius: 50%;
-
-    background: #111;
-
-    box-shadow:
-        inset 0 0 5px #000,
-        0 0 0 2px #716c62;
-}
-
-
-
-.visible-tape {
-    position: relative;
-
-    flex: 1;
-
-    height: 52px;
-
-    overflow: hidden;
-
-    border-radius: 3px;
-
-    background: #11110f;
-
-    box-shadow:
-        inset 0 0 8px #000;
-}
-
-
-
-.tape-roll {
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    top: 13px;
-
-    height: 23px;
-
-    background:
-        linear-gradient(
-            #493828,
-            #241a13
-        );
-}
-
-
-
-.tape-strip {
-    position: absolute;
-
-    left: 8%;
-
-    right: 8%;
-
-    top: 20px;
-
-    height: 8px;
-
-    background:
-        linear-gradient(
-            #806040,
-            #3a291c
-        );
-
-    box-shadow:
-        0 1px 2px #000;
-}
-
-
-
-/* =========================================================
-   LOWER CASSETTE
-   ========================================================= */
-
-.lower-tape-panel {
-    position: absolute;
-
-    left: 128px;
-
-    right: 128px;
-
-    bottom: 38px;
-
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-around;
-
-    clip-path:
-        polygon(
-            12% 0,
-            88% 0,
-            100% 100%,
-            0 100%
-        );
-
-    background:
-        linear-gradient(
-            #24241f,
-            #090a08
-        );
-
-    box-shadow:
-        inset 0 0 8px #000;
-}
-
-
-
-.lower-tape-hole {
-    width: 14px;
-
-    height: 14px;
-
-    border-radius: 50%;
-
-    background: #050605;
-
-    box-shadow:
-        0 0 0 2px #57554d;
-}
-
-
-
-.pressure-window {
-    width: 58px;
-
-    height: 21px;
-
-    display: grid;
-
-    place-items: center;
-
-    background: #161713;
-
-    box-shadow:
-        inset 0 0 5px #000;
-}
-
-
-
-.pressure-window span {
-    width: 37px;
-
-    height: 5px;
-
-    background: #857969;
-}
-
-
-
-.bottom-openings {
-    position: absolute;
-
-    left: 31%;
-
-    right: 31%;
-
-    bottom: 15px;
-
-    display: flex;
-
-    justify-content: space-between;
-}
-
-
-
-.bottom-openings span {
-    width: 8px;
-
-    height: 13px;
 
     border-radius:
         4px
@@ -2261,20 +921,218 @@ nav a.active::after {
         2px
         2px;
 
-    background: #070807;
-
     box-shadow:
-        inset 0 0 3px #000;
+        inset 3px 0 4px rgba(255,255,255,0.05),
+        inset -5px 0 6px rgba(0,0,0,0.7),
+        4px 7px 9px rgba(0,0,0,0.65);
+}
+
+
+
+.dark-spine {
+
+    color: #ded5c5;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080907,
+            #22231f 18%,
+            #11120f 78%,
+            #050605
+        );
+}
+
+
+
+.light-spine {
+
+    color: #1a1914;
+
+    background:
+        linear-gradient(
+            90deg,
+            #aea697,
+            #e0d6c5 17%,
+            #cbc1b0 80%,
+            #aaa294
+        );
+}
+
+
+
+.placeholder-spine strong {
+
+    position: absolute;
+
+    top: 19%;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    writing-mode:
+        vertical-rl;
+
+    font-size:
+        clamp(
+            0.8rem,
+            1vw,
+            1rem
+        );
+
+    letter-spacing: 1px;
+}
+
+
+
+.placeholder-spine small {
+
+    position: absolute;
+
+    top: 19%;
+
+    right: 10%;
+
+    writing-mode:
+        vertical-rl;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        clamp(
+            0.48rem,
+            0.55vw,
+            0.62rem
+        );
+
+    font-weight: bold;
+}
+
+
+
+.placeholder-accent {
+
+    position: absolute;
+
+    top: 7%;
+
+    left: 12%;
+
+    right: 12%;
+
+    height: 9%;
+}
+
+
+
+.placeholder-accent.red {
+    background: #a74a3b;
+}
+
+
+
+.placeholder-accent.blue {
+    background: #365f7c;
+}
+
+
+
+.placeholder-accent.yellow {
+    background: #b78c37;
 }
 
 
 
 /* =========================================================
-   PREVIEW INFO
+   PROJECT PREVIEW
    ========================================================= */
 
-.preview-info {
-    min-width: 0;
+.project-preview {
+
+    width:
+        calc(
+            100% -
+            (var(--page-padding) * 2)
+        );
+
+    max-width: 1500px;
+
+    margin:
+        28px
+        auto
+        0;
+
+    padding:
+        32px
+        38px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(400px, 0.92fr)
+        minmax(450px, 1.08fr);
+
+    gap: 55px;
+
+    align-items: center;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #20211c,
+            #090a08 20%,
+            #11120f
+        );
+
+    box-shadow:
+        inset 1px 1px 1px rgba(255,255,255,0.05),
+        0 14px 25px rgba(0,0,0,0.45);
+}
+
+
+
+/* =========================================================
+   PREVIEW IMAGE
+   ========================================================= */
+
+.preview-image-area {
+
+    position: relative;
+
+    min-height: 360px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+
+.project-front-image {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    max-height: 430px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            10px 14px 12px
+            rgba(0,0,0,0.42)
+        );
 
     transition:
         opacity 0.15s ease,
@@ -2283,55 +1141,78 @@ nav a.active::after {
 
 
 
-.preview-eyebrow {
-    display: flex;
+/* =========================================================
+   TEMPORARY FRONT PLACEHOLDER
+   ========================================================= */
 
-    justify-content: space-between;
+.preview-placeholder {
 
-    color: #678da7;
+    display: none;
+
+    width: 100%;
+
+    max-width: 570px;
+
+    aspect-ratio:
+        1.55
+        /
+        1;
+
+    padding:
+        35px;
+
+    color: #15140f;
+
+    background:
+        linear-gradient(
+            #ded3be,
+            #c6baa3
+        );
+
+    border:
+        16px
+        solid
+        #151612;
+
+    box-shadow:
+        10px 14px 18px rgba(0,0,0,0.45);
+}
+
+
+
+.preview-placeholder p {
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.64rem;
+    font-size: 0.78rem;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 
 
-.preview-eyebrow span {
-    color: #68665f;
+.preview-placeholder h3 {
 
-    letter-spacing: 1px;
+    margin-top: 35px;
+
+    font-size: 3rem;
 }
 
 
 
-.preview-info > h2 {
-    margin-top: 16px;
+/* =========================================================
+   PROJECT INFO
+   ========================================================= */
 
-    color: var(--cream);
+.preview-topline {
 
-    font-size:
-        clamp(
-            2.6rem,
-            4vw,
-            4.6rem
-        );
+    display: flex;
 
-    line-height: 0.93;
+    justify-content: space-between;
 
-    letter-spacing: -2px;
-}
-
-
-
-.preview-category {
-    margin-top: 11px;
-
-    color: var(--cream-dark);
+    color: #67889d;
 
     font-family:
         "Courier New",
@@ -2339,35 +1220,72 @@ nav a.active::after {
 
     font-size: 0.7rem;
 
-    letter-spacing: 2px;
+    letter-spacing: 3px;
 }
 
 
 
-.preview-description {
-    max-width: 700px;
+.preview-topline span:last-child {
+    color: #878279;
+}
 
-    margin-top: 18px;
 
-    color: #b1ab9f;
+
+.preview-info h2 {
+
+    margin-top: 17px;
+
+    font-size:
+        clamp(
+            2.7rem,
+            4vw,
+            4.7rem
+        );
+
+    line-height: 0.93;
+}
+
+
+
+.project-category {
+
+    margin-top: 12px;
+
+    color: #d2c9ba;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.79rem;
+    font-size: 0.78rem;
 
-    line-height: 1.65;
+    letter-spacing: 2px;
 }
 
 
 
-/* =========================================================
-   TAGS
-   ========================================================= */
+.project-description {
 
-.preview-tags {
-    margin-top: 18px;
+    max-width: 680px;
+
+    margin-top: 19px;
+
+    color: #b1aa9f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.86rem;
+
+    line-height: 1.7;
+}
+
+
+
+.project-tags {
+
+    margin-top: 19px;
 
     display: flex;
 
@@ -2378,57 +1296,50 @@ nav a.active::after {
 
 
 
-.preview-tags span {
+.project-tags span {
+
     padding:
         7px
         11px;
 
     border-radius: 3px;
 
-    color: #beb7ab;
+    color: #c7bfb1;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.57rem;
+    font-size: 0.68rem;
 
     letter-spacing: 1px;
 
     background:
         linear-gradient(
-            #1e1f1b,
-            #10110e
+            #20211c,
+            #0e0f0c
         );
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.06),
-        inset 0 -2px 3px rgba(0,0,0,0.5),
-        0 3px 5px rgba(0,0,0,0.3);
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        0 3px 5px rgba(0,0,0,0.35);
 }
 
 
 
-/* =========================================================
-   PROJECT BUTTON
-   ========================================================= */
+.view-project {
 
-.view-project-button {
     width: fit-content;
 
-    margin-top: 21px;
+    margin-top: 22px;
 
     padding:
         12px
-        18px;
+        17px;
 
-    display: flex;
+    display: block;
 
-    align-items: center;
-
-    gap: 20px;
-
-    color: #e5ddcd;
+    color: #e5dccd;
 
     text-decoration: none;
 
@@ -2436,13 +1347,13 @@ nav a.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.65rem;
+    font-size: 0.72rem;
 
     font-weight: bold;
 
     letter-spacing: 2px;
 
-    border-radius: 4px;
+    border-radius: 3px;
 
     background:
         linear-gradient(
@@ -2451,30 +1362,8 @@ nav a.active::after {
         );
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.07),
-        inset 0 -2px 4px rgba(0,0,0,0.65),
-        0 5px 8px rgba(0,0,0,0.3);
-
-    transition:
-        transform 0.2s ease;
-}
-
-
-
-.view-project-button:hover {
-    transform:
-        translateX(4px)
-        translateY(-1px);
-}
-
-
-
-.preview-cassette.changing,
-.preview-info.changing {
-    opacity: 0;
-
-    transform:
-        translateY(5px);
+        inset 0 1px 0 rgba(255,255,255,0.06),
+        0 5px 8px rgba(0,0,0,0.4);
 }
 
 
@@ -2484,28 +1373,28 @@ nav a.active::after {
    ========================================================= */
 
 .contact-section {
-    margin-top: 48px;
+
+    margin-top: 55px;
 
     padding:
         15px
         var(--page-padding)
-        30px;
+        32px;
 
     background:
         linear-gradient(
-            #11120e,
-            #080907
+            #10110e,
+            #070806
         );
 }
 
 
 
 .contact-console {
-    width: 100%;
 
     max-width: 1500px;
 
-    margin: 0 auto;
+    margin: auto;
 
     padding: 18px;
 
@@ -2517,68 +1406,67 @@ nav a.active::after {
 
     gap: 25px;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     background:
         linear-gradient(
             145deg,
-            #2b2c27,
-            #0c0d0a 18%,
-            #171814 77%,
-            #050605
+            #2a2b26,
+            #0b0c09 20%,
+            #151612
         );
 
     box-shadow:
-        inset 1px 1px 1px rgba(255,255,255,0.06),
-        inset -4px -5px 11px rgba(0,0,0,0.72),
-        0 10px 18px rgba(0,0,0,0.5);
+        0 10px 20px rgba(0,0,0,0.45);
 }
 
 
 
-.contact-information {
+.contact-left {
+
     padding:
-        24px
+        25px
         22px;
 }
 
 
 
-.contact-information h2 {
+.contact-left h2 {
+
     margin-top: 12px;
 
     font-size:
         clamp(
-            2.3rem,
+            2.5rem,
             4vw,
-            4.2rem
+            4.3rem
         );
-
-    line-height: 0.94;
 }
 
 
 
-.contact-intro {
-    max-width: 600px;
+.contact-left > p:not(.section-label) {
+
+    max-width: 580px;
 
     margin-top: 16px;
 
-    color: #aaa497;
+    color: #aca69b;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.75rem;
+    font-size: 0.84rem;
 
     line-height: 1.65;
 }
 
 
 
-.contact-readout {
-    margin-top: 22px;
+.contact-links {
+
+    margin-top: 23px;
 
     display: grid;
 
@@ -2587,7 +1475,8 @@ nav a.active::after {
 
 
 
-.contact-readout a {
+.contact-links a {
+
     padding:
         11px
         14px;
@@ -2595,84 +1484,69 @@ nav a.active::after {
     display: grid;
 
     grid-template-columns:
-        90px
+        95px
         1fr;
 
-    align-items: center;
-
-    color: #bdb7ab;
+    color: #bdb5a8;
 
     text-decoration: none;
 
-    border-radius: 3px;
-
     background:
-        linear-gradient(
-            #171814,
-            #0c0d0a
-        );
+        #0c0d0a;
 
     box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.04),
-        inset 0 -2px 3px rgba(0,0,0,0.55);
+        inset 0 0 8px #000;
 }
 
 
 
-.contact-readout a:hover {
-    color: var(--cream);
-}
+.contact-links span {
 
-
-
-.contact-type {
     color: var(--red);
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.57rem;
+    font-size: 0.68rem;
 
     letter-spacing: 2px;
 }
 
 
 
-.contact-value {
+.contact-links strong {
+
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.7rem;
+    font-size: 0.76rem;
+
+    font-weight: normal;
 }
 
 
 
 /* =========================================================
-   MESSAGE PANEL
+   FORM
    ========================================================= */
 
 .message-panel {
+
     padding: 10px;
 
-    border-radius: 6px;
-
     background:
-        linear-gradient(
-            145deg,
-            #41413c,
-            #10110e 15%,
-            #050605
-        );
+        #080906;
 
     box-shadow:
-        inset 0 0 5px #000;
+        inset 0 0 10px #000;
 }
 
 
 
-.message-display-header {
+.message-header {
+
     padding:
         11px
         14px;
@@ -2681,69 +1555,57 @@ nav a.active::after {
 
     justify-content: space-between;
 
-    align-items: center;
-
-    color: var(--display-blue);
+    color: #718d91;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.58rem;
+    font-size: 0.7rem;
 
     letter-spacing: 2px;
-
-    background:
-        #050605;
-
-    box-shadow:
-        inset 0 0 14px #000;
 }
 
 
 
-.status-light {
-    color: #a9b880;
+.ready {
+    color: #9ba875;
 }
 
 
 
-.contact-form {
-    padding:
-        15px
-        14px;
+.message-panel form {
+
+    padding: 15px;
 
     display: grid;
 
-    gap: 12px;
-
-    background:
-        #0b0c09;
+    gap: 13px;
 }
 
 
 
-.contact-form label {
+.message-panel label {
+
     display: grid;
 
     gap: 6px;
 
-    color: #807c72;
+    color: #938e83;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.55rem;
+    font-size: 0.68rem;
 
     letter-spacing: 2px;
 }
 
 
 
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
+.message-panel input,
+.message-panel textarea {
 
     padding:
         10px
@@ -2753,53 +1615,27 @@ nav a.active::after {
 
     outline: none;
 
-    resize: vertical;
+    color: #ddd5c8;
 
-    color: #ddd6c8;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.72rem;
-
-    background:
-        #070806;
+    background: #060705;
 
     box-shadow:
-        inset 0 0 8px #000,
-        0 1px 0 rgba(255,255,255,0.03);
+        inset 0 0 7px #000;
 }
 
 
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    box-shadow:
-        inset 0 0 8px #000,
-        0 0 0 1px #5d777a;
-}
+.message-panel button {
 
-
-
-.contact-form button {
     width: fit-content;
 
     padding:
         11px
         16px;
 
-    display: flex;
-
-    gap: 20px;
-
-    align-items: center;
-
     border: none;
 
-    border-radius: 3px;
-
-    color: #e8dfd0;
+    color: #e7dece;
 
     cursor: pointer;
 
@@ -2807,7 +1643,7 @@ nav a.active::after {
         "Courier New",
         monospace;
 
-    font-size: 0.61rem;
+    font-size: 0.7rem;
 
     font-weight: bold;
 
@@ -2818,18 +1654,6 @@ nav a.active::after {
             #292a25,
             #11120f
         );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.08),
-        inset 0 -2px 4px rgba(0,0,0,0.65),
-        0 4px 7px rgba(0,0,0,0.35);
-}
-
-
-
-.contact-form button:hover {
-    transform:
-        translateY(-1px);
 }
 
 
@@ -2838,29 +1662,27 @@ nav a.active::after {
    FOOTER
    ========================================================= */
 
-.site-footer {
+footer {
+
     padding:
-        19px
-        var(--page-padding)
-        22px;
+        21px
+        var(--page-padding);
 
     display: flex;
 
     justify-content: space-between;
 
-    gap: 25px;
-
-    color: #706d64;
+    color: #817c72;
 
     font-family:
         "Courier New",
         monospace;
 
-    font-size: 0.53rem;
+    font-size: 0.65rem;
 
     letter-spacing: 2px;
 
-    background: #060706;
+    background: #060705;
 }
 
 
@@ -2869,66 +1691,34 @@ nav a.active::after {
    RESPONSIVE
    ========================================================= */
 
-@media (max-width: 1350px) {
+@media (max-width: 1250px) {
 
     .header-top {
+
         grid-template-columns: 1fr;
 
-        gap: 22px;
+        gap: 25px;
     }
 
-}
-
-
-
-@media (max-width: 1100px) {
 
     .about-inner {
-        grid-template-columns: 1fr;
 
-        gap: 34px;
-    }
-
-
-    .about-card {
-        max-width: 650px;
-    }
-
-
-    .cabinet-interior {
-        grid-template-columns: 1fr;
-
-        overflow-x: auto;
-    }
-
-
-    .cassette-bank {
-        justify-content: flex-start;
-
-        transform: none;
-
-        min-width: 760px;
-    }
-
-
-    .headphones {
-        display: none;
-    }
-
-
-    .project-preview {
         grid-template-columns: 1fr;
 
         gap: 35px;
     }
 
 
-    .preview-art {
-        width: 100%;
+    .interest-card {
+        max-width: 650px;
+    }
 
-        max-width: 620px;
 
-        margin: 0 auto;
+    .project-preview {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
     }
 
 
@@ -2940,50 +1730,29 @@ nav a.active::after {
 
 
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     :root {
         --page-padding: 18px;
     }
 
 
-    .name-section h1 {
+    .name-area h1 {
+
         font-size:
             clamp(
-                2rem,
+                2.2rem,
                 10vw,
-                2.8rem
+                3rem
             );
     }
 
 
-    .name-section p {
+    .name-area p {
+
         white-space: normal;
 
-        font-size: 0.55rem;
-
-        letter-spacing: 3px;
-    }
-
-
-    nav a {
-        padding:
-            0
-            14px;
-
-        font-size: 0.57rem;
-
-        letter-spacing: 2px;
-    }
-
-
-    nav a:first-child {
-        padding-left: 0;
-    }
-
-
-    nav a::after {
-        left: 14px;
+        letter-spacing: 4px;
     }
 
 
@@ -2992,166 +1761,91 @@ nav a.active::after {
     }
 
 
-    .workbench-display-image {
-        min-height: 80px;
+    .main-nav a {
+
+        padding:
+            0
+            13px;
+
+        font-size: 0.65rem;
     }
 
 
-    .about-section {
-        padding-top: 40px;
-
-        padding-bottom: 42px;
+    .main-nav a:first-child {
+        padding-left: 0;
     }
 
 
-    .about-copy h2 {
-        font-size: 2.45rem;
-    }
-
-
-    .interest-grid {
+    .interests {
         grid-template-columns: 1fr;
     }
 
 
-    .about-card {
-        transform: none;
+    /*
+       Keep shelf large enough to feel like a real shelf.
+       Mobile can scroll sideways.
+    */
+
+    .shelf-stage {
+
+        width: 1050px;
+
+        max-width: none;
     }
 
 
-    .project-cabinet {
-        grid-template-columns:
-            18px
-            1fr
-            18px;
+    .projects-section {
+
+        overflow-x: auto;
     }
 
 
-    .cabinet-interior {
-        padding:
-            22px
-            18px;
+    .cassette-row {
+
+        left: 100px;
+
+        right: auto;
+
+        width: 700px;
+
+        gap: 8px;
     }
 
 
-    .cassette-bank {
-        min-width: 700px;
-    }
+    .project-spine {
 
-
-    .cassette {
-        flex-basis: 125px;
-
-        width: 125px;
-
-        height: 270px;
-    }
-
-
-    .cassette:nth-child(2),
-    .cassette:nth-child(3),
-    .cassette:nth-child(4),
-    .cassette:nth-child(5) {
-        height: 270px;
-    }
-
-
-    .vertical-label {
-        left: 31px;
-
-        right: 31px;
+        flex-basis: 95px;
     }
 
 
     .project-preview {
+
         width:
             calc(
                 100% - 24px
             );
 
         padding:
-            21px
-            16px;
-
-        gap: 28px;
+            22px
+            17px;
     }
 
 
-    .preview-cassette {
-        width: 100%;
+    .preview-image-area {
+        min-height: 270px;
     }
 
 
-    .preview-label {
-        top: 15px;
-
-        left: 17px;
-
-        right: 17px;
-
-        height: 116px;
+    .preview-info h2 {
+        font-size: 2.6rem;
     }
 
 
-    .preview-label h2 {
-        font-size: 1.45rem;
-    }
+    footer {
 
-
-    .reel-window {
-        top: 112px;
-
-        left: 51px;
-
-        right: 51px;
-
-        height: 79px;
-
-        gap: 13px;
-    }
-
-
-    .reel {
-        width: 48px;
-
-        height: 48px;
-
-        flex-basis: 48px;
-    }
-
-
-    .lower-tape-panel {
-        left: 88px;
-
-        right: 88px;
-
-        height: 37px;
-
-        bottom: 29px;
-    }
-
-
-    .preview-info > h2 {
-        font-size: 2.45rem;
-    }
-
-
-    .contact-information {
-        padding:
-            18px
-            12px;
-    }
-
-
-    .contact-readout a {
-        grid-template-columns: 1fr;
-
-        gap: 5px;
-    }
-
-
-    .site-footer {
         flex-direction: column;
+
+        gap: 8px;
     }
 
 }
