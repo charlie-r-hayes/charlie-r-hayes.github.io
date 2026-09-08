@@ -1,17 +1,8 @@
-/* =========================================================
-   VARIABLES
-   ========================================================= */
-
 :root {
-
     --background: #0b0c09;
-
     --cream: #eee4d2;
-
     --muted: #aba497;
-
     --red: #e4553e;
-
     --blue: #66859a;
 
     --page-padding:
@@ -26,15 +17,9 @@
 
 
 
-/* =========================================================
-   RESET
-   ========================================================= */
-
 * {
     box-sizing: border-box;
-
     margin: 0;
-
     padding: 0;
 }
 
@@ -47,9 +32,7 @@ html {
 
 
 body {
-
     min-height: 100vh;
-
     overflow-x: hidden;
 
     color: var(--cream);
@@ -59,8 +42,7 @@ body {
         Helvetica,
         sans-serif;
 
-    background:
-        #0b0c09;
+    background: #0b0c09;
 }
 
 
@@ -80,15 +62,13 @@ button {
 
 
 /* =========================================================
-   PAGE TEXTURE
+   TEXTURE
    ========================================================= */
 
 body::before {
-
     content: "";
 
     position: fixed;
-
     inset: 0;
 
     z-index: 999;
@@ -114,7 +94,6 @@ body::before {
    ========================================================= */
 
 .site-header {
-
     padding:
         18px
         var(--page-padding)
@@ -133,18 +112,14 @@ body::before {
 
 
 .header-inner {
-
     width: 100%;
-
     max-width: var(--max-width);
-
     margin: auto;
 }
 
 
 
 .header-top {
-
     display: grid;
 
     grid-template-columns:
@@ -158,12 +133,7 @@ body::before {
 
 
 
-/* =========================================================
-   NAME
-   ========================================================= */
-
 .name-area h1 {
-
     white-space: nowrap;
 
     font-size:
@@ -181,7 +151,6 @@ body::before {
 
 
 .name-area p {
-
     margin-top: 13px;
 
     font-size: 0.78rem;
@@ -193,12 +162,7 @@ body::before {
 
 
 
-/* =========================================================
-   HEADER DISPLAY
-   ========================================================= */
-
 .header-console {
-
     display: grid;
 
     grid-template-columns:
@@ -213,7 +177,6 @@ body::before {
 
 
 .display-image-wrapper {
-
     min-width: 0;
 
     overflow: hidden;
@@ -226,7 +189,6 @@ body::before {
 
 
 .display-image {
-
     display: block;
 
     width: 100%;
@@ -239,9 +201,6 @@ body::before {
 
 
 .header-side-box {
-
-    min-height: 100%;
-
     padding: 20px;
 
     display: flex;
@@ -267,7 +226,6 @@ body::before {
 
 
 .header-side-box p {
-
     font-family:
         "Courier New",
         monospace;
@@ -280,7 +238,6 @@ body::before {
 
 
 .header-side-box a {
-
     width: fit-content;
 
     margin-top: 15px;
@@ -307,7 +264,6 @@ body::before {
    ========================================================= */
 
 .main-nav {
-
     margin-top: 17px;
 
     display: flex;
@@ -320,7 +276,6 @@ body::before {
 
 
 .main-nav a {
-
     position: relative;
 
     padding:
@@ -347,7 +302,6 @@ body::before {
 
 
 .main-nav a + a::before {
-
     content: "";
 
     position: absolute;
@@ -375,18 +329,16 @@ body::before {
 
 .main-nav a:hover,
 .main-nav a.active {
-
     color: var(--red);
 }
 
 
 
 /* =========================================================
-   SECTION LABEL
+   GENERIC
    ========================================================= */
 
 .section-label {
-
     color: var(--red);
 
     font-family:
@@ -407,7 +359,6 @@ body::before {
    ========================================================= */
 
 .about-section {
-
     padding:
         47px
         var(--page-padding)
@@ -429,7 +380,6 @@ body::before {
 
 
 .about-inner {
-
     width: 100%;
 
     max-width: 1500px;
@@ -450,7 +400,6 @@ body::before {
 
 
 .about-copy h2 {
-
     max-width: 800px;
 
     margin-top: 14px;
@@ -468,7 +417,6 @@ body::before {
 
 
 .about-lead {
-
     max-width: 720px;
 
     margin-top: 20px;
@@ -483,7 +431,6 @@ body::before {
 
 
 .about-body {
-
     max-width: 730px;
 
     margin-top: 15px;
@@ -502,7 +449,6 @@ body::before {
 
 
 .about-buttons {
-
     margin-top: 22px;
 
     display: flex;
@@ -515,7 +461,6 @@ body::before {
 
 
 .retro-button {
-
     padding:
         11px
         15px;
@@ -554,7 +499,6 @@ body::before {
    ========================================================= */
 
 .interest-card {
-
     padding: 13px;
 
     transform:
@@ -575,7 +519,6 @@ body::before {
 
 
 .interest-paper {
-
     padding:
         23px
         26px;
@@ -594,7 +537,6 @@ body::before {
 
 
 .interest-heading {
-
     display: flex;
 
     justify-content: space-between;
@@ -613,7 +555,6 @@ body::before {
 
 
 .interest-rule {
-
     height: 2px;
 
     margin:
@@ -626,7 +567,6 @@ body::before {
 
 
 .interests {
-
     display: grid;
 
     grid-template-columns:
@@ -641,7 +581,6 @@ body::before {
 
 
 .interests > div {
-
     padding:
         10px
         0;
@@ -663,7 +602,6 @@ body::before {
 
 
 .interests span {
-
     grid-row:
         1
         /
@@ -681,14 +619,12 @@ body::before {
 
 
 .interests strong {
-
     font-size: 0.82rem;
 }
 
 
 
 .interests p {
-
     margin-top: 4px;
 
     color: #62594d;
@@ -703,7 +639,6 @@ body::before {
 
 
 .interest-footer {
-
     margin-top: 14px;
 
     color: #685d4d;
@@ -720,21 +655,18 @@ body::before {
 
 
 /* =========================================================
-   PROJECT SECTION
+   PROJECTS
    ========================================================= */
 
 .projects-section {
-
     padding-top: 20px;
 
-    background:
-        #0b0c09;
+    background: #0b0c09;
 }
 
 
 
 .projects-heading {
-
     width: 100%;
 
     max-width: 1500px;
@@ -754,7 +686,6 @@ body::before {
 
 
 .project-instruction {
-
     color: #8d877d;
 
     font-family:
@@ -769,11 +700,10 @@ body::before {
 
 
 /* =========================================================
-   REAL SHELF BACKGROUND
+   REAL SHELF
    ========================================================= */
 
 .shelf-stage {
-
     position: relative;
 
     width: 100%;
@@ -786,7 +716,7 @@ body::before {
     overflow: hidden;
 
     background-image:
-        url("images/project-shelf-background.png");
+        url("images/shelf/project-shelf-background.png");
 
     background-size: cover;
 
@@ -802,7 +732,6 @@ body::before {
    ========================================================= */
 
 .cassette-row {
-
     position: absolute;
 
     left: 9.5%;
@@ -828,7 +757,6 @@ body::before {
 
 
 .project-spine {
-
     height: 100%;
 
     flex:
@@ -864,7 +792,6 @@ body::before {
 .project-spine:hover,
 .project-spine:focus-visible,
 .project-spine.active {
-
     transform:
         translateY(-10px);
 
@@ -878,11 +805,10 @@ body::before {
 
 
 /* =========================================================
-   REAL CASSETTE SPINE IMAGE
+   HOMELAB IMAGE
    ========================================================= */
 
 .image-spine img {
-
     display: block;
 
     width: 100%;
@@ -894,23 +820,15 @@ body::before {
     object-position:
         center
         bottom;
-
-    /*
-       Useful if the cropped spine image still contains
-       tiny white areas around it.
-    */
-
-    mix-blend-mode: multiply;
 }
 
 
 
 /* =========================================================
-   TEMPORARY CSS SPINES
+   PLACEHOLDERS
    ========================================================= */
 
 .placeholder-spine {
-
     position: relative;
 
     overflow: hidden;
@@ -930,7 +848,6 @@ body::before {
 
 
 .dark-spine {
-
     color: #ded5c5;
 
     background:
@@ -946,7 +863,6 @@ body::before {
 
 
 .light-spine {
-
     color: #1a1914;
 
     background:
@@ -962,7 +878,6 @@ body::before {
 
 
 .placeholder-spine strong {
-
     position: absolute;
 
     top: 19%;
@@ -981,14 +896,11 @@ body::before {
             1vw,
             1rem
         );
-
-    letter-spacing: 1px;
 }
 
 
 
 .placeholder-spine small {
-
     position: absolute;
 
     top: 19%;
@@ -1015,7 +927,6 @@ body::before {
 
 
 .placeholder-accent {
-
     position: absolute;
 
     top: 7%;
@@ -1048,11 +959,10 @@ body::before {
 
 
 /* =========================================================
-   PROJECT PREVIEW
+   PREVIEW
    ========================================================= */
 
 .project-preview {
-
     width:
         calc(
             100% -
@@ -1097,12 +1007,7 @@ body::before {
 
 
 
-/* =========================================================
-   PREVIEW IMAGE
-   ========================================================= */
-
 .preview-image-area {
-
     position: relative;
 
     min-height: 360px;
@@ -1117,7 +1022,6 @@ body::before {
 
 
 .project-front-image {
-
     display: block;
 
     width: 100%;
@@ -1133,20 +1037,11 @@ body::before {
             10px 14px 12px
             rgba(0,0,0,0.42)
         );
-
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease;
 }
 
 
 
-/* =========================================================
-   TEMPORARY FRONT PLACEHOLDER
-   ========================================================= */
-
 .preview-placeholder {
-
     display: none;
 
     width: 100%;
@@ -1158,8 +1053,7 @@ body::before {
         /
         1;
 
-    padding:
-        35px;
+    padding: 35px;
 
     color: #15140f;
 
@@ -1181,7 +1075,6 @@ body::before {
 
 
 .preview-placeholder p {
-
     font-family:
         "Courier New",
         monospace;
@@ -1194,7 +1087,6 @@ body::before {
 
 
 .preview-placeholder h3 {
-
     margin-top: 35px;
 
     font-size: 3rem;
@@ -1202,12 +1094,7 @@ body::before {
 
 
 
-/* =========================================================
-   PROJECT INFO
-   ========================================================= */
-
 .preview-topline {
-
     display: flex;
 
     justify-content: space-between;
@@ -1232,7 +1119,6 @@ body::before {
 
 
 .preview-info h2 {
-
     margin-top: 17px;
 
     font-size:
@@ -1248,7 +1134,6 @@ body::before {
 
 
 .project-category {
-
     margin-top: 12px;
 
     color: #d2c9ba;
@@ -1265,7 +1150,6 @@ body::before {
 
 
 .project-description {
-
     max-width: 680px;
 
     margin-top: 19px;
@@ -1284,7 +1168,6 @@ body::before {
 
 
 .project-tags {
-
     margin-top: 19px;
 
     display: flex;
@@ -1297,7 +1180,6 @@ body::before {
 
 
 .project-tags span {
-
     padding:
         7px
         11px;
@@ -1312,23 +1194,16 @@ body::before {
 
     font-size: 0.68rem;
 
-    letter-spacing: 1px;
-
     background:
         linear-gradient(
             #20211c,
             #0e0f0c
         );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.05),
-        0 3px 5px rgba(0,0,0,0.35);
 }
 
 
 
 .view-project {
-
     width: fit-content;
 
     margin-top: 22px;
@@ -1353,17 +1228,11 @@ body::before {
 
     letter-spacing: 2px;
 
-    border-radius: 3px;
-
     background:
         linear-gradient(
             #292a25,
             #10110e
         );
-
-    box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.06),
-        0 5px 8px rgba(0,0,0,0.4);
 }
 
 
@@ -1373,7 +1242,6 @@ body::before {
    ========================================================= */
 
 .contact-section {
-
     margin-top: 55px;
 
     padding:
@@ -1391,7 +1259,6 @@ body::before {
 
 
 .contact-console {
-
     max-width: 1500px;
 
     margin: auto;
@@ -1406,8 +1273,6 @@ body::before {
 
     gap: 25px;
 
-    border-radius: 8px;
-
     background:
         linear-gradient(
             145deg,
@@ -1415,15 +1280,11 @@ body::before {
             #0b0c09 20%,
             #151612
         );
-
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.45);
 }
 
 
 
 .contact-left {
-
     padding:
         25px
         22px;
@@ -1432,7 +1293,6 @@ body::before {
 
 
 .contact-left h2 {
-
     margin-top: 12px;
 
     font-size:
@@ -1446,7 +1306,6 @@ body::before {
 
 
 .contact-left > p:not(.section-label) {
-
     max-width: 580px;
 
     margin-top: 16px;
@@ -1465,7 +1324,6 @@ body::before {
 
 
 .contact-links {
-
     margin-top: 23px;
 
     display: grid;
@@ -1476,7 +1334,6 @@ body::before {
 
 
 .contact-links a {
-
     padding:
         11px
         14px;
@@ -1491,17 +1348,12 @@ body::before {
 
     text-decoration: none;
 
-    background:
-        #0c0d0a;
-
-    box-shadow:
-        inset 0 0 8px #000;
+    background: #0c0d0a;
 }
 
 
 
 .contact-links span {
-
     color: var(--red);
 
     font-family:
@@ -1516,7 +1368,6 @@ body::before {
 
 
 .contact-links strong {
-
     font-family:
         "Courier New",
         monospace;
@@ -1528,25 +1379,15 @@ body::before {
 
 
 
-/* =========================================================
-   FORM
-   ========================================================= */
-
 .message-panel {
-
     padding: 10px;
 
-    background:
-        #080906;
-
-    box-shadow:
-        inset 0 0 10px #000;
+    background: #080906;
 }
 
 
 
 .message-header {
-
     padding:
         11px
         14px;
@@ -1575,7 +1416,6 @@ body::before {
 
 
 .message-panel form {
-
     padding: 15px;
 
     display: grid;
@@ -1586,7 +1426,6 @@ body::before {
 
 
 .message-panel label {
-
     display: grid;
 
     gap: 6px;
@@ -1606,7 +1445,6 @@ body::before {
 
 .message-panel input,
 .message-panel textarea {
-
     padding:
         10px
         11px;
@@ -1618,15 +1456,11 @@ body::before {
     color: #ddd5c8;
 
     background: #060705;
-
-    box-shadow:
-        inset 0 0 7px #000;
 }
 
 
 
 .message-panel button {
-
     width: fit-content;
 
     padding:
@@ -1663,7 +1497,6 @@ body::before {
    ========================================================= */
 
 footer {
-
     padding:
         21px
         var(--page-padding);
@@ -1694,31 +1527,17 @@ footer {
 @media (max-width: 1250px) {
 
     .header-top {
-
         grid-template-columns: 1fr;
-
-        gap: 25px;
     }
 
 
     .about-inner {
-
         grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-
-    .interest-card {
-        max-width: 650px;
     }
 
 
     .project-preview {
-
         grid-template-columns: 1fr;
-
-        gap: 35px;
     }
 
 
@@ -1737,42 +1556,8 @@ footer {
     }
 
 
-    .name-area h1 {
-
-        font-size:
-            clamp(
-                2.2rem,
-                10vw,
-                3rem
-            );
-    }
-
-
-    .name-area p {
-
-        white-space: normal;
-
-        letter-spacing: 4px;
-    }
-
-
     .header-console {
         grid-template-columns: 1fr;
-    }
-
-
-    .main-nav a {
-
-        padding:
-            0
-            13px;
-
-        font-size: 0.65rem;
-    }
-
-
-    .main-nav a:first-child {
-        padding-left: 0;
     }
 
 
@@ -1781,45 +1566,26 @@ footer {
     }
 
 
-    /*
-       Keep shelf large enough to feel like a real shelf.
-       Mobile can scroll sideways.
-    */
-
     .shelf-stage {
-
         width: 1050px;
-
-        max-width: none;
     }
 
 
     .projects-section {
-
         overflow-x: auto;
     }
 
 
     .cassette-row {
-
         left: 100px;
 
         right: auto;
 
         width: 700px;
-
-        gap: 8px;
-    }
-
-
-    .project-spine {
-
-        flex-basis: 95px;
     }
 
 
     .project-preview {
-
         width:
             calc(
                 100% - 24px
@@ -1831,21 +1597,8 @@ footer {
     }
 
 
-    .preview-image-area {
-        min-height: 270px;
-    }
-
-
-    .preview-info h2 {
-        font-size: 2.6rem;
-    }
-
-
     footer {
-
         flex-direction: column;
-
-        gap: 8px;
     }
 
 }
