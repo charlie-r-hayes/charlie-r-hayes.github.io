@@ -31,12 +31,19 @@
 
 html {
     scroll-behavior: smooth;
+
+    /*
+       Makes the site appear like browser zoom at 90%.
+    */
+
+    zoom: 0.9;
 }
 
 
 
 body {
     min-height: 100vh;
+
     overflow-x: hidden;
 
     color: var(--cream);
@@ -73,6 +80,7 @@ body::before {
     content: "";
 
     position: fixed;
+
     inset: 0;
 
     z-index: 999;
@@ -117,7 +125,9 @@ body::before {
 
 .header-inner {
     width: 100%;
+
     max-width: var(--max-width);
+
     margin: auto;
 }
 
@@ -713,7 +723,7 @@ body::before {
 
 /* =========================================================
    FULL WIDTH SHELF
-   SLIGHTLY SHORTER THAN BEFORE
+   SHORTER HEIGHT
    ========================================================= */
 
 .shelf-stage {
@@ -721,14 +731,10 @@ body::before {
 
     width: 100%;
 
-    /*
-       The original image is 1916 x 508.
-
-       This container is intentionally a little shorter.
-       The image itself is NOT stretched.
-    */
-
-    aspect-ratio: 1916 / 465;
+    aspect-ratio:
+        1916
+        /
+        465;
 
     overflow: hidden;
 
@@ -762,10 +768,10 @@ body::before {
     right: 16%;
 
     /*
-       Lower number = farther down toward shelf.
+       Lower value = closer to bottom shelf.
     */
 
-    bottom: 15%;
+    bottom: 8%;
 
     height: 50%;
 
@@ -820,11 +826,31 @@ body::before {
 
 
 
+/*
+   Hover / keyboard focus lifts the tape slightly.
+*/
+
 .project-spine:hover,
-.project-spine:focus-visible,
+.project-spine:focus-visible {
+    transform:
+        translateY(-8px);
+
+    filter:
+        drop-shadow(
+            0 8px 10px
+            rgba(0,0,0,0.55)
+        );
+}
+
+
+
+/*
+   Active tape stays sitting on the shelf.
+*/
+
 .project-spine.active {
     transform:
-        translateY(-10px);
+        translateY(0);
 
     filter:
         drop-shadow(
@@ -1018,11 +1044,6 @@ body::before {
         );
 
     max-width: 1500px;
-
-    /*
-       Slightly closer to the shelf so more of it
-       appears on screen at once.
-    */
 
     margin:
         20px
@@ -1651,6 +1672,16 @@ footer {
 
 @media (max-width: 800px) {
 
+    /*
+       Don't force the 90% desktop scaling
+       on small/mobile screens.
+    */
+
+    html {
+        zoom: 1;
+    }
+
+
     :root {
         --page-padding: 18px;
     }
@@ -1723,7 +1754,7 @@ footer {
 
         width: 700px;
 
-        bottom: 15%;
+        bottom: 8%;
 
         gap: 8px;
     }
