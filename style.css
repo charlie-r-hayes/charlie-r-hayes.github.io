@@ -31,11 +31,6 @@
 
 html {
     scroll-behavior: smooth;
-
-    /*
-       Makes the site appear like browser zoom at 90%.
-    */
-
     zoom: 0.9;
 }
 
@@ -43,7 +38,6 @@ html {
 
 body {
     min-height: 100vh;
-
     overflow-x: hidden;
 
     color: var(--cream);
@@ -80,7 +74,6 @@ body::before {
     content: "";
 
     position: fixed;
-
     inset: 0;
 
     z-index: 999;
@@ -125,9 +118,7 @@ body::before {
 
 .header-inner {
     width: 100%;
-
     max-width: var(--max-width);
-
     margin: auto;
 }
 
@@ -181,7 +172,7 @@ body::before {
 
 
 /* =========================================================
-   HEADER DISPLAY
+   HEADER CONSOLE
    ========================================================= */
 
 .header-console {
@@ -214,7 +205,6 @@ body::before {
     display: block;
 
     width: 100%;
-
     height: auto;
 
     object-fit: contain;
@@ -329,11 +319,9 @@ body::before {
     position: absolute;
 
     left: 0;
-
     top: 50%;
 
     width: 1px;
-
     height: 17px;
 
     transform:
@@ -722,8 +710,7 @@ body::before {
 
 
 /* =========================================================
-   FULL WIDTH SHELF
-   SHORTER HEIGHT
+   SHELF
    ========================================================= */
 
 .shelf-stage {
@@ -757,19 +744,13 @@ body::before {
 
 /* =========================================================
    CASSETTE ROW
-   MOVED LOWER
    ========================================================= */
 
 .cassette-row {
     position: absolute;
 
     left: 9.5%;
-
-    right: 16%;
-
-    /*
-       Lower value = closer to bottom shelf.
-    */
+    right: 15%;
 
     bottom: 8%;
 
@@ -781,95 +762,61 @@ body::before {
 
     gap:
         clamp(
-            6px,
-            0.65vw,
-            13px
+            2px,
+            0.25vw,
+            6px
         );
 }
 
 
 
 /* =========================================================
-   CASSETTES
+   CASSETTE BUTTON
    ========================================================= */
 
 .project-spine {
+    position: relative;
+
     height: 100%;
 
     flex:
         0
         0
         clamp(
-            76px,
-            7vw,
-            125px
+            82px,
+            5.4vw,
+            108px
         );
 
     padding: 0;
 
-    border: none;
+    border: 0;
 
-    outline: none;
+    outline: 0;
 
     background: transparent;
 
     cursor: pointer;
+
+    transform:
+        translateY(0);
 
     transform-origin:
         bottom
         center;
 
     transition:
-        transform 0.2s ease,
-        filter 0.2s ease;
-}
-
-
-
-/*
-   Hover / keyboard focus lifts the tape slightly.
-*/
-
-.project-spine:hover,
-.project-spine:focus-visible {
-    transform:
-        translateY(-8px);
-
-    filter:
-        drop-shadow(
-            0 8px 10px
-            rgba(0,0,0,0.55)
-        );
-}
-
-
-
-/*
-   Active tape stays sitting on the shelf.
-*/
-
-.project-spine.active {
-    transform:
-        translateY(0);
-
-    filter:
-        drop-shadow(
-            0 8px 10px
-            rgba(0,0,0,0.55)
-        );
+        transform 180ms ease,
+        filter 180ms ease;
 }
 
 
 
 /* =========================================================
-   REAL HOMELAB SPINE
+   CASSETTE IMAGE
    ========================================================= */
 
 .image-spine {
-    flex-basis: 125px;
-
-    height: 125%;
-
     overflow: visible;
 }
 
@@ -879,7 +826,6 @@ body::before {
     display: block;
 
     width: 100%;
-
     height: 100%;
 
     object-fit: contain;
@@ -888,146 +834,58 @@ body::before {
         center
         bottom;
 
-    transform:
-        scale(1.18);
+    pointer-events: none;
 
-    transform-origin:
-        bottom
-        center;
+    filter:
+        drop-shadow(
+            3px
+            5px
+            4px
+            rgba(0,0,0,0.5)
+        );
 }
 
 
 
 /* =========================================================
-   PLACEHOLDER SPINES
+   ACTIVE CASSETTE
    ========================================================= */
 
-.placeholder-spine {
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius:
-        4px
-        4px
-        2px
-        2px;
-
-    box-shadow:
-        inset 3px 0 4px rgba(255,255,255,0.05),
-        inset -5px 0 6px rgba(0,0,0,0.7),
-        4px 7px 9px rgba(0,0,0,0.65);
-}
-
-
-
-.dark-spine {
-    color: #ded5c5;
-
-    background:
-        linear-gradient(
-            90deg,
-            #080907,
-            #22231f 18%,
-            #11120f 78%,
-            #050605
+.project-spine.active {
+    filter:
+        brightness(1.07)
+        drop-shadow(
+            0
+            4px
+            7px
+            rgba(0,0,0,0.5)
         );
 }
 
 
 
-.light-spine {
-    color: #1a1914;
+/* =========================================================
+   HOVER CASSETTE
 
-    background:
-        linear-gradient(
-            90deg,
-            #aea697,
-            #e0d6c5 17%,
-            #cbc1b0 80%,
-            #aaa294
-        );
-}
+   THIS IS THE NEW "MOVE UP" EFFECT
+   ========================================================= */
 
-
-
-.placeholder-spine strong {
-    position: absolute;
-
-    top: 19%;
-
-    left: 50%;
-
+.project-spine:hover,
+.project-spine:focus-visible,
+.project-spine.active:hover {
     transform:
-        translateX(-50%);
+        translateY(-18px);
 
-    writing-mode:
-        vertical-rl;
-
-    font-size:
-        clamp(
-            0.85rem,
-            1vw,
-            1.05rem
-        );
-}
-
-
-
-.placeholder-spine small {
-    position: absolute;
-
-    top: 19%;
-
-    right: 10%;
-
-    writing-mode:
-        vertical-rl;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size:
-        clamp(
-            0.52rem,
-            0.58vw,
-            0.66rem
+    filter:
+        brightness(1.12)
+        drop-shadow(
+            0
+            14px
+            9px
+            rgba(0,0,0,0.62)
         );
 
-    font-weight: bold;
-}
-
-
-
-.placeholder-accent {
-    position: absolute;
-
-    top: 7%;
-
-    left: 12%;
-
-    right: 12%;
-
-    height: 9%;
-}
-
-
-
-.placeholder-accent.red {
-    background: #a74a3b;
-}
-
-
-
-.placeholder-accent.blue {
-    background: #365f7c;
-}
-
-
-
-.placeholder-accent.yellow {
-    background: #b78c37;
+    z-index: 10;
 }
 
 
@@ -1110,9 +968,15 @@ body::before {
 
     object-fit: contain;
 
+    transition:
+        opacity 140ms ease,
+        transform 140ms ease;
+
     filter:
         drop-shadow(
-            10px 14px 12px
+            10px
+            14px
+            12px
             rgba(0,0,0,0.42)
         );
 }
@@ -1120,65 +984,16 @@ body::before {
 
 
 /* =========================================================
-   PREVIEW PLACEHOLDER
-   ========================================================= */
-
-.preview-placeholder {
-    display: none;
-
-    width: 100%;
-
-    max-width: 570px;
-
-    aspect-ratio:
-        1.55
-        /
-        1;
-
-    padding: 35px;
-
-    color: #15140f;
-
-    background:
-        linear-gradient(
-            #ded3be,
-            #c6baa3
-        );
-
-    border:
-        16px
-        solid
-        #151612;
-
-    box-shadow:
-        10px 14px 18px rgba(0,0,0,0.45);
-}
-
-
-
-.preview-placeholder p {
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 0.82rem;
-
-    letter-spacing: 2px;
-}
-
-
-
-.preview-placeholder h3 {
-    margin-top: 35px;
-
-    font-size: 3rem;
-}
-
-
-
-/* =========================================================
    PROJECT INFO
    ========================================================= */
+
+.preview-info {
+    transition:
+        opacity 140ms ease,
+        transform 140ms ease;
+}
+
+
 
 .preview-topline {
     display: flex;
@@ -1327,6 +1142,13 @@ body::before {
     box-shadow:
         inset 0 1px 0 rgba(255,255,255,0.06),
         0 5px 8px rgba(0,0,0,0.4);
+}
+
+
+
+.view-project:hover {
+    transform:
+        translateY(-2px);
 }
 
 
@@ -1480,7 +1302,7 @@ body::before {
 
 
 /* =========================================================
-   FORM
+   MESSAGE FORM
    ========================================================= */
 
 .message-panel {
@@ -1672,11 +1494,6 @@ footer {
 
 @media (max-width: 800px) {
 
-    /*
-       Don't force the 90% desktop scaling
-       on small/mobile screens.
-    */
-
     html {
         zoom: 1;
     }
@@ -1718,11 +1535,6 @@ footer {
     }
 
 
-    .main-nav a:first-child {
-        padding-left: 0;
-    }
-
-
     .interests {
         grid-template-columns: 1fr;
     }
@@ -1752,11 +1564,11 @@ footer {
 
         right: auto;
 
-        width: 700px;
+        width: 760px;
 
         bottom: 8%;
 
-        gap: 8px;
+        gap: 3px;
     }
 
 
@@ -1765,20 +1577,11 @@ footer {
     }
 
 
-    .image-spine {
-        flex-basis: 115px;
-
-        height: 125%;
-    }
-
-
-    .image-spine img {
+    .project-spine:hover,
+    .project-spine:focus-visible,
+    .project-spine.active:hover {
         transform:
-            scale(1.18);
-
-        transform-origin:
-            bottom
-            center;
+            translateY(-14px);
     }
 
 
