@@ -1,30 +1,25 @@
 const projects = {
 
 
-    /* =====================================================
-       1. CUSTOM MACRO PCB
-       ===================================================== */
-
     macro: {
 
         number:
-            "01 / 07",
+            "01 / 08",
 
         title:
             "CUSTOM MACRO PCB",
 
         category:
-            "PCB • EMBEDDED • HUMAN INTERFACE",
+            "PCB • EMBEDDED • ELECTRONICS",
 
         description:
-            "A custom programmable macropad designed from schematic capture through PCB layout and physical assembly. The project combines electronics, embedded hardware, and human-interface design into a compact desktop control device.",
+            "A custom programmable macropad designed from schematic capture through PCB layout, manufacturing, firmware, and physical assembly.",
 
         tags: [
-            "PCB DESIGN",
             "KICAD",
+            "PCB DESIGN",
             "EMBEDDED",
-            "ELECTRONICS",
-            "PROTOTYPING"
+            "ELECTRONICS"
         ],
 
         link:
@@ -36,23 +31,19 @@ const projects = {
 
 
 
-    /* =====================================================
-       2. BALL BALANCING ROBOT
-       ===================================================== */
-
     ballbalance: {
 
         number:
-            "02 / 07",
+            "02 / 08",
 
         title:
             "BALL BALANCING ROBOT",
 
         category:
-            "CONTROLS • STEPPER MOTORS • SENSORS",
+            "CONTROLS • STEPPER MOTORS • SONAR",
 
         description:
-            "An automatic control system designed to balance a ball by measuring its position with a sonar sensor and commanding stepper motors to correct its motion. The current design constrains the ball mechanically while providing a platform for further control-system development.",
+            "A feedback-control project that measures ball position using a sonar sensor and commands stepper motors to automatically maintain the ball near a desired position.",
 
         tags: [
             "CONTROL SYSTEMS",
@@ -71,14 +62,10 @@ const projects = {
 
 
 
-    /* =====================================================
-       3. CUSTOM SPEAKERS
-       ===================================================== */
-
     speakers: {
 
         number:
-            "03 / 07",
+            "03 / 08",
 
         title:
             "CUSTOM SPEAKERS",
@@ -87,7 +74,7 @@ const projects = {
             "AUDIO • CLASS D • ELECTRONICS",
 
         description:
-            "A custom speaker system built around a Class D amplifier, combining audio electronics, speaker design, enclosure construction, wiring, and system integration into a complete working audio system.",
+            "A custom speaker system combining enclosure design, audio electronics, wiring, fabrication, and a Class D amplifier into a complete working audio system.",
 
         tags: [
             "CLASS D",
@@ -106,14 +93,10 @@ const projects = {
 
 
 
-    /* =====================================================
-       4. CUSTOM HOMELAB
-       ===================================================== */
-
     homelab: {
 
         number:
-            "04 / 07",
+            "04 / 08",
 
         title:
             "CUSTOM HOMELAB",
@@ -122,7 +105,7 @@ const projects = {
             "PROXMOX • LINUX • NETWORKING",
 
         description:
-            "A self-hosted homelab built for experimentation with virtualization, networking, Linux, game servers, and self-hosted services. The system provides a practical environment for infrastructure deployment, troubleshooting, and learning.",
+            "A self-hosted homelab built for virtualization, networking, Linux, game servers, storage, security, and self-hosted services.",
 
         tags: [
             "PROXMOX",
@@ -141,14 +124,10 @@ const projects = {
 
 
 
-    /* =====================================================
-       5. FPV RACING DRONE
-       ===================================================== */
-
     drone: {
 
         number:
-            "05 / 07",
+            "05 / 08",
 
         title:
             "FPV RACING DRONE",
@@ -157,14 +136,14 @@ const projects = {
             "FPV • FLIGHT CONTROL • ELECTRONICS",
 
         description:
-            "A custom-built FPV racing drone assembled and configured from individual components, combining high-current electronics, motors, radio systems, flight-controller configuration, and mechanical integration.",
+            "A custom-built FPV racing drone assembled and configured from individual components including motors, ESCs, radio equipment, and a programmable flight controller.",
 
         tags: [
             "FPV",
-            "DRONES",
             "FLIGHT CONTROL",
+            "MOTORS",
             "ELECTRONICS",
-            "MOTORS"
+            "RADIO"
         ],
 
         link:
@@ -176,14 +155,41 @@ const projects = {
 
 
 
-    /* =====================================================
-       6. CHEMICAL FEED SKID
-       ===================================================== */
+    tag: {
+
+        number:
+            "06 / 08",
+
+        title:
+            "TAG",
+
+        category:
+            "GODOT • GAME DEVELOPMENT • DESIGN",
+
+        description:
+            "A video game developed in the Godot engine, combining gameplay programming, game systems, level design, user interaction, debugging, and iterative design.",
+
+        tags: [
+            "GODOT",
+            "GAME DEVELOPMENT",
+            "PROGRAMMING",
+            "DESIGN",
+            "DEBUGGING"
+        ],
+
+        link:
+            "projects/tag.html",
+
+        image:
+            "images/cassettes/tag-front.png"
+    },
+
+
 
     skid: {
 
         number:
-            "06 / 07",
+            "07 / 08",
 
         title:
             "CHEMICAL FEED SKID",
@@ -192,7 +198,7 @@ const projects = {
             "PROCESS SYSTEMS • CAD • FABRICATION",
 
         description:
-            "A chemical feed skid designed and built as an integrated process system. The project involved equipment layout, CAD, component selection, fabrication considerations, piping, pumps, instrumentation, and system integration.",
+            "A chemical feed skid designed and built as an integrated process system involving CAD, pumps, piping, component selection, fabrication, and system integration.",
 
         tags: [
             "CAD",
@@ -211,14 +217,10 @@ const projects = {
 
 
 
-    /* =====================================================
-       7. ROBOTIC ARM END EFFECTOR
-       ===================================================== */
-
     robotarm: {
 
         number:
-            "07 / 07",
+            "08 / 08",
 
         title:
             "ROBOTIC ARM TOOL",
@@ -227,7 +229,7 @@ const projects = {
             "ROBOTICS • CAD • FABRICATION",
 
         description:
-            "A custom end-of-arm tool designed for a robotic arm, combining mechanical design, CAD, fabrication, and robotic integration to create tooling for a specific automated task.",
+            "A custom end-of-arm tool designed for a robotic arm, combining CAD, mechanical design, fabrication, and automation-system integration.",
 
         tags: [
             "ROBOTICS",
@@ -247,10 +249,6 @@ const projects = {
 };
 
 
-
-/* =========================================================
-   ELEMENTS
-   ========================================================= */
 
 const projectButtons =
     document.querySelectorAll(
@@ -306,18 +304,12 @@ const previewInfo =
     );
 
 
-
 let currentProject =
     "macro";
 
 
 
-/* =========================================================
-   CHANGE PROJECT
-   ========================================================= */
-
 function showProject(projectName) {
-
 
     const project =
         projects[projectName];
@@ -327,11 +319,6 @@ function showProject(projectName) {
         return;
     }
 
-
-
-    /* ---------------------------------------------
-       ACTIVE SPINE
-       --------------------------------------------- */
 
     projectButtons.forEach(
         button => {
@@ -359,11 +346,6 @@ function showProject(projectName) {
     }
 
 
-
-    /* ---------------------------------------------
-       SMALL TRANSITION
-       --------------------------------------------- */
-
     projectImage.style.opacity =
         "0";
 
@@ -380,14 +362,8 @@ function showProject(projectName) {
         "translateY(5px)";
 
 
-
     setTimeout(
         () => {
-
-
-            /* -------------------------------------
-               IMAGE
-               ------------------------------------- */
 
             projectImage.src =
                 project.image;
@@ -396,11 +372,6 @@ function showProject(projectName) {
             projectImage.alt =
                 `${project.title} cassette`;
 
-
-
-            /* -------------------------------------
-               TEXT
-               ------------------------------------- */
 
             projectNumber.textContent =
                 project.number;
@@ -422,18 +393,12 @@ function showProject(projectName) {
                 project.link;
 
 
-
-            /* -------------------------------------
-               TAGS
-               ------------------------------------- */
-
             projectTags.innerHTML =
                 "";
 
 
             project.tags.forEach(
                 tag => {
-
 
                     const element =
                         document.createElement(
@@ -449,15 +414,9 @@ function showProject(projectName) {
                         element
                     );
 
-
                 }
             );
 
-
-
-            /* -------------------------------------
-               FADE BACK IN
-               ------------------------------------- */
 
             projectImage.style.opacity =
                 "1";
@@ -474,12 +433,10 @@ function showProject(projectName) {
             previewInfo.style.transform =
                 "translateY(0)";
 
-
         },
 
         120
     );
-
 
 
     currentProject =
@@ -489,22 +446,12 @@ function showProject(projectName) {
 
 
 
-/* =========================================================
-   CASSETTE EVENTS
-   ========================================================= */
-
 projectButtons.forEach(
     button => {
-
 
         const projectName =
             button.dataset.project;
 
-
-
-        /* -----------------------------------------
-           DESKTOP HOVER
-           ----------------------------------------- */
 
         button.addEventListener(
             "mouseenter",
@@ -518,11 +465,6 @@ projectButtons.forEach(
         );
 
 
-
-        /* -----------------------------------------
-           KEYBOARD
-           ----------------------------------------- */
-
         button.addEventListener(
             "focus",
             () => {
@@ -535,11 +477,6 @@ projectButtons.forEach(
         );
 
 
-
-        /* -----------------------------------------
-           CLICK / MOBILE TAP
-           ----------------------------------------- */
-
         button.addEventListener(
             "click",
             () => {
@@ -551,15 +488,10 @@ projectButtons.forEach(
             }
         );
 
-
     }
 );
 
 
-
-/* =========================================================
-   DEFAULT
-   ========================================================= */
 
 showProject(
     "macro"
