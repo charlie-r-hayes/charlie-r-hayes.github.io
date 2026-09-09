@@ -1,1 +1,750 @@
 
+:root {
+    --bg: #090a08;
+    --panel: #10110e;
+    --panel-light: #171814;
+
+    --cream: #eee4d2;
+    --muted: #999287;
+
+    --red: #dc543e;
+    --blue: #618298;
+
+    --line: #4d4a42;
+
+    --page-width: 1500px;
+}
+
+
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+
+    zoom: 0.9;
+}
+
+
+
+body {
+    min-height: 100vh;
+
+    padding: 20px;
+
+    color: var(--cream);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #191a16,
+            #070806 55%
+        );
+}
+
+
+
+/* =========================================================
+   MAIN SHELL
+   ========================================================= */
+
+.project-shell {
+    width: 100%;
+
+    max-width: var(--page-width);
+
+    margin: auto;
+
+    padding: 14px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #25261f,
+            #080906 18%,
+            #12130f
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.project-topbar {
+    min-height: 46px;
+
+    padding:
+        8px
+        12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom:
+        1px
+        solid
+        var(--line);
+}
+
+
+
+.back-button {
+    padding:
+        8px
+        13px;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 2px;
+
+    border:
+        1px
+        solid
+        #6a665d;
+
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            #20211c,
+            #0c0d0a
+        );
+}
+
+
+
+.back-button:hover {
+    color: var(--red);
+}
+
+
+
+.tape-counter {
+    color: #aaa399;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.project-heading {
+    padding:
+        24px
+        22px
+        20px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+
+.project-heading h1 {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            2.8rem,
+            5vw,
+            5rem
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: 1px;
+}
+
+
+
+.project-subtitle {
+    margin-top: 10px;
+
+    color: #d3cbbb;
+
+    font-size: 0.78rem;
+
+    letter-spacing: 3px;
+}
+
+
+
+.heading-cassette {
+    width:
+        clamp(
+            240px,
+            24vw,
+            370px
+        );
+
+    max-height: 150px;
+
+    object-fit: contain;
+}
+
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.project-grid {
+    padding:
+        0
+        22px
+        22px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(360px, 0.9fr)
+        minmax(440px, 1.2fr)
+        minmax(250px, 0.55fr);
+
+    gap: 14px;
+}
+
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.project-panel {
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #161713,
+            #0a0b09
+        );
+
+    border:
+        1px
+        solid
+        #403e37;
+
+    box-shadow:
+        inset 0 0 15px rgba(0,0,0,0.45);
+}
+
+
+
+.panel-heading {
+    margin-bottom: 12px;
+
+    padding-bottom: 8px;
+
+    color: var(--cream);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 1px;
+
+    border-bottom:
+        1px
+        solid
+        #4b4840;
+}
+
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.project-hero {
+    width: 100%;
+
+    aspect-ratio:
+        4
+        /
+        3;
+
+    overflow: hidden;
+
+    background: #050605;
+}
+
+
+
+.project-hero img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about-project p {
+    margin-bottom: 14px;
+
+    color: #bab2a5;
+
+    font-size: 0.78rem;
+
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.feature-list {
+    margin-top: 20px;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+
+
+.feature {
+    display: grid;
+
+    grid-template-columns:
+        35px
+        1fr;
+
+    gap: 12px;
+
+    align-items: start;
+}
+
+
+
+.feature-icon {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px
+        solid
+        #8b8477;
+
+    border-radius: 4px;
+
+    color: var(--cream);
+
+    font-size: 0.9rem;
+}
+
+
+
+.feature strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 1px;
+}
+
+
+
+.feature p {
+    margin: 0;
+
+    color: #948d82;
+
+    font-size: 0.69rem;
+}
+
+
+
+/* =========================================================
+   RIGHT SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    display: grid;
+
+    gap: 12px;
+
+    align-content: start;
+}
+
+
+
+.sidebar-list {
+    list-style: none;
+
+    display: grid;
+
+    gap: 6px;
+
+    color: #aaa399;
+
+    font-size: 0.72rem;
+
+    line-height: 1.4;
+}
+
+
+
+.sidebar-list li::before {
+    content: "› ";
+
+    color: var(--red);
+}
+
+
+
+/* =========================================================
+   STATUS PANEL
+   ========================================================= */
+
+.status-panel p {
+    color: #aaa399;
+
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+}
+
+
+
+.status-light {
+    width: 8px;
+    height: 8px;
+
+    margin-right: 7px;
+
+    display: inline-block;
+
+    border-radius: 50%;
+
+    background: #8b9b67;
+
+    box-shadow:
+        0 0 7px rgba(139,155,103,0.5);
+}
+
+
+
+/* =========================================================
+   LOWER SECTION
+   ========================================================= */
+
+.project-lower {
+    padding:
+        0
+        22px
+        22px;
+}
+
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+.project-tabs {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    border-bottom:
+        1px
+        solid
+        #4a473f;
+}
+
+
+
+.project-tabs span {
+    padding:
+        10px
+        16px;
+
+    color: #938c80;
+
+    font-size: 0.67rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+.project-tabs span.active {
+    color: var(--red);
+
+    border-bottom:
+        2px
+        solid
+        var(--red);
+}
+
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-grid {
+    padding-top: 14px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+
+.gallery-card {
+    min-height: 180px;
+
+    overflow: hidden;
+
+    background: #050605;
+
+    border:
+        1px
+        solid
+        #46433c;
+}
+
+
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+
+/* =========================================================
+   TEXT SECTIONS
+   ========================================================= */
+
+.project-section {
+    margin-top: 15px;
+
+    padding: 20px;
+
+    border:
+        1px
+        solid
+        #403e37;
+
+    background:
+        linear-gradient(
+            #12130f,
+            #090a08
+        );
+}
+
+
+
+.project-section h2 {
+    margin-bottom: 13px;
+
+    color: var(--red);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+.project-section p {
+    max-width: 1000px;
+
+    color: #aaa398;
+
+    font-size: 0.8rem;
+
+    line-height: 1.7;
+}
+
+
+
+.project-section ul {
+    margin:
+        15px
+        0
+        0
+        20px;
+
+    color: #aaa398;
+
+    font-size: 0.78rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.project-footer {
+    padding:
+        16px
+        22px
+        8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #716c64;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 4px;
+
+    border-top:
+        1px
+        solid
+        #34322d;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .project-grid {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+
+    .sidebar {
+        grid-column:
+            1
+            /
+            -1;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+
+@media (max-width: 750px) {
+
+    html {
+        zoom: 1;
+    }
+
+
+    body {
+        padding: 8px;
+    }
+
+
+    .project-heading {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sidebar {
+        grid-column: auto;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .project-footer {
+        flex-direction: column;
+    }
+
+}
