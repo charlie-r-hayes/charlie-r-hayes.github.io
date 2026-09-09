@@ -754,13 +754,13 @@ body::before {
 .cassette-row {
     position: absolute;
 
-    left: 8.5%;
+    left: 8%;
 
     right: 10%;
 
     bottom: 7%;
 
-    height: 58%;
+    height: 62%;
 
     display: flex;
 
@@ -784,12 +784,12 @@ body::before {
         0
         0
         clamp(
-            96px,
-            6.2vw,
-            128px
+            106px,
+            6.8vw,
+            140px
         );
 
-    margin-right: -5px;
+    margin-right: -8px;
 
     padding: 0;
 
