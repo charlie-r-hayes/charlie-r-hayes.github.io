@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -9,14 +11,15 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <meta
-        name="description"
-        content="PROJECT TITLE - Charlie Hayes engineering portfolio."
+    <link
+        rel="stylesheet"
+        href="project.css"
     >
 
-    <link rel="stylesheet" href="project.css">
+    <title>
+        Custom Homelab | Charlie Hayes
+    </title>
 
-    <title>PROJECT TITLE | Charlie Hayes</title>
 </head>
 
 
@@ -26,9 +29,9 @@
     <main class="project-shell">
 
 
-        <!-- =====================================================
+        <!-- =================================================
              TOP BAR
-             ===================================================== -->
+             ================================================= -->
 
         <div class="project-topbar">
 
@@ -36,624 +39,519 @@
                 href="../index.html#projects"
                 class="back-button"
             >
-                ← BACK TO ARCHIVE
+                ← BACK TO PROJECTS
             </a>
 
+
             <span class="tape-counter">
-                TAPE 00 / 08
+                TAPE 04 / 08
             </span>
 
         </div>
 
 
 
-        <!-- =====================================================
-             PROJECT HEADER
-             ===================================================== -->
 
-        <section class="project-heading">
+        <!-- =================================================
+             PROJECT TITLE
+             ================================================= -->
 
-            <div class="project-heading-copy">
+        <header class="project-heading">
 
-                <p class="section-label">
-                    PROJECT FILE
-                </p>
+            <div>
 
                 <h1>
-                    PROJECT TITLE
+                    CUSTOM HOMELAB
                 </h1>
 
                 <p class="project-subtitle">
-                    TECHNOLOGY • CATEGORY • CATEGORY
+                    PROXMOX • LINUX • NETWORKING
                 </p>
 
             </div>
 
 
-            <div class="heading-cassette">
+            <img
+                src="../images/cassettes/homelab-front.png"
+                alt="Custom Homelab cassette"
+                class="heading-cassette"
+            >
 
-                <img
-                    src="../images/cassettes/PROJECT-front.png"
-                    alt="PROJECT TITLE cassette"
-                >
-
-            </div>
-
-        </section>
+        </header>
 
 
 
-        <!-- =====================================================
-             MAIN PROJECT GRID
-             ===================================================== -->
 
-        <section class="project-grid">
+        <!-- =================================================
+             MAIN CONTENT
+             ================================================= -->
 
-
-            <!-- =================================================
-                 MAIN IMAGE
-                 ================================================= -->
-
-            <div class="project-panel hero-panel">
-
-                <div class="panel-header">
-
-                    <span>
-                        PROJECT IMAGE
-                    </span>
-
-                    <span>
-                        FIG. 01
-                    </span>
-
-                </div>
+        <div class="project-grid">
 
 
-                <div class="hero-image-wrapper">
+            <!-- HERO IMAGE -->
+
+            <section class="project-panel">
+
+                <h2 class="panel-heading">
+                    PROJECT // OVERVIEW
+                </h2>
+
+
+                <div class="project-hero">
+
+                    <!-- Replace this with your own project photo -->
 
                     <img
-                        src="../images/projects/PROJECT/main.jpg"
-                        alt="PROJECT TITLE"
-                        class="hero-image"
+                        src="../images/projects/homelab/main.jpg"
+                        alt="Custom homelab server rack"
                     >
 
                 </div>
 
-            </div>
+            </section>
 
 
 
-            <!-- =================================================
-                 ABOUT PROJECT
-                 ================================================= -->
 
-            <div class="project-panel about-panel">
+            <!-- ABOUT -->
 
-                <div class="panel-header">
+            <section class="project-panel about-project">
 
-                    <span>
-                        ABOUT PROJECT
-                    </span>
-
-                    <span>
-                        01
-                    </span>
-
-                </div>
+                <h2 class="panel-heading">
+                    ABOUT THE PROJECT
+                </h2>
 
 
-                <div class="panel-content">
+                <p>
 
-                    <p>
+                    I built this homelab as a platform for learning
+                    virtualization, networking, Linux administration,
+                    storage, self-hosting, and infrastructure design.
 
-                        Write a short overview of the project here.
-
-                        Explain what you built, why you built it, and what
-                        problem the project was meant to solve.
-
-                    </p>
+                </p>
 
 
-                    <p>
+                <p>
 
-                        This is a good place to describe the project from a
-                        systems perspective. Mention the electronics,
-                        mechanical design, software, controls, networking,
-                        fabrication, or other major pieces that were involved.
+                    Rather than relying entirely on cloud services,
+                    the system gives me hands-on experience deploying,
+                    troubleshooting, maintaining, and improving real
+                    infrastructure.
 
-                    </p>
+                </p>
 
 
-                    <div class="feature-list">
 
-                        <div>
-                            <span>01</span>
+                <div class="feature-list">
 
-                            <p>
-                                FIRST IMPORTANT FEATURE OR DESIGN GOAL
-                            </p>
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ◫
                         </div>
 
-
                         <div>
-                            <span>02</span>
+
+                            <strong>
+                                VIRTUALIZATION
+                            </strong>
 
                             <p>
-                                SECOND IMPORTANT FEATURE OR DESIGN GOAL
+                                Proxmox VE running multiple virtual
+                                machines and containers.
                             </p>
-                        </div>
 
-
-                        <div>
-                            <span>03</span>
-
-                            <p>
-                                THIRD IMPORTANT FEATURE OR DESIGN GOAL
-                            </p>
                         </div>
 
                     </div>
 
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ⑂
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                NETWORKING
+                            </strong>
+
+                            <p>
+                                OPNsense firewall, VLANs, routing,
+                                DNS, and remote access.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            ⚙
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                SELF-HOSTED SERVICES
+                            </strong>
+
+                            <p>
+                                Game servers, Pi-hole, monitoring,
+                                storage, and development tools.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
                 </div>
 
-            </div>
+            </section>
 
 
 
-            <!-- =================================================
-                 SIDEBAR
-                 ================================================= -->
 
-            <aside class="project-sidebar">
+            <!-- SIDEBAR -->
 
-
-                <!-- KEY TECHNOLOGIES -->
-
-                <div class="sidebar-section">
-
-                    <div class="panel-header">
-
-                        <span>
-                            KEY TECHNOLOGIES
-                        </span>
-
-                    </div>
+            <aside class="sidebar">
 
 
-                    <div class="tech-list">
+                <section class="project-panel">
 
-                        <span>TECHNOLOGY 1</span>
-                        <span>TECHNOLOGY 2</span>
-                        <span>TECHNOLOGY 3</span>
-                        <span>TECHNOLOGY 4</span>
-                        <span>TECHNOLOGY 5</span>
+                    <h2 class="panel-heading">
+                        KEY TECHNOLOGIES
+                    </h2>
 
-                    </div>
+                    <ul class="sidebar-list">
 
-                </div>
+                        <li>
+                            Proxmox VE
+                        </li>
 
+                        <li>
+                            Linux
+                        </li>
 
+                        <li>
+                            OPNsense
+                        </li>
 
-                <!-- HARDWARE -->
+                        <li>
+                            Pi-hole
+                        </li>
 
-                <div class="sidebar-section">
+                        <li>
+                            Docker
+                        </li>
 
-                    <div class="panel-header">
+                        <li>
+                            Tailscale
+                        </li>
 
-                        <span>
-                            HARDWARE / COMPONENTS
-                        </span>
-
-                    </div>
-
-
-                    <ul class="hardware-list">
-
-                        <li>COMPONENT 1</li>
-                        <li>COMPONENT 2</li>
-                        <li>COMPONENT 3</li>
-                        <li>COMPONENT 4</li>
-                        <li>COMPONENT 5</li>
+                        <li>
+                            LXC Containers
+                        </li>
 
                     </ul>
 
-                </div>
+                </section>
 
 
 
-                <!-- STATUS -->
+                <section class="project-panel">
 
-                <div class="sidebar-section">
+                    <h2 class="panel-heading">
+                        HARDWARE
+                    </h2>
 
-                    <div class="panel-header">
+                    <ul class="sidebar-list">
 
-                        <span>
-                            PROJECT STATUS
-                        </span>
+                        <li>
+                            Ryzen 9 7900
+                        </li>
 
-                    </div>
+                        <li>
+                            64 GB DDR5
+                        </li>
+
+                        <li>
+                            NVMe Storage
+                        </li>
+
+                        <li>
+                            Custom Rack
+                        </li>
+
+                        <li>
+                            Managed Networking
+                        </li>
+
+                    </ul>
+
+                </section>
 
 
-                    <div class="status-box">
 
-                        <strong>
-                            COMPLETE
-                        </strong>
+                <section class="project-panel status-panel">
 
-                        <p>
-                            ADD A SHORT STATUS NOTE HERE
-                        </p>
+                    <h2 class="panel-heading">
+                        STATUS
+                    </h2>
 
-                    </div>
+                    <p>
+                        <span class="status-light"></span>
 
-                </div>
+                        ACTIVE
+                    </p>
+
+                </section>
+
 
             </aside>
 
-        </section>
+
+        </div>
 
 
 
-        <!-- =====================================================
-             LOWER NAVIGATION
-             ===================================================== -->
 
-      
+        <!-- =================================================
+             LOWER INFORMATION
+             ================================================= -->
+
+        <div class="project-lower">
+
+
+            
 
 
 
-        <!-- =====================================================
-             GALLERY
-             ===================================================== -->
 
-        <section class="project-panel gallery-section">
-
-            <div class="panel-header">
-
-                <span>
-                    PROJECT GALLERY
-                </span>
-
-                <span>
-                    FIG. 02–04
-                </span>
-
-            </div>
-
+            <!-- GALLERY -->
 
             <div class="gallery-grid">
 
-                <figure>
+
+                <div class="gallery-card">
 
                     <img
-                        src="../images/projects/PROJECT/gallery-1.jpg"
-                        alt="PROJECT TITLE gallery image 1"
+                        src="../images/projects/homelab/gallery-1.jpg"
+                        alt="Homelab rack"
                     >
 
-                    <figcaption>
-                        ADD IMAGE CAPTION
-                    </figcaption>
-
-                </figure>
+                </div>
 
 
-                <figure>
+                <div class="gallery-card">
 
                     <img
-                        src="../images/projects/PROJECT/gallery-2.jpg"
-                        alt="PROJECT TITLE gallery image 2"
+                        src="../images/projects/homelab/gallery-2.jpg"
+                        alt="Homelab networking"
                     >
 
-                    <figcaption>
-                        ADD IMAGE CAPTION
-                    </figcaption>
-
-                </figure>
+                </div>
 
 
-                <figure>
+                <div class="gallery-card">
 
                     <img
-                        src="../images/projects/PROJECT/gallery-3.jpg"
-                        alt="PROJECT TITLE gallery image 3"
+                        src="../images/projects/homelab/gallery-3.jpg"
+                        alt="Homelab hardware"
                     >
 
-                    <figcaption>
-                        ADD IMAGE CAPTION
-                    </figcaption>
+                </div>
 
-                </figure>
 
             </div>
 
-        </section>
 
 
 
-        <!-- =====================================================
-             PROJECT GOALS
-             ===================================================== -->
+            <!-- =================================================
+                 PROJECT GOALS
+                 ================================================= -->
 
-        <section class="project-panel text-section">
+            <section class="project-section">
 
-            <div class="panel-header">
-
-                <span>
+                <h2>
                     PROJECT GOALS
-                </span>
+                </h2>
 
-                <span>
-                    02
-                </span>
-
-            </div>
-
-
-            <div class="text-section-content">
 
                 <p>
 
-                    Explain what you wanted the project to accomplish.
+                    The main goal was to build a flexible environment
+                    where I could experiment with technologies that
+                    would be difficult to learn exclusively through
+                    coursework.
 
                 </p>
 
-                <p>
 
-                    Include the requirements, constraints, performance
-                    targets, or personal learning goals that influenced
-                    the design.
+                <ul>
 
-                </p>
+                    <li>
+                        Learn virtualization and server administration.
+                    </li>
 
-            </div>
+                    <li>
+                        Build and configure a custom network.
+                    </li>
 
-        </section>
+                    <li>
+                        Deploy reliable self-hosted services.
+                    </li>
+
+                    <li>
+                        Develop stronger troubleshooting skills.
+                    </li>
+
+                </ul>
+
+            </section>
 
 
 
-        <!-- =====================================================
-             DESIGN PROCESS
-             ===================================================== -->
 
-        <section class="project-panel text-section">
+            <!-- =================================================
+                 DESIGN PROCESS
+                 ================================================= -->
 
-            <div class="panel-header">
+            <section class="project-section">
 
-                <span>
+                <h2>
                     DESIGN PROCESS
-                </span>
+                </h2>
 
-                <span>
-                    03
-                </span>
-
-            </div>
-
-
-            <div class="text-section-content">
 
                 <p>
 
-                    Describe how the project went from idea to finished
-                    system.
+                    Use this section to describe how the project
+                    developed. You can explain hardware decisions,
+                    software architecture, networking choices,
+                    problems you encountered, and why you changed
+                    certain parts of the design.
 
                 </p>
 
-                <p>
-
-                    This section can include research, calculations,
-                    schematics, CAD, PCB design, prototyping, programming,
-                    fabrication, or testing.
-
-                </p>
-
-            </div>
-
-        </section>
+            </section>
 
 
 
-        <!-- =====================================================
-             DIAGRAM / SCHEMATIC
-             ===================================================== -->
 
-        <section class="project-panel diagram-section">
+            <!-- =================================================
+                 CHALLENGES
+                 ================================================= -->
 
-            <div class="panel-header">
+            <section class="project-section">
 
-                <span>
-                    SYSTEM DIAGRAM
-                </span>
-
-                <span>
-                    FIG. 05
-                </span>
-
-            </div>
-
-
-            <div class="diagram-wrapper">
-
-                <img
-                    src="../images/projects/PROJECT/diagram.jpg"
-                    alt="PROJECT TITLE system diagram"
-                >
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CHALLENGES
-             ===================================================== -->
-
-        <section class="project-panel text-section">
-
-            <div class="panel-header">
-
-                <span>
+                <h2>
                     CHALLENGES
-                </span>
+                </h2>
 
-                <span>
-                    04
-                </span>
-
-            </div>
-
-
-            <div class="text-section-content">
 
                 <p>
 
-                    Explain one or two problems you encountered during
-                    the project.
+                    This is a good place to describe technical problems
+                    you encountered and how you solved them. Employers
+                    often care more about this than simply seeing that
+                    the finished project works.
 
                 </p>
 
-                <p>
-
-                    Describe how you diagnosed them and what changes you
-                    made to solve them.
-
-                </p>
-
-            </div>
-
-        </section>
+            </section>
 
 
 
-        <!-- =====================================================
-             RESULTS
-             ===================================================== -->
 
-        <section class="project-panel text-section">
+            <!-- =================================================
+                 RESULTS
+                 ================================================= -->
 
-            <div class="panel-header">
+            <section class="project-section">
 
-                <span>
+                <h2>
                     RESULTS
-                </span>
+                </h2>
 
-                <span>
-                    05
-                </span>
-
-            </div>
-
-
-            <div class="text-section-content">
 
                 <p>
 
-                    Explain the final outcome of the project.
+                    Explain what ultimately worked, what the system can
+                    currently do, and what you learned while building it.
 
                 </p>
 
-                <p>
-
-                    Include anything measurable if possible — performance,
-                    reliability, speed, accuracy, power consumption,
-                    successful functionality, or testing results.
-
-                </p>
-
-            </div>
-
-        </section>
+            </section>
 
 
 
-        <!-- =====================================================
-             LESSONS LEARNED
-             ===================================================== -->
 
-        <section class="project-panel text-section">
+            <!-- =================================================
+                 FUTURE IMPROVEMENTS
+                 ================================================= -->
 
-            <div class="panel-header">
+            <section class="project-section">
 
-                <span>
-                    LESSONS LEARNED
-                </span>
-
-                <span>
-                    06
-                </span>
-
-            </div>
-
-
-            <div class="text-section-content">
-
-                <p>
-
-                    Explain what this project taught you.
-
-                </p>
-
-                <p>
-
-                    This can be technical knowledge, design decisions you
-                    would change, debugging lessons, or experience working
-                    with unfamiliar tools.
-
-                </p>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             NEXT STEPS
-             ===================================================== -->
-
-        <section class="project-panel text-section">
-
-            <div class="panel-header">
-
-                <span>
+                <h2>
                     NEXT STEPS
-                </span>
-
-                <span>
-                    07
-                </span>
-
-            </div>
+                </h2>
 
 
-            <div class="text-section-content">
+                <ul>
 
-                <p>
+                    <li>
+                        Expand storage.
+                    </li>
 
-                    Describe what you would improve or add if you continued
-                    developing the project.
+                    <li>
+                        Improve automated backups.
+                    </li>
 
-                </p>
+                    <li>
+                        Add more monitoring and alerting.
+                    </li>
 
-            </div>
+                    <li>
+                        Continue experimenting with new services.
+                    </li>
 
-        </section>
+                </ul>
+
+            </section>
+
+
+        </div>
 
 
 
-        <!-- =====================================================
+
+        <!-- =================================================
              FOOTER
-             ===================================================== -->
+             ================================================= -->
 
         <footer class="project-footer">
 
-            <a href="../index.html#projects">
-                ← PROJECT ARCHIVE
-            </a>
+            <span>
+                CHARLIE HAYES
+            </span>
 
             <span>
-                CHARLIE HAYES // ELECTRICAL ENGINEERING
+                ENGINEERING // PRACTICAL SOLUTIONS
+            </span>
+
+            <span>
+                PLAY › BUILD › LEARN › REPEAT
             </span>
 
         </footer>
