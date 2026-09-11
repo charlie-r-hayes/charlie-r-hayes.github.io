@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="PROJECT TITLE - Charlie Hayes engineering portfolio."
+    >
+
+    <link rel="stylesheet" href="project.css">
+
+    <title>PROJECT TITLE | Charlie Hayes</title>
+</head>
+
+
+<body>
+
+
+    <main class="project-shell">
+
+
+        <!-- =====================================================
+             TOP BAR
+             ===================================================== -->
+
+        <div class="project-topbar">
+
+            <a
+                href="../index.html#projects"
+                class="back-button"
+            >
+                ← BACK TO ARCHIVE
+            </a>
+
+            <span class="tape-counter">
+                TAPE 00 / 08
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             PROJECT HEADER
+             ===================================================== -->
+
+        <section class="project-heading">
+
+            <div class="project-heading-copy">
+
+                <p class="section-label">
+                    PROJECT FILE
+                </p>
+
+                <h1>
+                    PROJECT TITLE
+                </h1>
+
+                <p class="project-subtitle">
+                    TECHNOLOGY • CATEGORY • CATEGORY
+                </p>
+
+            </div>
+
+
+            <div class="heading-cassette">
+
+                <img
+                    src="../images/cassettes/PROJECT-front.png"
+                    alt="PROJECT TITLE cassette"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MAIN PROJECT GRID
+             ===================================================== -->
+
+        <section class="project-grid">
+
+
+            <!-- =================================================
+                 MAIN IMAGE
+                 ================================================= -->
+
+            <div class="project-panel hero-panel">
+
+                <div class="panel-header">
+
+                    <span>
+                        PROJECT IMAGE
+                    </span>
+
+                    <span>
+                        FIG. 01
+                    </span>
+
+                </div>
+
+
+                <div class="hero-image-wrapper">
+
+                    <img
+                        src="../images/projects/PROJECT/main.jpg"
+                        alt="PROJECT TITLE"
+                        class="hero-image"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ABOUT PROJECT
+                 ================================================= -->
+
+            <div class="project-panel about-panel">
+
+                <div class="panel-header">
+
+                    <span>
+                        ABOUT PROJECT
+                    </span>
+
+                    <span>
+                        01
+                    </span>
+
+                </div>
+
+
+                <div class="panel-content">
+
+                    <p>
+
+                        Write a short overview of the project here.
+
+                        Explain what you built, why you built it, and what
+                        problem the project was meant to solve.
+
+                    </p>
+
+
+                    <p>
+
+                        This is a good place to describe the project from a
+                        systems perspective. Mention the electronics,
+                        mechanical design, software, controls, networking,
+                        fabrication, or other major pieces that were involved.
+
+                    </p>
+
+
+                    <div class="feature-list">
+
+                        <div>
+                            <span>01</span>
+
+                            <p>
+                                FIRST IMPORTANT FEATURE OR DESIGN GOAL
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <span>02</span>
+
+                            <p>
+                                SECOND IMPORTANT FEATURE OR DESIGN GOAL
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <span>03</span>
+
+                            <p>
+                                THIRD IMPORTANT FEATURE OR DESIGN GOAL
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SIDEBAR
+                 ================================================= -->
+
+            <aside class="project-sidebar">
+
+
+                <!-- KEY TECHNOLOGIES -->
+
+                <div class="sidebar-section">
+
+                    <div class="panel-header">
+
+                        <span>
+                            KEY TECHNOLOGIES
+                        </span>
+
+                    </div>
+
+
+                    <div class="tech-list">
+
+                        <span>TECHNOLOGY 1</span>
+                        <span>TECHNOLOGY 2</span>
+                        <span>TECHNOLOGY 3</span>
+                        <span>TECHNOLOGY 4</span>
+                        <span>TECHNOLOGY 5</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- HARDWARE -->
+
+                <div class="sidebar-section">
+
+                    <div class="panel-header">
+
+                        <span>
+                            HARDWARE / COMPONENTS
+                        </span>
+
+                    </div>
+
+
+                    <ul class="hardware-list">
+
+                        <li>COMPONENT 1</li>
+                        <li>COMPONENT 2</li>
+                        <li>COMPONENT 3</li>
+                        <li>COMPONENT 4</li>
+                        <li>COMPONENT 5</li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="sidebar-section">
+
+                    <div class="panel-header">
+
+                        <span>
+                            PROJECT STATUS
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-box">
+
+                        <strong>
+                            COMPLETE
+                        </strong>
+
+                        <p>
+                            ADD A SHORT STATUS NOTE HERE
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LOWER NAVIGATION
+             ===================================================== -->
+
+        <div class="project-tabs">
+
+            <span>
+                DESIGN
+            </span>
+
+            <span>
+                BUILD
+            </span>
+
+            <span>
+                TEST
+            </span>
+
+            <span>
+                RESULTS
+            </span>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             GALLERY
+             ===================================================== -->
+
+        <section class="project-panel gallery-section">
+
+            <div class="panel-header">
+
+                <span>
+                    PROJECT GALLERY
+                </span>
+
+                <span>
+                    FIG. 02–04
+                </span>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                <figure>
+
+                    <img
+                        src="../images/projects/PROJECT/gallery-1.jpg"
+                        alt="PROJECT TITLE gallery image 1"
+                    >
+
+                    <figcaption>
+                        ADD IMAGE CAPTION
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../images/projects/PROJECT/gallery-2.jpg"
+                        alt="PROJECT TITLE gallery image 2"
+                    >
+
+                    <figcaption>
+                        ADD IMAGE CAPTION
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="../images/projects/PROJECT/gallery-3.jpg"
+                        alt="PROJECT TITLE gallery image 3"
+                    >
+
+                    <figcaption>
+                        ADD IMAGE CAPTION
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROJECT GOALS
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    PROJECT GOALS
+                </span>
+
+                <span>
+                    02
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Explain what you wanted the project to accomplish.
+
+                </p>
+
+                <p>
+
+                    Include the requirements, constraints, performance
+                    targets, or personal learning goals that influenced
+                    the design.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DESIGN PROCESS
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    DESIGN PROCESS
+                </span>
+
+                <span>
+                    03
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Describe how the project went from idea to finished
+                    system.
+
+                </p>
+
+                <p>
+
+                    This section can include research, calculations,
+                    schematics, CAD, PCB design, prototyping, programming,
+                    fabrication, or testing.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DIAGRAM / SCHEMATIC
+             ===================================================== -->
+
+        <section class="project-panel diagram-section">
+
+            <div class="panel-header">
+
+                <span>
+                    SYSTEM DIAGRAM
+                </span>
+
+                <span>
+                    FIG. 05
+                </span>
+
+            </div>
+
+
+            <div class="diagram-wrapper">
+
+                <img
+                    src="../images/projects/PROJECT/diagram.jpg"
+                    alt="PROJECT TITLE system diagram"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CHALLENGES
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    CHALLENGES
+                </span>
+
+                <span>
+                    04
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Explain one or two problems you encountered during
+                    the project.
+
+                </p>
+
+                <p>
+
+                    Describe how you diagnosed them and what changes you
+                    made to solve them.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             RESULTS
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    RESULTS
+                </span>
+
+                <span>
+                    05
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Explain the final outcome of the project.
+
+                </p>
+
+                <p>
+
+                    Include anything measurable if possible — performance,
+                    reliability, speed, accuracy, power consumption,
+                    successful functionality, or testing results.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LESSONS LEARNED
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    LESSONS LEARNED
+                </span>
+
+                <span>
+                    06
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Explain what this project taught you.
+
+                </p>
+
+                <p>
+
+                    This can be technical knowledge, design decisions you
+                    would change, debugging lessons, or experience working
+                    with unfamiliar tools.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             NEXT STEPS
+             ===================================================== -->
+
+        <section class="project-panel text-section">
+
+            <div class="panel-header">
+
+                <span>
+                    NEXT STEPS
+                </span>
+
+                <span>
+                    07
+                </span>
+
+            </div>
+
+
+            <div class="text-section-content">
+
+                <p>
+
+                    Describe what you would improve or add if you continued
+                    developing the project.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FOOTER
+             ===================================================== -->
+
+        <footer class="project-footer">
+
+            <a href="../index.html#projects">
+                ← PROJECT ARCHIVE
+            </a>
+
+            <span>
+                CHARLIE HAYES // ELECTRICAL ENGINEERING
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>
