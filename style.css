@@ -742,6 +742,24 @@ body::before {
     letter-spacing: 2px;
 }
 
+.project-page-status {
+    display: none;
+
+    margin-top: 10px;
+
+    color: #e4553e;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 0.72rem;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
 
 
 /* =========================================================
